@@ -1,2 +1,2 @@
-# Kitsu-th-que
+# Kitsu-theque
 Mangathèque
