@@ -1,2 +1,161 @@
+$familyTitle: 'Carter One', cursive;
+$falilyTxt: 'Roboto', sans-serif;
+$black : #0C0C0C;
 
-    font-family: 'Carter One', cursive;
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.row-limit-size {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.titleDiv {
+    width: 100%;
+}
+
+.title {
+    margin: 0 auto;
+    font-size: 1.9rem;
+    font-family: $familyTitle;
+    position: relative;
+    color: $black;
+    height: 100px;
+    width: 231px;
+
+}
+
+.title::after {
+    content: url(../img/Nuages-Kitsutech/nuage-souligneur.svg);
+    position: absolute;
+    top: 30%;
+    left: 0;
+
+
+}
+
+/*news phone*/
+
+#news {
+    overflow: auto;
+
+    .row-limit-size {
+
+
+        #slider {
+            width: 100%;
+
+
+            #leftArrow,
+            #rightArrow {
+                display: none;
+            }
+
+            #window-slider {
+                width: 270px;
+                height: 414px;
+                overflow: hidden;
+                margin: 0 auto;
+
+                #list-slide {
+
+                    margin-left: 0;
+
+                    .slide img {
+                        width: 100%;
+
+
+                    }
+                }
+            }
+
+        }
+
+        #swipe {
+            img {
+                width: 20%;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+
+
+
+}
+
+/*news desltop*/
+@media screen and (min-width : 800px) {
+    body {
+        background: url(../img/Nuages-Kitsutech/nuage-kitsutech-decor.svg) -20px 50px no-repeat, url(paper.gif) left top repeat;
+        background-size: 10vw;
+
+        main #news {
+            padding-top:100px ;
+
+            .row-limit-size #slider {
+                position: relative;
+                height: 415px;
+
+                #leftArrow,
+                #rightArrow {
+                    display: block;
+                    position: absolute
+                }
+
+                #leftArrow {
+                    top: 37%;
+                    left: 5%;
+                }
+
+                #rightArrow {
+                    top: 37%;
+                    right: 5%;
+                }
+
+                #window-slider {
+                    width: 800px;
+
+                    #list-slide {
+                        display: flex;
+
+                        .slide img {
+                            width: 270px;
+                            height: 414px;
+                            padding-right: 30px;
+                        }
+                    }
+                }
+            }
+
+            #swipe {
+                display: none;
+            }
+
+        }
+    }
+}
+
+
+/*Event phone*/
+
+#event {
+    overflow: auto;
+    .titleDiv .title {
+        width: 240px;
+    }
+    #eventran {
+        width: 100%;
+        #imgEvent img {
+            width: 150px;
+            height: 200px;
+        }
+    }
+
+}
