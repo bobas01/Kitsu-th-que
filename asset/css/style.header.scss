@@ -1,0 +1,66 @@
+$familyTitle: 'Carter One', cursive;
+    $falilyTxt: 'Roboto', sans-serif;
+    $black : #0C0C0C;
+    $red : #BF1818;
+    $orange : #EB5D11;
+    *, ::before, ::after{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+.row-limit-size {
+        max-width: 1200px;
+        width: 100%;
+    }
+    header{
+        #head{  
+        .logo{
+           float: left;
+           margin: 30px;
+           cursor: pointer;
+        .titre-logo{
+            color: $red;
+            font-family: $familyTitle;
+            background-color: #BF1818;
+
+           }
+           
+        } 
+        
+        .connexion, .cataloge{
+            float: right;
+            margin: 30px;
+            cursor: pointer;
+        }
+
+        #nav-bar{
+            // position: absolute;
+            // text-align: center;
+            // top: "50%";
+            // left: "50%";
+            // transform: "translate(-50%, -50%)";
+            width: 20%;
+            height: 40px;
+            margin-left: 600px;
+            border: solid $orange;
+            border-radius: 100px 10px / 120px;
+
+            .loup{
+                height: 33px;
+                margin-left: 55px;
+            }
+           
+           
+        }
+        .titre-logo{
+            color: $red;
+            font-family: $familyTitle;
+            margin-top: 20px;
+           }
+        
+         
+         
+        }
+         
+    }
+    
