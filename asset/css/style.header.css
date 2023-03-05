@@ -1,4 +1,6 @@
-*, ::before, ::after {
+*,
+::before,
+::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -9,34 +11,68 @@
   width: 100%;
 }
 
-header #head .logo {
+header {
+  box-shadow: #EB5D11 0px 0px 0px 3px;
+  padding-bottom: 50px;
+}
+header #container .logo {
   float: left;
   margin: 30px;
   cursor: pointer;
 }
-header #head .logo .titre-logo {
+header #container .titre-logo {
   color: #BF1818;
   font-family: "Carter One", cursive;
-  background-color: #BF1818;
 }
-header #head .connexion, header #head .cataloge {
+header #container .connexion,
+header #container .cataloge {
   float: right;
   margin: 30px;
   cursor: pointer;
 }
-header #head #nav-bar {
-  width: 20%;
-  height: 40px;
-  margin-left: 600px;
-  border: solid #EB5D11;
+header #container .search {
+  display: flex;
+  justify-content: center;
+}
+header #container .search .search-bar {
+  background-color: white;
+  color: white;
+  border: none;
+  width: 90%;
+  padding: 10px;
   border-radius: 100px 10px/120px;
+  margin-left: -10px;
+  cursor: pointer;
+  border: 2px solid #EB5D11;
 }
-header #head #nav-bar .loup {
-  height: 33px;
-  margin-left: 55px;
+header #container .search .button img {
+  height: 20px;
 }
-header #head .titre-logo {
-  color: #BF1818;
-  font-family: "Carter One", cursive;
-  margin-top: 20px;
+
+section {
+  height: 200px;
+  color: aliceblue;
+}
+
+footer {
+  background-color: #BF1818;
+}
+footer .information {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 20px;
+}
+
+/*******phone********/
+@media screen and (max-width: 610px) {
+  #container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-evenly;
+  }
+  .information {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
 }/*# sourceMappingURL=style.header.css.map */
