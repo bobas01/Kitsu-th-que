@@ -29,12 +29,12 @@
                     </div>
                     <div id="window-slider">
                         <div id="list-slide">
-                            <div class="slide"><img src="./asset/img/première page/One-Piece - édition-originale-t.103.jpg" alt="One Piece - édition originale t.103"></div>
-                            <div class="slide"><img src="./asset/img/première page/One-Piece - édition-originale-t.102.jpg" alt="One Piece - édition originale t.102.jpg"></div>
-                            <div class="slide"><img src="./asset/img/première page/One-Piece - édition-originale-t.101.jpeg" alt="One Piece - édition originale t.101.jpg"></div>
-                            <div class="slide"><img src="./asset/img/première page/One-Piece - édition-originale-t.100.jpeg" alt="One Piece - édition originale t.100.jpg"></div>
-                            <div class="slide"><img src="./asset/img/première page/One-Piece - édition-originale-t.99.jpg" alt="One Piece - édition originale t.99.jpg"></div>
-                            <div class="slide"><img src="./asset/img/première page/One-Piece - édition-originale-t.103.jpg" alt="One Piece - édition originale t.103"></div>
+                            <div class="slide"><img src="./asset/img/première-page/One-Pieceédition-originale-t.103.jpg" alt="One Piece - édition originale t.103"></div>
+                            <div class="slide"><img src="./asset/img/première-page/OnePiecedition-originalet.102.jpg" alt="One Piece - édition originale t.102.jpg"></div>
+                            <div class="slide"><img src="./asset/img/première-page/OnePieceédition-originale-t.101.jpeg" alt="One Piece - édition originale t.101.jpg"></div>
+                            <div class="slide"><img src="./asset/img/première-page/OnePieceéditionoriginalet.100.jpeg" alt="One Piece - édition originale t.100.jpg"></div>
+                            <div class="slide"><img src="./asset/img/première-page/OnePieceédition-originalet.99.jpg" alt="One Piece - édition originale t.99.jpg"></div>
+                            <div class="slide"><img src="./asset/img/première-page/One-Pieceédition-originale-t.103.jpg" alt="One Piece - édition originale t.103"></div>
                         </div>
                     </div>
                     <div id="rightArrow">
@@ -50,6 +50,7 @@
         </section>
         <section id="event">
             <div class="row-limit-size">
+
                 <article class="titleDiv">
                     <h1 class="title"> Nos événements</h1>
                 </article>
@@ -58,12 +59,50 @@
                         <img src="./asset/img/photo/kevin-tran-250.jpg" alt="Kévin Tran">
                         <img src="./asset/img/première-page/ki&hi.png" alt="KI&HI">
                     </div>
-                    <p>Dédicace de Kevin Tran  le  30/03/2023  de <br> 14h à 18h pour son dernier manga KI & HI.</p>
+                    <p>Dédicace de Kevin Tran le 30/03/2023 de 14h à 18h pour son dernier manga KI & HI.</p>
                 </div>
 
             </div>
         </section>
+        <section id="place">
+            <div class="row-limit-size">
+
+                <article class="titleDiv">
+                    <h1 class="title"> Notre mangathèque</h1>
+                </article>
+                <div id=placeKitsu>
+                    <p>Un endroit chaleureux, accessible à tous (accès pour personne à handicap) pour tous des plus petits avec Pokémon les ados avec Naruto ou les plus vieux avec Berserk
+                        pour lire sur place ou chez vous avec un personnel très accueillant. </p>
+                    <div id="imgPlace">
+                        <img id="firstImgPlace" src="./asset/img/photo/musee-manga-kyoto-3.jpg" alt="Kespace de lecture">
+                        <img id="secondImgPlace" src="./asset/img/photo/espace-accuieller.jpg" alt="rayon de la mangathèque">
+                        <img id="thirdImgPlace" src="./asset/img/photo/trogstad_public_library_no_013.jpg" alt="accueil">
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <section id="suggestion">
+            <div class="row-limit-size">
+            <article class="titleDiv">
+                    <h1 class="title">Vos suggestions</h1>
+                </article>
+
+                <div id="suggestion-container">
+                    <p>Envoyer nous  vos suggestions pour les prochains tomes ou nouveau manga qui vous interresserai :</p>
+                    <form action="/submit-suggestion">
+                        
+                        <input type="text" id="suggestion" name="suggestion" placeholder="Vos suggestion">
+                        <button type="submit">Envoyer</button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
     </main>
+   
     <script src="./asset/js/main.js"></script>
 </body>
 

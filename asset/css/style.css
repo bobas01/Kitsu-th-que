@@ -7,7 +7,7 @@
 }
 
 .row-limit-size {
-  max-width: 1200px;
+  max-width: 1000px;
   width: 100%;
   margin: 0 auto;
 }
@@ -64,10 +64,6 @@
 
 /*news desltop*/
 @media screen and (min-width: 800px) {
-  body {
-    background: url(../img/Nuages-Kitsutech/nuage-kitsutech-decor.svg) -20px 50px no-repeat, url(paper.gif) left top repeat;
-    background-size: 10vw;
-  }
   body main #news {
     padding-top: 100px;
   }
@@ -89,7 +85,7 @@
     right: 5%;
   }
   body main #news .row-limit-size #slider #window-slider {
-    width: 800px;
+    width: 780px;
   }
   body main #news .row-limit-size #slider #window-slider #list-slide {
     display: flex;
@@ -107,13 +103,176 @@
 #event {
   overflow: auto;
 }
+#event .titleDiv {
+  padding: 50px 0 30px 0;
+}
 #event .titleDiv .title {
   width: 240px;
 }
 #event #eventran {
   width: 100%;
 }
+#event #eventran #imgEvent {
+  margin: 0 auto;
+  width: 310px;
+}
 #event #eventran #imgEvent img {
   width: 150px;
   height: 200px;
+}
+#event #eventran p {
+  padding: 30px 0;
+  width: 300px;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #0C0C0C;
+}
+
+/* event desktop*/
+@media screen and (min-width: 800px) {
+  #event #eventran {
+    width: 700px;
+    margin: 0 auto;
+  }
+  #event #eventran #imgEvent {
+    margin: unset;
+    float: left;
+    padding: 0 30px;
+    width: 400px;
+  }
+  #event #eventran p {
+    width: unset;
+  }
+}
+/*place phone*/
+#place {
+  overflow: auto;
+}
+#place .titleDiv {
+  padding: 50px 0 30px 0;
+}
+#place .titleDiv .title {
+  width: 305px;
+}
+#place .titleDiv .title::after {
+  content: url(../img/Nuages-Kitsutech/nuage-souligneur.svg);
+  transform: scale(1.4);
+  top: 40%;
+  left: 10%;
+}
+#place #placeKitsu p {
+  width: 90%;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #0C0C0C;
+  padding-bottom: 20px;
+}
+#place #placeKitsu #imgPlace {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+#place #placeKitsu #imgPlace img {
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+/* Place desktop*/
+@media screen and (min-width: 800px) {
+  #place .row-limit-size {
+    max-width: 1000px;
+  }
+  #place .row-limit-size #placeKitsu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+  #place .row-limit-size #placeKitsu p {
+    float: left;
+    width: 40%;
+  }
+  #place .row-limit-size #placeKitsu #imgPlace {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    width: 50%;
+    float: right;
+  }
+  #place .row-limit-size #placeKitsu #imgPlace #firstImgPlace {
+    grid-row: 1/span 2;
+    grid-column: 1/span 1;
+    height: 210px;
+  }
+  #place .row-limit-size #placeKitsu #imgPlace #secondImgPlace {
+    grid-row: 1/span 1;
+    grid-column: 2/span 1;
+    height: 100px;
+  }
+  #place .row-limit-size #placeKitsu #imgPlace #thirdImgPlace {
+    grid-row: 2/span 1;
+    grid-column: 2/span 1;
+    height: 100px;
+  }
+  #place .row-limit-size #placeKitsu #imgPlace img {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+  }
+}
+/*suggestion phone*/
+#suggestion {
+  overflow: auto;
+}
+#suggestion .titleDiv {
+  padding: 50px 0 30px 0;
+}
+#suggestion .titleDiv .title {
+  width: 232px;
+}
+#suggestion .titleDiv .title::after {
+  content: url(../img/Nuages-Kitsutech/nuage-souligneur.svg);
+  transform: scale(1.1);
+  top: 40%;
+  left: 6%;
+}
+#suggestion #suggestion-container p {
+  width: 90%;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #0C0C0C;
+  padding-bottom: 20px;
+}
+#suggestion #suggestion-container form {
+  width: 90%;
+  margin: 0 auto;
+}
+#suggestion #suggestion-container form input[type=text] {
+  padding: 10px 0 10px 10px;
+  border: 2px solid #EB5D11;
+  border-radius: 5px;
+  width: calc(100% - 80px);
+  border-radius: 25px 0 0 0;
+  margin-bottom: 10px;
+}
+#suggestion #suggestion-container form button[type=submit] {
+  background-color: #EB5D11;
+  color: white;
+  border: none;
+  width: 70px;
+  padding: 12px 10px 12px 10px;
+  border-radius: 0 0 25px 0;
+  margin-left: -10px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    background: url(../img/Nuages-Kitsutech/nuage-kitsutech-decor.svg) 0 2% no-repeat, url(../img/icon/7025581-removebg-preview.png) 100% 45% no-repeat, url(../img/icon/kitsune9queue.png) 0 85% no-repeat;
+    background-size: 20vw;
+  }
 }/*# sourceMappingURL=style.css.map */

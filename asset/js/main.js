@@ -9,7 +9,7 @@ let mLeft = 0;
 
 
 rightArrow.addEventListener('click', function () {
-   if (mLeft - 280 == 280 * -6) {
+   if (mLeft - 280 == 280 * -4) {
 
       this.click.stopPropagation()
    }
