@@ -1,3 +1,5 @@
+//slide
+
 let rightArrow = document.getElementById('rightArrow');
 let leftArrow = document.getElementById('leftArrow');
 let windowSlider = document.getElementById('window-slider').offsetWidth;
@@ -32,6 +34,9 @@ leftArrow.addEventListener('click', function () {
    }
 
 });
+
+//swipe
+
 let currentSlide = 0;
 
 
@@ -86,3 +91,11 @@ function handleTouchMove(evt) {
    xDown = null;
    yDown = null;
 }
+
+
+
+
+
+
+
+
