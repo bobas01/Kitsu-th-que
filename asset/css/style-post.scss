@@ -1,0 +1,33 @@
+// Définition des variables
+$familyTitle: 'Carter One', cursive;
+$falilyTxt: 'Roboto', sans-serif;
+$black : #0C0C0C;
+$red : #BF1818;
+$orange : #EB5D11;
+
+// Réinitialisation des styles par défaut
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// Limitation de la largeur de la page
+.row-limit-size {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+header .logo{
+    margin: 20px;
+}
+body h1{
+    color: #EB5D11;
+    .text{
+        width: 20px;
+        height: 30px;
+        border: solid $orange;
+    }
+}

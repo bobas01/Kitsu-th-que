@@ -22,11 +22,13 @@
 
     header {
         box-shadow: #EB5D11 0px 0px 0px 3px;
-        padding-bottom: 50px;
 
         // Conteneur principal de l'en-tête
         #container {
-
+         
+            .logo, .titre-logo,.search, .connexion, .cataloge{
+                display: flex;
+            }
             .logo {
                 float: left;
                 margin: 30px;
@@ -38,7 +40,8 @@
             .titre-logo {
                 color: $red;
                 font-family: $familyTitle;
-                
+                margin-top: 20px;
+               
             }
 
             // Liens de connexion et de catalogue
@@ -50,60 +53,69 @@
             }
 
             // Barre de recherche
-            .search {
+            .search-container {
                 display: flex;
                 justify-content: center;
-
-                .search-bar {
-                    background-color: white;
-                    color: white;
-                    border: none;
-                    width: 90%;
-                    padding: 10px;
-                    border-radius: 100px 10px / 120px;
-                    margin-left: -10px;
-                    cursor: pointer;
-                    border: 2px solid #EB5D11;
+                padding: 50px;
+            
+                form {
+            
+                    input[type="text"] {
+                        padding: 18px 0 10px 10px;
+                        border: 2px solid #EB5D11;
+                        border-radius: 5px;
+                        width: calc(100% - 80px);
+                        border-radius: 25px 0 0 0;
+                        margin-bottom: 10px;
+                    }
+            
+                    button[type="submit"] {
+                        background-color: white;
+                        color: white;
+                        border: none;
+                        width: 70px;
+                        padding: 10px;
+                        border-radius: 0 0 25px 0;
+                        margin-left: -10px;
+                        cursor: pointer;
+                        border: 2px solid #EB5D11;
+            
+                        img {
+                            height: 20px;
+                        }
+                    }
                 }
-
-                .button img {
-                    height: 20px;
-
-                }
-
+            
             }
+            
         }
 
         }
-        section{
-            height: 200px;
-            color: aliceblue;
-        }
-        footer{
-            background-color: $red;
-            .information{
-                display: flex;
-             justify-content: space-between;
-             margin: 40px 20px ;
-            }
-        }
+      
+        
        
 
         // Styles pour le pied de page
 
         /*******phone********/
         // Styles pour les écrans de petite taille
-        @media screen and (max-width: 610px) {
+        @media screen and (max-width: 630px) {
 
             #container {
                 display: flex;
                 flex-wrap: wrap;
                 text-align: center;
                 justify-content: space-evenly;
-            }
+                .logo{
+                    .titre-logo{
+                        display: none;
+                    }
+                }
+                
+                
 
-        .information{
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-        }
+            }
+            
+            
+        
         }

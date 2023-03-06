@@ -13,61 +13,29 @@
 <body>
     <header>
         <div id="container">
-
-            <a href="#"><img src="./asset/img/logo-bibliotheque.svg" alt="logo-kitsutheque" class="logo" height="80px"></a>
-            <span class="titre-logo">Kitsutheque</span>
-
-            <a href="#"><img src="./asset/img/icons-connexion.png" class="connexion" alt="connexion"></a>
-
-            <a href="#"><img src="./asset/img/icons8-livre-ouvert-50.png" class="cataloge" alt="livre"></a>
-
-            <div class="search">
+        <div class="logo">
+            <a href="#"><img src="./asset/img/logo-bibliotheque.svg" alt="logo-kitsutheque"  height="80px"></a>
+            <h2 class="titre-logo">Kitsutheque</h2>
+        </div>
+        <div class="connexion">
+            <a href="#"><img src="./asset/img/icons-connexion.png"  alt="connexion"></a>
+        </div>
+        <div class="cataloge">
+            <a href="#"><img src="./asset/img/icons8-livre-ouvert-50.png"  alt="livre"></a>
+        </div>
+            <div class="search-container">
                 <form action="">
-                    <input class="search-bar" type="text" placeholder="Rechercher votre manga" />
-                    <button class="button" type="submit"><img src="./asset/img/icon-search.png" alt="icon loupe"></button>
+                    <input type="text" placeholder="Rechercher votre manga" />
+                    <button class="button" type="submit"><img src="./asset/img/icon__search.svg" alt="icon loupe"></button>
                 </form>
             </div>
         </div>
 
 
     </header>
-    <section>
+    
 
-    </section>
 
-    <footer>
-    <div class="information">
-        <div class="adress">
-            <p>Adresse:<br>
-                65 rue Malandin<br>
-                01000 Peronnas<br>
-                Téléphone:<br>
-                06.06.06.06.06
-            </p>
-        </div> 
-        <div class="service">
-            <p>Accessibilité:<br>
-                Bus n°2<br>
-                Parking<br>
-                Accès handicapé
-            </p>
-        </div>
-        <div class="horaires">
-            <p>Horaires<br>
-                Lundi au Vendredi : 10h00-18h00<br>
-                Samedi : 8h-12h<br>
-                Dimanche : fermée
-            </p>
-        </div>
-        <div class="réseaux-sociaux">
-        <p>Réseaux sociaux:</p>
-        <a href="#"><img src="./asset/img/icons8-facebook.svg" alt=""></a>
-        <a href="#"><img src="./asset/img/icons8-instagram.svg" alt=""></a>
-        <a href="#"><img src="./asset/img/icons8-twitter.svg" alt="" ></a>
-
-        </div>
-    </div>
-</footer>
 
 </body>
 

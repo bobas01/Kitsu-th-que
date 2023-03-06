@@ -1,0 +1,57 @@
+// Définition des variables
+$familyTitle: 'Carter One', cursive;
+$falilyTxt: 'Roboto', sans-serif;
+$black : #0C0C0C;
+$red : #BF1818;
+$orange : #EB5D11;
+
+// Réinitialisation des styles par défaut
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// Limitation de la largeur de la page
+.row-limit-size {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+// style footer
+footer {
+    background-color: $red;
+    // padding: 20px 100px 20px 100px;
+   
+    #container-footer{ 
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    flex-wrap: wrap;
+ 
+    }
+
+    }
+    
+
+    
+
+
+// Styles pour les écrans de petite taille*mobile*
+@media screen and (min-width: 600px){
+    footer{
+    #container-footer{ 
+    display: flex;
+    justify-content: space-between;
+    
+    div h3{
+    padding-top: 20px;
+    }
+    }
+
+    
+
+    }
+}

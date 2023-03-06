@@ -1,1 +1,33 @@
-/*# sourceMappingURL=style-footer.css.map */
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.row-limit-size {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+footer {
+  background-color: #BF1818;
+}
+footer #container-footer {
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
+  flex-wrap: wrap;
+}
+
+@media screen and (min-width: 600px) {
+  footer #container-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  footer #container-footer div h3 {
+    padding-top: 20px;
+  }
+}/*# sourceMappingURL=style-footer.css.map */

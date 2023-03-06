@@ -13,7 +13,9 @@
 
 header {
   box-shadow: #EB5D11 0px 0px 0px 3px;
-  padding-bottom: 50px;
+}
+header #container .logo, header #container .titre-logo, header #container .search, header #container .connexion, header #container .cataloge {
+  display: flex;
 }
 header #container .logo {
   float: left;
@@ -23,6 +25,7 @@ header #container .logo {
 header #container .titre-logo {
   color: #BF1818;
   font-family: "Carter One", cursive;
+  margin-top: 20px;
 }
 header #container .connexion,
 header #container .cataloge {
@@ -30,49 +33,43 @@ header #container .cataloge {
   margin: 30px;
   cursor: pointer;
 }
-header #container .search {
+header #container .search-container {
   display: flex;
   justify-content: center;
+  padding: 50px;
 }
-header #container .search .search-bar {
+header #container .search-container form input[type=text] {
+  padding: 18px 0 10px 10px;
+  border: 2px solid #EB5D11;
+  border-radius: 5px;
+  width: calc(100% - 80px);
+  border-radius: 25px 0 0 0;
+  margin-bottom: 10px;
+}
+header #container .search-container form button[type=submit] {
   background-color: white;
   color: white;
   border: none;
-  width: 90%;
+  width: 70px;
   padding: 10px;
-  border-radius: 100px 10px/120px;
+  border-radius: 0 0 25px 0;
   margin-left: -10px;
   cursor: pointer;
   border: 2px solid #EB5D11;
 }
-header #container .search .button img {
+header #container .search-container form button[type=submit] img {
   height: 20px;
 }
 
-section {
-  height: 200px;
-  color: aliceblue;
-}
-
-footer {
-  background-color: #BF1818;
-}
-footer .information {
-  display: flex;
-  justify-content: space-between;
-  margin: 40px 20px;
-}
-
 /*******phone********/
-@media screen and (max-width: 610px) {
+@media screen and (max-width: 630px) {
   #container {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     justify-content: space-evenly;
   }
-  .information {
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+  #container .logo .titre-logo {
+    display: none;
   }
 }/*# sourceMappingURL=style.header.css.map */
