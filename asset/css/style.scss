@@ -1,2 +1,378 @@
+$familyTitle: 'Carter One', cursive;
+$falilyTxt: 'Roboto', sans-serif;
+$black : #0C0C0C;
 
-    font-family: 'Carter One', cursive;
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.row-limit-size {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.titleDiv {
+    width: 100%;
+}
+
+.title {
+    margin: 0 auto;
+    font-size: 1.9rem;
+    font-family: $familyTitle;
+    position: relative;
+    color: $black;
+    height: 100px;
+    width: 231px;
+
+}
+
+.title::after {
+    content: url(../img/Nuages-Kitsutech/nuage-souligneur.svg);
+    position: absolute;
+    top: 30%;
+    left: 0;
+
+
+}
+
+/*news phone*/
+
+#news {
+    overflow: auto;
+
+    .row-limit-size {
+
+
+        #slider {
+            width: 100%;
+
+
+            #leftArrow,
+            #rightArrow {
+                display: none;
+            }
+
+            #window-slider {
+                width: 270px;
+                height: 414px;
+                overflow: hidden;
+                margin: 0 auto;
+
+                #list-slide {
+
+                    margin-left: 0;
+
+                    .slide img {
+                        width: 100%;
+
+
+                    }
+                }
+            }
+
+        }
+
+        #swipe {
+            img {
+                width: 20%;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+
+
+
+}
+
+/*news desltop*/
+@media screen and (min-width : 800px) {
+    body {
+
+        main #news {
+            padding-top: 100px;
+
+            .row-limit-size #slider {
+                position: relative;
+                height: 415px;
+
+                #leftArrow,
+                #rightArrow {
+                    display: block;
+                    position: absolute
+                }
+
+                #leftArrow {
+                    top: 37%;
+                    left: 5%;
+                }
+
+                #rightArrow {
+                    top: 37%;
+                    right: 5%;
+                }
+
+                #window-slider {
+                    width: 780px;
+
+                    #list-slide {
+                        display: flex;
+
+                        .slide img {
+                            width: 270px;
+                            height: 414px;
+                            padding-right: 30px;
+                        }
+                    }
+                }
+            }
+
+            #swipe {
+                display: none;
+            }
+
+        }
+    }
+}
+
+
+/*Event phone*/
+
+#event {
+    overflow: auto;
+
+    .titleDiv {
+        padding: 50px 0 30px 0;
+
+        .title {
+
+            width: 240px;
+        }
+    }
+
+    #eventran {
+        width: 100%;
+
+
+        #imgEvent {
+            margin: 0 auto;
+            width: 310px;
+
+            img {
+
+                width: 150px;
+                height: 200px;
+            }
+        }
+
+        p {
+            padding: 30px 0;
+            width: 300px;
+            margin: 0 auto;
+
+            font-family: $falilyTxt;
+            font-size: 1rem;
+            color: $black;
+        }
+    }
+
+}
+
+/* event desktop*/
+
+@media screen and (min-width : 800px) {
+    #event #eventran {
+        width: 700px;
+        margin: 0 auto;
+
+        #imgEvent {
+            margin: unset;
+            float: left;
+            padding: 0 30px;
+            width: 400px;
+        }
+
+        p {
+            width: unset;
+        }
+    }
+}
+
+
+/*place phone*/
+
+
+#place {
+    overflow: auto;
+
+    .titleDiv {
+        padding: 50px 0 30px 0;
+
+        .title {
+
+            width: 305px;
+        }
+
+        .title::after {
+            content: url(../img/Nuages-Kitsutech/nuage-souligneur.svg);
+            transform: scale(1.4);
+            top: 40%;
+            left: 10%;
+        }
+
+    }
+
+    #placeKitsu {
+        p {
+            width: 90%;
+            margin: 0 auto;
+            font-family: $falilyTxt;
+            font-size: 1rem;
+            color: $black;
+            padding-bottom: 20px;
+
+        }
+
+        #imgPlace {
+            width: 90%;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+
+            img {
+                width: 100%;
+                padding-bottom: 20px;
+
+
+            }
+        }
+    }
+}
+
+/* Place desktop*/
+
+@media screen and (min-width: 800px) {
+    #place .row-limit-size {
+        max-width: 1000px;
+
+        #placeKitsu {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+
+            p {
+                float: left;
+                width: 40%;
+            }
+
+
+            #imgPlace {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto;
+                gap: 10px;
+                width: 50%;
+                float: right;
+
+                #firstImgPlace {
+                    grid-row: 1 / span 2;
+                    grid-column: 1 / span 1;
+                    height: 210px;
+                }
+
+                #secondImgPlace {
+                    grid-row: 1 / span 1;
+                    grid-column: 2 / span 1;
+                    height: 100px;
+                }
+
+                #thirdImgPlace {
+                    grid-row: 2 / span 1;
+                    grid-column: 2 / span 1;
+                    height: 100px;
+                }
+
+                img {
+                    width: 100%;
+                    display: block;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
+
+
+/*suggestion phone*/
+
+
+#suggestion {
+    overflow: auto;
+
+    .titleDiv {
+        padding: 50px 0 30px 0;
+
+        .title {
+
+            width: 232px;
+        }
+
+        .title::after {
+            content: url(../img/Nuages-Kitsutech/nuage-souligneur.svg);
+            transform: scale(1.1);
+            top: 40%;
+            left: 6%;
+        }
+
+    }
+
+    #suggestion-container {
+        p {
+            width: 90%;
+            margin: 0 auto;
+            font-family: $falilyTxt;
+            font-size: 1rem;
+            color: $black;
+            padding-bottom: 20px;
+
+        }
+
+        form {
+            width: 90%;
+            margin: 0 auto;
+
+            input[type="text"] {
+                padding: 10px 0 10px 10px;
+                border: 2px solid #EB5D11;
+                border-radius: 5px;
+                width: calc(100% - 80px);
+                border-radius: 25px 0 0 0;
+                margin-bottom: 10px;
+            }
+
+            button[type="submit"] {
+                background-color: #EB5D11;
+                color: white;
+                border: none;
+                width: 70px;
+                padding: 12px 10px 12px 10px;
+                border-radius: 0 0 25px 0;
+                margin-left: -10px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 800px) {
+    body {
+        background: url(../img/Nuages-Kitsutech/nuage-kitsutech-decor.svg) 0 2% no-repeat, url(../img/icon/7025581-removebg-preview.png) 100% 45% no-repeat, url(../img/icon/kitsune9queue.png) 0 85% no-repeat;
+        background-size: 20vw;
+    }
+}

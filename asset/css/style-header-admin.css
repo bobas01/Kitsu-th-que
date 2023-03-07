@@ -1,0 +1,51 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgba(235, 93, 17, 0.45);
+  border-right: 2px solid #EB5D11;
+  border-bottom: 2px solid #EB5D11;
+  width: 140px;
+  overflow: auto;
+}
+header a {
+  margin: 0 auto;
+  width: 70px;
+  display: block;
+}
+header a #logo {
+  width: 70px;
+  height: 70px;
+}
+header #main-menu {
+  display: none;
+}
+header #main-menu ul {
+  list-style: none;
+}
+header #main-menu ul li {
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 70px;
+}
+header #main-menu ul .menu img {
+  width: 70px;
+}
+header #main-menu.active {
+  display: block;
+}
+
+@media screen and (min-width: 800px) {
+  header #main-menu {
+    display: block;
+  }
+}/*# sourceMappingURL=style-header-admin.css.map */
