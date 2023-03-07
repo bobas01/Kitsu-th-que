@@ -1,3 +1,9 @@
+<?php
+include_once './connexion.php'
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,56 +24,105 @@
 <body>
 
     <main>
-        <section id="catalogue">
+        <section id="check_box">
             <div class="row-limit-size">
                 <article class="titleDiv">
                     <h1 class="title">Catalogue</h1>
                 </article>
-                <section>
-    <label for="category">Catégorie:</label>
-    <select id="category" name="category[]" multiple>
-        <option value="kodomo">Kodomo</option>
-        <option value="shonen">Shonen</option>
-        <option value="shojo">Shojo</option>
-        <option value="seinen">Seinen</option>
-        <option value="josei">Josei</option>
-    </select>
-</section>
+             <form  id="form" action="">
+                <fieldset>
+                    <legend>Genre</legend>
+                    <input id="genre" type="checkbox"  name="genre[]">
+                    <label for="kodomo">Kodomo</label>
 
-<section>
-    <label for="public">Public:</label>
-    <select id="public" name="public[]" multiple>
-        <option value="enfant">Enfant</option>
-        <option value="adolescent">Adolescent</option>
-        <option value="adulte">Adulte</option>
-    </select>
-</section>
+                    <input id="genre" type="checkbox"  name="genre[]">
+                    <label for="shonen">Shonen</label>
+                    <input id="genre" type="checkbox"  name="genre[]">
+                    <label for="shojo">Shojo</label>
 
-<section>
-    <label for="genre">Genre:</label>
-    <select id="genre" name="genre[]" multiple>
-        <option value="action">Action</option>
-        <option value="aventure">Aventure</option>
-        <option value="romance">Romance</option>
-        <option value="science-fiction">Science-fiction</option>
-        <option value="comedie">Comédie</option>
-        <option value="drame">Drame</option>
-        <option value="fantastic">Fantastique</option>
-        <option value="horror">Horreur</option>
-        <option value="musical">Musical</option>
-        <option value="mistery">Mystère</option>
-        <option value="school-life">School-life</option>
-        <option value="slice-of-life">Tranche de vie</option>
-        <option value="sport">Sport</option>
-        <option value="surnaturel">Surnaturel</option>
-        <option value="thriller">Thriller</option>
-    </select>
-</section>
+                    <input id="genre" type="checkbox"  name="genre[]">
+                    <label for="seinen">seinen</label>
+                    <input id="genre" type="checkbox"  name="genre[]">
+                    <label for="josei">Josei</label>
+                    <input id="genre" type="checkbox"  name="genre[]">
+                    <label for="meca">Méca</label>
+
+                </fieldset>
+                <fieldset>
+                    <legend>Public</legend>
+                    <input type="checkbox" id="enfant" name="public[]">
+                    <label for="enfant">Enfant</label>
+
+                    <input type="checkbox" id="adolescent" name="public[]">
+                    <label for="adolescent">Adolescent</label>
+                    <input type="checkbox" id="adulte" name="public[]">
+                    <label for="adulte">Adulte</label>
 
 
 
-   
+                </fieldset>
+                <fieldset>
+                    <legend>Catégorie</legend>
+                    <input type="checkbox" id="action" name="category[]">
+                    <label for="action">Action</label>
+
+                    <input type="checkbox" id="aventure" name="category[]">
+                    <label for="aventure">Aventure</label>
+                    <input type="checkbox" id="romance" name="category[]">
+                    <label for="romance">Romance</label>
+
+                    <input type="checkbox" id="science-fiction" name="category[]">
+                    <label for="science-fiction">Science-fiction</label>
+                    <input type="checkbox" id="comedie" name="category[]">
+                    <label for="comedie">Comédie</label>
+                    <input type="checkbox" id="drame" name="category[]">
+                    <label for="drame">Drame</label>
+                    <input type="checkbox" id="fantastic" name="category[]">
+                    <label for="fantastic">Fantastique</label>
+                    <input type="checkbox" id="horror" name="category[]">
+                    <label for="horror">Horreur</label>
+                    <input type="checkbox" id="musical" name="category[]">
+                    <label for="musical">Musical</label>
+                    <input type="checkbox" id="mistery" name="category[]">
+                    <label for="mistery">Mystère</label>
+                    <input type="checkbox" id="school-life" name="category[]">
+                    <label for="school-life">School-life</label>
+                    <input type="checkbox" id="slice-of-life" name="category[]">
+                    <label for="slice-of-life">Tranche de vie</label>
+                    <input type="checkbox" id="sport" name="category[]">
+                    <label for="sport">Sport</label>
+                    <input type="checkbox" id="surnaturel" name="category[]">
+                    <label for="surnaturel">Surnaturel</label>
+                    <input type="checkbox" id="thriller" name="category[]">
+                    <label for="thriller">Thriller</label>
+
+                </fieldset>
+
+                <button id="search">Rechercher</button>
+                </form>
+            </div>
+
+        </section>
+        <section id="catalogue">
+            <div  class="articles">
+            <?php
+               
+                $req = $db->query("SELECT `id`,`cover`,`title`,`volume` FROM `manga` ORDER BY `id` DESC;");
+                while ($article = $req->fetch(PDO::FETCH_ASSOC)) {
+                ?>
+                <article>
+                    <figure>
+                        <a href="#"><img src="./asset/img/premiere-page/<?= $article['cover'] ?>" alt="premièrepage"></a>
+                    </figure>
+                    <div class="article-content">
+                        <h2 class="article-title"><?= $article['title'] ?></h2>
+                        <p class="article-tome">Tome <?= $article['volume'] ?></p>
+                        
+                    </div>
+                </article>
+                <?php } ?>
+              
         </section>
     </main>
-    <script src="./asset/js/main.js"></script>
+    <script src="./asset/js/ajax.js"></script>
 </body>
