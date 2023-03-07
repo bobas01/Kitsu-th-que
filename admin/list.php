@@ -1,9 +1,11 @@
-<!--?php include_once './header-admin.php'; ?-->
+<?php 
+include_once '../connexion.php';
+include_once './header-admin.php'; 
+?>
 
 <h1>Listes des mangas</h1>
 
 <?php
-include_once '../connexion.php';
 
 $sql = "SELECT `id`,`title`,`volume`,`published_at` FROM `manga` ORDER BY `published_at` DESC ";
 $req = $db->query($sql);

@@ -1,4 +1,5 @@
 <?php
+include_once './header-admin.php';
 session_start();
 
 if (!isset($_SESSION['id-user']) && $_SESSION['role-user'] === 'admin' ) {
