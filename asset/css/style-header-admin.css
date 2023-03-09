@@ -13,9 +13,9 @@ a {
 header {
   box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgba(235, 93, 17, 0.45);
   border-right: 2px solid #EB5D11;
-  border-bottom: 2px solid #EB5D11;
   width: 140px;
   overflow: auto;
+  height: 100vh;
 }
 header a {
   margin: 0 auto;

@@ -1,3 +1,9 @@
+<?php
+include_once './connexion.php'
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,56 +24,83 @@
 <body>
 
     <main>
-        <section id="catalogue">
+        <section id="check_box">
             <div class="row-limit-size">
                 <article class="titleDiv">
                     <h1 class="title">Catalogue</h1>
                 </article>
-                <section>
-    <label for="category">Catégorie:</label>
-    <select id="category" name="category[]" multiple>
-        <option value="kodomo">Kodomo</option>
-        <option value="shonen">Shonen</option>
-        <option value="shojo">Shojo</option>
-        <option value="seinen">Seinen</option>
-        <option value="josei">Josei</option>
-    </select>
-</section>
+                <form id="form" action="">
+                    <fieldset>
+                        <legend>Genre</legend>
+                        <?php
+                        $reqGenre = $db->query("SELECT `id`,`name`,`slug` FROM `genre`;");
+                        while ($articleGenre = $reqGenre->fetch(PDO::FETCH_ASSOC)) {
+                        ?>
+                            <input class="genre" type="checkbox" name="genre[]" value="<?= $articleGenre['slug'] ?>">
+                            <label for="<?= $articleGenre['slug'] ?>"><?= $articleGenre['name'] ?></label>
+                        <?php
+                        }
+                        ?>
 
-<section>
-    <label for="public">Public:</label>
-    <select id="public" name="public[]" multiple>
-        <option value="enfant">Enfant</option>
-        <option value="adolescent">Adolescent</option>
-        <option value="adulte">Adulte</option>
-    </select>
-</section>
+            
 
-<section>
-    <label for="genre">Genre:</label>
-    <select id="genre" name="genre[]" multiple>
-        <option value="action">Action</option>
-        <option value="aventure">Aventure</option>
-        <option value="romance">Romance</option>
-        <option value="science-fiction">Science-fiction</option>
-        <option value="comedie">Comédie</option>
-        <option value="drame">Drame</option>
-        <option value="fantastic">Fantastique</option>
-        <option value="horror">Horreur</option>
-        <option value="musical">Musical</option>
-        <option value="mistery">Mystère</option>
-        <option value="school-life">School-life</option>
-        <option value="slice-of-life">Tranche de vie</option>
-        <option value="sport">Sport</option>
-        <option value="surnaturel">Surnaturel</option>
-        <option value="thriller">Thriller</option>
-    </select>
-</section>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Public</legend>
+                        <?php
+                        $reqPublic = $db->query("SELECT `id`,`name`,`slug` FROM `public`;");
+                        while ($articlePublic = $reqPublic->fetch(PDO::FETCH_ASSOC)) {
+                        ?>
+                            <input class="public" type="checkbox" name="public[]" value="<?= $articlePublic['slug'] ?>">
+                            <label for="<?= $articlePublic['slug'] ?>"><?= $articlePublic['name'] ?></label>
+                        <?php
+                        }
+                        ?>
+                     
 
 
 
-   
+                    </fieldset>
+                    <fieldset>
+                        <legend>Catégorie</legend>
+                        <?php
+                        $reqCategory = $db->query("SELECT `id`,`name`,`slug` FROM `category`;");
+                        while ($articleCategory = $reqCategory->fetch(PDO::FETCH_ASSOC)) {
+                        ?>
+                            <input class="category" type="checkbox" name="category[]" value="<?= $articleCategory['slug'] ?>">
+                            <label for="<?= $articleCategory['slug'] ?>"><?= $articleCategory['name'] ?></label>
+                        <?php
+                        }?>
+     
+               
+                    </fieldset>
+
+                    <button id="search" type="submit">Rechercher</button>
+                </form>
+            </div>
+
+        </section>
+        <section id="catalogue">
+            <div class="articles">
+                <?php
+
+                $req = $db->query("SELECT `id`,`cover`,`title`,`volume` FROM `manga` ORDER BY `id` DESC;");
+                while ($article = $req->fetch(PDO::FETCH_ASSOC)) {
+                ?>
+                    <article>
+                        <figure>
+                            <a href="#"><img src="./asset/img/premiere-page/<?= $article['cover'] ?>" alt="premièrepage"></a>
+                        </figure>
+                        <div class="article-content">
+                            <h2 class="article-title"><?= $article['title'] ?></h2>
+                            <p class="article-tome">Tome <?= $article['volume'] ?></p>
+
+                        </div>
+                    </article>
+                <?php } ?>
+
         </section>
     </main>
-    <script src="./asset/js/main.js"></script>
+    <script src="./asset/js/ajax.js"></script>
 </body>
+
