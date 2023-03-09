@@ -9,38 +9,53 @@ if (isset($_POST['submit'])) {
     $title = addslashes($_POST['title']);
     $volume = addslashes($_POST['volume']);
     $editor = addslashes($_POST['editor']);
-    $published_at = addslashes($_POST['published_at']);
+    $published_at = addslashes(date('Y-m-d', strtotime($_POST['published_at'])));
     $author = addslashes($_POST['author']);
     $cover = 'image.jpg';
     $extract = addslashes($_POST['extract']);
 
-    $manga = "INSERT INTO `manga`( `id_genre`, `id_public`, `title`, `volume`, `editor`, `published_at`, `author`, `cover`, `extract` )VALUES ('$genre', '$public', '$title', '$volume', '$editor', '$published_at', '$author', '$cover', '$extract')";
-    $db->query($manga);
+    $manga = $db->prepare("INSERT INTO `manga`( `id_genre`, `id_public`, `title`, `volume`, `editor`, `published_at`, `author`, `cover`, `extract` )VALUES (:id_genre, :id_public, :title, :volume, :editor, :published_at, :author, :cover, :extract)");
+    $manga->bindParam('id_genre', $genre, PDO::PARAM_INT);
+    $manga->bindParam('id_public', $public, PDO::PARAM_INT);
+    $manga->bindParam('title', $title, PDO::PARAM_INT);
+    $manga->bindParam('volume', $volume, PDO::PARAM_INT);
+    $manga->bindParam('editor', $editor, PDO::PARAM_INT);
+    $manga->bindParam('published_at', $published_at, PDO::PARAM_INT);
+    $manga->bindParam('author', $author, PDO::PARAM_INT);
+    $manga->bindParam('cover', $cover, PDO::PARAM_INT);
+    $manga->bindParam('extract', $extract, PDO::PARAM_INT);
 
-    /* Ajout de catégories */
-    $id_category = addslashes($_POST['id_category']);
-
-    $category = "INSERT INTO `manga_category`(`id_manga`, `id_category`)VALUES (LAST_INSERT_ID(), '$id_category')";
-    $db->query($category);
-
-    $_SESSION['sucess'] = "Produit ajouté avec succès !";
+    $manga->execute();
     header('Location: ./list.php');
-    exit();
 }
 
 ?>
-
-<div class="row-limite-size">
+<section class="new-post row-limite-size">
+ <div class="row-limite-size">
     <h1>Nouveau manga</h1>
     <form action="#" method="POST">
         <fieldset>
             <legend>Nouveau manga</legend>
             <div>
-                <label for="genre">Genre</label><br>
-                <input type="text" name="genre" id="genre" maxlength="50">
+            <label for="genre">Genre</label><br>
+                <select name="genre" id="genre">
+                    <?php
+                    $sql = "SELECT `id`,`name` FROM `genre`";
+                    $req = $db->query($sql);
+                    while ($genre = $req->fetch(PDO::FETCH_ASSOC)) { ?>
+                        <option value="<?= $genre['id'] ?>"><?= $genre['name'] ?></option>
+                    <?php } ?>
+                </select>
                 <br>
                 <label for="public">Publique</label><br>
-                <input type="text" name="public" id="public" maxlength="50">
+                <select name="public" id="public">
+                    <?php
+                    $sql = "SELECT `id`,`name` FROM `public`";
+                    $req = $db->query($sql);
+                    while ($public = $req->fetch(PDO::FETCH_ASSOC)) { ?>
+                        <option value="<?= $public['id'] ?>"><?= $public['name'] ?></option>
+                    <?php } ?>
+                </select>
                 <br>
                 <label for="title">Titre</label><br>
                 <input type="text" name="title" id="title" maxlength="50">
@@ -61,20 +76,7 @@ if (isset($_POST['submit'])) {
                 <br>
                 <label for="extract">Résumé</label><br>
                 <textarea name="extract" id="extract" cols="50" rows="5" maxlength="255"></textarea>
-            </div>
-            <fieldset>
-                <legend>Catégories</legend>
-                <div>
-                    <?php
-                    $sql2 = "SELECT `id`,`name`,`slug` FROM `category`";
-                    $req = $db->query($sql2);
-                    while ($category = $req->fetch(PDO::FETCH_ASSOC)) { ?>
-                        <input type="checkbox" id="id_category" name="id_category">
-                        <label for="<?= $category['slug'] ?>"><?= $category['name'] ?></label><br>
-                    <?php } ?>
-                    <br>
-                </div>
-            </fieldset>
+            </div> 
         </fieldset>
 
         <fieldset id="btn">
@@ -83,9 +85,7 @@ if (isset($_POST['submit'])) {
             <input type="reset" name="reset" value="Reset">
         </fieldset>
     </form>
-</div>
-
-
+</div>   
+</section>
 </main>
-
 </body>

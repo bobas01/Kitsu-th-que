@@ -1,33 +1,39 @@
 <?php
+session_start();
 include_once '../connexion.php';
+include_once './header-admin.php';
 
-$id = $_GET['id'];
-?>
-
-<?php
 if (isset($_POST['submit'])) {
-    $id_category = addslashes($_POST['id_category']);
+    if (!empty($_POST['check_list'])) {
+        foreach ($_POST['check_list'] as $id_category) {
+            $id = $_GET['id'];
+            $add = $db->prepare("INSERT INTO `manga_category`(`id_manga`, `id_category`)VALUES (:id, :id_category)");
+            $add->bindParam('id', $id, PDO::PARAM_INT);
+            $add->bindParam('id_category', $id_category, PDO::PARAM_INT);
+            $add->execute();
 
-    $sql1 = "INSERT INTO `manga_category`(`id_manga`, `id_category`)VALUES ('$id', '$id_category')";
-    $db->query($sql1);
-
-    $_SESSION['sucess'] = "Catégorie(s) ajoutée(s) avec succès !";
-    header('Location: ./list.php');
-    exit();
+            $_SESSION['sucess'] = "Catégorie(s) ajoutée(s) avec succès !";
+            header('Location: ./list.php');
+            exit();
+        }
+    } else {
+        echo "<b> Please select at least one option !</b>";
+    }
 }
 ?>
 
-<div class="row-limite-size">
+<section class="categorie row-limite-size">
+    <div class="row-limite-size">
     <h1>Ajouter une catégorie</h1>
     <form action="#" method="POST">
         <fieldset>
             <legend>Catégories</legend>
             <div>
                 <?php
-                $sql2 = "SELECT `id`,`name`,`slug` FROM `category`";
-                $req = $db->query($sql2);
+                $sql = "SELECT `id`,`name`,`slug` FROM `category`";
+                $req = $db->query($sql);
                 while ($category = $req->fetch(PDO::FETCH_ASSOC)) { ?>
-                    <input type="checkbox" id="id_category" name="category[]">
+                    <input type="checkbox" id="id_category" name="check_list[]" value="<?= $category['id'] ?>">
                     <label for="<?= $category['slug'] ?>"><?= $category['name'] ?></label><br>
                 <?php } ?>
                 <br>
@@ -40,6 +46,8 @@ if (isset($_POST['submit'])) {
         </fieldset>
     </form>
 </div>
+</section>
+
 </main>
 
 </body>

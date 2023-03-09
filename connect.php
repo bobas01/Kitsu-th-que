@@ -5,7 +5,7 @@
         <legend>Sign In</legend>
         <div class="sign-in">
             <?php if (isset($_GET['err'])) { ?>
-                <p style="color:red;">Pseudo et/ou mot de passe incorrect</p>
+                <p style="color:red;">Identifiant et/ou mot de passe incorrecte</p>
             <?php } ?>
             <form action="./auth.php" method="POST"><br>
                 <label for="pseudo">Pseudo</label><br>
@@ -20,7 +20,7 @@
         <legend>Sign Up</legend>
         <div class="sign-up">
         <?php if (isset($_GET['erro'])) { ?>
-                <p style="color:red;">Pseudo et/ou adresse mail déjà utilisé(s)</p>
+                <p style="color:red;">Identifiant et/ou adresse mail déjà utilisé(s)</p>
             <?php } ?>
             <form action="./register.php" method="POST"><br>
                 <label for="pseudo">Pseudo</label><br>
