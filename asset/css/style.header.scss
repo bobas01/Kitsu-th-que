@@ -20,6 +20,11 @@ header {
         a {
             img {
                 width: 70px;
+                height: 60px;
+                margin: 10px 0;
+                &:hover{
+                    transform: scale(0.8);
+                }
             }
         }
     }
@@ -29,7 +34,7 @@ header {
     
         form {
     
-            input[type="text"] {
+            input[type="search"] {
                 padding: 18px 0 10px 10px;
                 border: 2px solid #EB5D11;
                 border-right: 0px;
@@ -53,6 +58,9 @@ header {
     
                 img {
                     height: 20px;
+                    &:hover {
+                        transform: scale(1.2);
+                    }
                 }
             }
         }
@@ -71,6 +79,7 @@ header {
                     font-weight: 900;
                     position: absolute;
                     top: 40%;
+                    left: 120%;
                     font-size: 0.8rem;
                 }
             }

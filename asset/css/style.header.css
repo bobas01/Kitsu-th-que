@@ -17,12 +17,17 @@ header #icon {
 }
 header #icon a img {
   width: 70px;
+  height: 60px;
+  margin: 10px 0;
+}
+header #icon a img:hover {
+  transform: scale(0.8);
 }
 header .search-container {
   display: flex;
   justify-content: center;
 }
-header .search-container form input[type=text] {
+header .search-container form input[type=search] {
   padding: 18px 0 10px 10px;
   border: 2px solid #EB5D11;
   border-right: 0px;
@@ -46,6 +51,9 @@ header .search-container form button[type=submit] {
 header .search-container form button[type=submit] img {
   height: 20px;
 }
+header .search-container form button[type=submit] img:hover {
+  transform: scale(1.2);
+}
 
 @media screen and (min-width: 600px) {
   header #icon #logo {
@@ -58,6 +66,7 @@ header .search-container form button[type=submit] img {
     font-weight: 900;
     position: absolute;
     top: 40%;
+    left: 120%;
     font-size: 0.8rem;
   }
   header #icon #catalogue {

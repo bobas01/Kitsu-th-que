@@ -64,17 +64,17 @@
     margin-left: 10%;
   }
 }
-#catalogue {
+#catalogues {
   padding: 30px;
 }
-#catalogue .articles {
+#catalogues .articles {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   width: 80%;
   margin: 0 auto;
 }
-#catalogue .articles article {
+#catalogues .articles article {
   width: 20%;
   min-width: 150px;
   margin-left: 8px;
@@ -86,27 +86,31 @@
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   background-color: white;
 }
-#catalogue .articles article figure img {
+#catalogues .articles article figure img {
   width: 100%;
   height: 100%;
 }
-#catalogue .articles article .article-content {
+#catalogues .articles article .article-content {
   padding: 12px;
   background-color: #fff;
 }
-#catalogue .articles article .article-content h2, #catalogue .articles article .article-content p {
+#catalogues .articles article .article-content > .artcle-tome {
+  color: #0C0C0C;
+}
+#catalogues .articles article .article-content h2,
+#catalogues .articles article .article-content p {
   height: 40px;
   padding: 10px 0;
   text-align: center;
   font-family: "Roboto", sans-serif;
 }
-#catalogue .articles article:hover {
+#catalogues .articles article:hover {
   transform: scale(1.1);
 }
 
 @media screen and (min-width: 800px) {
   body {
-    background: url(../img/Nuages-Kitsutech/nuage-kitsutech-decor.svg) 0 -3% no-repeat, url(../img/icon/7025581-removebg-preview.png) 100% 45% no-repeat, url(../img/icon/kitsune9queue.png) 0 85% no-repeat;
+    background: url(../img/Nuages-Kitsutech/nuage-kitsutech-decor.svg) 0 2% no-repeat, url(../img/icon/7025581-removebg-preview.png) 105% 45% no-repeat, url(../img/icon/katana.png) 0 75% no-repeat, url(../img/icon/kitsune9queue.png) 100% 90% no-repeat;
     background-size: 20vw;
   }
 }/*# sourceMappingURL=style-catalogue.css.map */

@@ -11,8 +11,6 @@ a {
 }
 
 header {
-  box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgba(235, 93, 17, 0.45);
-  border-right: 2px solid #EB5D11;
   width: 140px;
   overflow: auto;
   height: 100vh;
@@ -25,6 +23,7 @@ header a {
 header a #logo {
   width: 70px;
   height: 70px;
+  margin-top: 20px;
 }
 header #main-menu {
   display: none;
@@ -42,10 +41,18 @@ header #main-menu ul .menu img {
 }
 header #main-menu.active {
   display: block;
+  box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgba(235, 93, 17, 0.45);
+  border-right: 2px solid #EB5D11;
 }
 
 @media screen and (min-width: 800px) {
+  header {
+    box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgba(235, 93, 17, 0.45);
+    border-right: 2px solid #EB5D11;
+  }
   header #main-menu {
     display: block;
+    box-shadow: unset;
+    border-right: unset;
   }
 }/*# sourceMappingURL=style-header-admin.css.map */

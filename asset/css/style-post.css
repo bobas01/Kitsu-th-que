@@ -1,1 +1,93 @@
-/*# sourceMappingURL=style-post.css.map */
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#post .row-limit-size {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+#post .row-limit-size #titleDiv {
+  width: 100%;
+}
+#post .row-limit-size #titleDiv #title {
+  margin: 0 auto;
+  font-size: 1.9rem;
+  font-family: "Carter One", cursive;
+  position: relative;
+  color: #0C0C0C;
+  height: 100px;
+  width: 250px;
+}
+#post .row-limit-size #titleDiv #title::after {
+  content: url(../img/Nuages-Kitsutech/nuage-souligneur.svg);
+  position: absolute;
+  top: 30%;
+  left: 0;
+}
+#post .row-limit-size #postIt {
+  padding-bottom: 20px;
+  overflow: auto;
+}
+#post .row-limit-size #postIt figure {
+  width: 90%;
+  max-width: 350px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+#post .row-limit-size #postIt figure img {
+  width: 100%;
+}
+#post .row-limit-size #postIt form {
+  width: 90%;
+  margin: 0 auto;
+}
+#post .row-limit-size #postIt form div label {
+  float: left;
+  max-width: 100px;
+  padding: 5px 0;
+  margin: 5px 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #EB5D11;
+  font-family: "Roboto", sans-serif;
+}
+#post .row-limit-size #postIt form div input,
+#post .row-limit-size #postIt form div textarea {
+  float: right;
+  width: 100%;
+  padding: 5px 0;
+  margin: 5px 0;
+  border: 2px solid #EB5D11;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    background: url(../img/Nuages-Kitsutech/nuage-kitsutech-decor.svg) 0 5% no-repeat, url(../img/icon/7025581-removebg-preview.png) 100% 35% no-repeat, url(../img/icon/katana.png) 0 65% no-repeat, url(../img/icon/kitsune9queue.png) 100% 85% no-repeat;
+    background-size: 15vw;
+  }
+  body #post #postIt {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    margin: 0 auto;
+  }
+  body #post #postIt figure {
+    padding-right: 10px;
+  }
+  body #post #postIt figure img {
+    height: 600px;
+  }
+  body #post #postIt form {
+    width: 50%;
+  }
+  body #post #postIt form input,
+  body #post #postIt form textarea {
+    width: 90%;
+    margin: 0 auto;
+  }
+}/*# sourceMappingURL=style-post.css.map */
