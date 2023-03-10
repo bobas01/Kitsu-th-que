@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once './connexion.php';
+require_once '../connexion.php';
 
 
 $pseudo = $_POST['pseudo'];
@@ -19,13 +19,13 @@ if ($req->rowCount() == 1) {
         $_SESSION['id-user'] = $user['id'];
         $_SESSION['role-user'] = $user['role'];
         if ($user['role'] === 'admin') {
-            header('Location: ./admin/dashboard-admin.php');
+            header('Location: ../admin/dashboard-admin.php');
         } else {
-            header('Location: ./dashboard-reader.php');
+            header('Location: ../index.php');
         }
     } else {
-        header('Location: ./connect.php?err=1');
+        header('Location: ../connect.php?err=1');
     }
 } else {
-    header('Location: ./connect.php?err=1');
+    header('Location: ../connect.php?err=1');
 }

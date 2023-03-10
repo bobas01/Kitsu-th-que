@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
     </form>
 </div>
 </section>
-
 </main>
-
+<script src="../asset/js/header-admin.js"></script>
 </body>
+</html>

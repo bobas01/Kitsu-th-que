@@ -13,12 +13,11 @@ a {
 header {
   box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgba(235, 93, 17, 0.45);
   border-right: 2px solid #EB5D11;
-  height: 100vh;
   width: 140px;
-  overflow: auto;
+  height: 100%;
 }
 header a {
-  margin: 0 auto;
+  margin: 20px auto;
   width: 70px;
   display: block;
 }
@@ -44,8 +43,66 @@ header #main-menu.active {
   display: block;
 }
 
+section.new-post {
+  position: absolute;
+  top: 0;
+  left: 14%;
+}
+section.new-post > form {
+  margin: 10% 15%;
+  width: 90%;
+}
+section.new-post > form > fieldset.manga-info {
+  margin-right: 30px;
+  padding: 30px;
+  border: 1px solid #e23b3b;
+  color: #eb5d11;
+  font-family: "Carter One", cursive;
+}
+section.new-post > form > fieldset.manga-info div {
+  display: grid;
+  grid-template-columns: 200px 400px;
+}
+section.new-post > form > fieldset.manga-info div label {
+  justify-self: end;
+  margin-right: 10px;
+}
+section.new-post > form > fieldset.manga-info div > select {
+  color: #eb5d11;
+  font-family: "Carter One", cursive;
+  border: none;
+  border: 1px solid #e23b3b;
+  width: 90%;
+}
+section.new-post > form > fieldset.manga-info div > input,
+section.new-post > form > fieldset.manga-info div textarea {
+  border: 1px solid #e23b3b;
+  width: 90%;
+}
+section.new-post > form > fieldset.manga-info div > span {
+  font-size: smaller;
+  font-weight: 200;
+  color: rgb(145, 145, 145);
+  text-align: center;
+}
+section.new-post > form > input[type=submit], section.new-post > form > input[type=reset] {
+  color: #eb5d11;
+  font-family: "Carter One", cursive;
+  border: 1px solid #e23b3b;
+  border-radius: 15px 0 15px 0;
+  cursor: pointer;
+  background-color: #fff;
+  padding: 10px 15px;
+  margin: 10px;
+  float: right;
+  font-size: 1.1rem;
+}
+
 @media screen and (min-width: 800px) {
-  header #main-menu {
+  header {
+    border: none;
+  }
+  header nav#main-menu {
     display: block;
   }
 }/*# sourceMappingURL=style-header-admin.css.map */

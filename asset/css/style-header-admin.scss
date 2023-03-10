@@ -1,3 +1,8 @@
+$orange : #eb5d11;
+$red : #e23b3b;
+$white : #fff;
+$familyCarter: 'Carter One', cursive;
+
 *,
 ::before,
 ::after {
@@ -13,21 +18,17 @@ a {
 header {
     box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgba(235, 93, 17, 0.45);
     border-right: 2px solid #EB5D11;
-    height: 100vh;
     width: 140px;
-    overflow: auto;
-
-
+    height: 100%;
 
     a {
-        margin: 0 auto;
+        margin: 20px auto;
         width: 70px;
         display: block;
 
         #logo {
             width: 70px;
             height: 70px;
-
         }
     }
 
@@ -37,21 +38,15 @@ header {
         ul {
             list-style: none;
 
-
             li {
                 margin: 0 auto;
                 padding: 20px 0;
                 width: 70px;
             }
 
-
-
             .menu img {
                 width: 70px;
-
             }
-
-
         }
     }
 
@@ -61,12 +56,81 @@ header {
 }
 
 
+// Section New Post
+section.new-post {
+    position: absolute;
+    top: 0;
+    left: 14%;
+
+    &>form {
+        margin: 10% 15%;
+        width: 90%;
+
+        &>fieldset.manga-info {
+            margin-right: 30px;
+            padding: 30px;
+            border: 1px solid $red;
+            color: $orange;
+            font-family: $familyCarter;
+
+
+            div {
+                display: grid;
+                grid-template-columns: 200px 400px;
+
+                label {
+                    justify-self: end;
+                    margin-right: 10px;
+
+                }
+
+                &>select {
+                    color: $orange;
+                    font-family: $familyCarter;
+                    border: none;
+                    border: 1px solid $red;
+                    width: 90%;
+                }
+
+                &>input,
+                textarea {
+                    border: 1px solid $red;
+                    width: 90%;
+
+                }
+
+
+                &>span {
+                    font-size: smaller;
+                    font-weight: 200;
+                    color: rgb(145, 145, 145);
+                    text-align: center;
+                }
+            }
+        }
+
+        &>input[type=submit],
+        &>input[type=reset] {
+            color: $orange;
+            font-family: $familyCarter;
+            border: 1px solid $red;
+            border-radius: 15px 0 15px 0;
+            cursor: pointer;
+            background-color: $white;
+            padding: 10px 15px;
+            margin: 10px;
+            float: right;
+            font-size: 1.1rem;
+
+        }
+    }
+}
 
 @media screen and (min-width: 800px) {
     header {
-        
+        border: none;
 
-        #main-menu {
+        nav#main-menu {
             display: block;
         }
     }

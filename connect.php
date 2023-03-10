@@ -7,7 +7,7 @@
             <?php if (isset($_GET['err'])) { ?>
                 <p style="color:red;">Identifiant et/ou mot de passe incorrecte</p>
             <?php } ?>
-            <form action="./auth.php" method="POST"><br>
+            <form action="./model/auth.php" method="POST"><br>
                 <label for="pseudo">Pseudo</label><br>
                 <input type="text" name="pseudo" id="pseudo"><br>
                 <label for="password">Mot de passe</label><br>
@@ -22,7 +22,7 @@
         <?php if (isset($_GET['erro'])) { ?>
                 <p style="color:red;">Identifiant et/ou adresse mail déjà utilisé(s)</p>
             <?php } ?>
-            <form action="./register.php" method="POST"><br>
+            <form action="./model/inscription.php" method="POST"><br>
                 <label for="pseudo">Pseudo</label><br>
                 <input type="text" name="pseudo" id="pseudo"><br>
                 <label for="password">Mot de passe</label><br>

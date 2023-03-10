@@ -4,7 +4,7 @@ include_once './header-admin.php';
 ?>
 
 
-<section class="list row-limite-size">
+<section id="list">
     <h1>Listes des mangas</h1>
     <?php
 
@@ -14,26 +14,23 @@ include_once './header-admin.php';
     while ($manga = $req->fetch(PDO::FETCH_ASSOC)) {
     ?>
 
-        <div id="list-mangas">
+        <div id="list-manga">
             <p><?= $manga['title'] ?></p>
             <p><?= $manga['volume'] ?></p>
             <div>
                 <div class="placement">
                     <a href="./add-category.php?id=<?= $manga['id'] ?>" class="add-category">Ajouter une catégorie</a>
                     <span> | </span>
-                    <a href="./modify.php?id=<?= $manga['id'] ?>" class="edit-manga">Modifier</a>
+                    <a href="./edit.php?id=<?= $manga['id'] ?>" class="edit-manga">Modifier</a>
                     <span> | </span>
-                    <a href="./delete_modify.php?id=<?= $manga['id'] ?>" class="delete-manga">Supprimer</a>
+                    <a href="./delete.php?id=<?= $manga['id'] ?>" class="delete-manga">Supprimer</a>
                 </div>
             </div>
         </div>
 
     <?php } ?>
-</section>
-
-
+    </section>
 </main>
-<script src="./main.js"></script>
+<script src="../asset/js/header-admin.js"></script>
 </body>
-
 </html>

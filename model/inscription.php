@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once './connexion.php';
+require_once '../connexion.php';
 
 $pseudo = $_POST['pseudo'];
 $pass = $_POST['password'];
@@ -19,7 +19,7 @@ if (!empty($_POST)) {
     $result = $req->fetch(PDO::FETCH_ASSOC);
 
     if ($result['count'] > 0) {
-        header('Location: ./connect.php?erro=1');
+        header('Location: ../connect.php?erro=1');
         exit();
     } else {
         $req = $db->prepare("INSERT INTO `user` (`role`, `pseudo`, `password`, `mail`) VALUES (:roles, :pseudo, :pass, :mail)");
@@ -29,7 +29,7 @@ if (!empty($_POST)) {
         $req->bindParam('pass', $passHashed, PDO::PARAM_STR);
         $req->bindParam('mail', $mailVerif, PDO::PARAM_STR);
         $req->execute();
-        header('Location: ./dashboard-reader.php');
+        header('Location: ../index.php');
         exit();
     }
 }
