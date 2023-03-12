@@ -2,7 +2,7 @@
 
 <section>
     <fieldset>
-        <legend>Sign In</legend>
+        <legend>Se connecter</legend>
         <div class="sign-in">
             <?php if (isset($_GET['err'])) { ?>
                 <p style="color:red;">Identifiant et/ou mot de passe incorrecte</p>
@@ -17,7 +17,7 @@
         </div>
     </fieldset>
     <fieldset>
-        <legend>Sign Up</legend>
+        <legend>S'inscrire</legend>
         <div class="sign-up">
         <?php if (isset($_GET['erro'])) { ?>
                 <p style="color:red;">Identifiant et/ou adresse mail déjà utilisé(s)</p>

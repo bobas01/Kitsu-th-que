@@ -22,32 +22,28 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<section class="categorie row-limite-size">
-    <div class="row-limite-size">
-    <h1>Ajouter une catégorie</h1>
+<section class="new-post">
     <form action="#" method="POST">
-        <fieldset>
-            <legend>Catégories</legend>
-            <div>
+        <fieldset class="manga-info">
+            <legend>Ajouter une catégorie</legend>
+            <div class="category">
                 <?php
                 $sql = "SELECT `id`,`name`,`slug` FROM `category`";
                 $req = $db->query($sql);
                 while ($category = $req->fetch(PDO::FETCH_ASSOC)) { ?>
+                    <label for="<?= $category['slug'] ?>"><?= $category['name'] ?></label>
                     <input type="checkbox" id="id_category" name="check_list[]" value="<?= $category['id'] ?>">
-                    <label for="<?= $category['slug'] ?>"><?= $category['name'] ?></label><br>
                 <?php } ?>
                 <br>
             </div>
         </fieldset>
-        <fieldset id="btn">
-            <legend>Post/Reset</legend>
-            <input type="submit" name="submit" value="Post ">
-            <input type="reset" name="reset" value="Reset">
-        </fieldset>
+        <input type="reset" name="reset" value="Reset">
+        <input type="submit" name="submit" value="Ajouter">
     </form>
-</div>
+    </div>
 </section>
 </main>
 <script src="../asset/js/header-admin.js"></script>
 </body>
+
 </html>

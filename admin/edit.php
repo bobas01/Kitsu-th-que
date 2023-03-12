@@ -96,7 +96,7 @@ while ($article = $req->fetch(PDO::FETCH_ASSOC)) {
                 <div>
                     <label for="extract">Résumé</label>
                     <textarea name="extract" id="extract" cols="50" rows="5"><?= $article['extract'] ?></textarea>
-                    <span>N'oubliez pas de saisir les champs "Genre" et "Publique"!</span>
+                    <span>N'oubliez pas de selectionner les champs "Genre" et "Publique"!</span>
                 </div>
                 
             </fieldset>
