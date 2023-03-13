@@ -115,7 +115,7 @@ include_once './connexion.php';
                         <div class="article-content">
                             <h2 class="article-title"><?= $article['title'] ?></h2>
                             <p class="article-tome">Tome <?= $article['volume'] ?></p>
-
+                    <?php } ?>
    
         </section>
     </main>
