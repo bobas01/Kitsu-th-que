@@ -1,10 +1,11 @@
 <?php
+$style= './asset/css/style-post.css';
 require_once './header.php';
 
 require_once './connexion.php';
 ?>
 
-<main>
+<main id="mainPost">
     <section id="post">
         <div class="row-limit-size">
             <article id="titleDiv">

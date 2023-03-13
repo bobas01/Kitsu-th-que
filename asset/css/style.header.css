@@ -36,10 +36,9 @@ header .search-container {
 header .search-container form input[type=search] {
   padding: 18px 0 10px 10px;
   border: 2px solid #EB5D11;
-  border-right: 0px;
   border-radius: 5px;
   width: calc(100% - 80px);
-  border-radius: 25px 0 0 0;
+  border-radius: 25px 0 25px 0;
   margin-bottom: 10px;
 }
 header .search-container form button[type=submit] {
@@ -47,15 +46,13 @@ header .search-container form button[type=submit] {
   color: white;
   border: none;
   width: 70px;
-  padding: 11px 10px 10px 10px;
+  padding: 10px;
   border-radius: 0 0 25px 0;
-  margin-left: -10px;
   cursor: pointer;
-  border: 2px solid #EB5D11;
-  border-left: 0px;
 }
 header .search-container form button[type=submit] img {
-  height: 20px;
+  height: 30px;
+  width: 30px;
 }
 header .search-container form button[type=submit] img:hover {
   transform: scale(1.2);
