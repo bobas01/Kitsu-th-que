@@ -1,3 +1,3 @@
 # Kitsu-theque
 Mangathèque
-https://www.figma.com/file/cQBlbpY29zlcYTq1bdOaFM/Untitled?node-id=1%3A2&t=sXkbHEUGmmZFlJ2d-0
+https://www.figma.com/file/RWOfyfnaaxC5utkjUdmK9b/Untitled?node-id=0-1&t=QUUi8ftrhFyY01yT-0

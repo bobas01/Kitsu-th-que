@@ -22,8 +22,6 @@ a {
 }
 
 header {
-    box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgba(235, 93, 17, 0.45);
-    border-right: 2px solid #EB5D11;
     width: 140px;
     height: 100vh;
     overflow: auto;
@@ -36,6 +34,9 @@ header {
         #logo {
             width: 70px;
             height: 70px;
+            margin-top: 20px;
+            
+
         }
     }
 
@@ -59,6 +60,8 @@ header {
 
     #main-menu.active {
         display: block;
+        box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgba(235, 93, 17, 0.45);
+        border-right: 2px solid #EB5D11;
     }
 }
 
@@ -250,9 +253,14 @@ main {
 @media screen and (min-width: 800px) {
     header {
         border: none;
+        box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgba(235, 93, 17, 0.45);
+        border-right: 2px solid #EB5D11;
+
 
         nav#main-menu {
             display: block;
+            box-shadow: unset;
+            border-right: unset;
         }
     }
 }
