@@ -9,12 +9,11 @@ $black : #0C0C0C;
     margin: 0;
     box-sizing: border-box;
 }
-/*list checkbox*/
 
 .row-limit-size {
-    
+    max-width: 1000px;
     width: 100%;
-    
+    margin: 0 auto;
 
     .titleDiv {
         width: 100%;
@@ -27,7 +26,7 @@ $black : #0C0C0C;
             position: relative;
             color: $black;
             height: 100px;
-            width: 160px;
+            width: 231px;
 
         }
 
@@ -41,105 +40,7 @@ $black : #0C0C0C;
 
         }
     }
+   
 
-    fieldset {
-        border: 2px solid #EB5D11;
-       
-
-        legend {
-            font-family: $familyTitle;
-            font-size: 1.2rem;
-            color: #BF1818;
-        }
-
-        label {
-            font-family: $falilyTxt;
-            font-size: 1rem;
-            font-weight: 400;
-            color: $black;
-            padding-right: 10px;
-        }
-
-        
-
-    }
-    #search{
-      width: 150px;
-      padding: 10px 0;
-      color: #0C0C0C;
-      font-family: $familyTitle;
-      background-color: #fff;
-      border: 2px solid #EB5D11;
-      border-radius: 25px 0 25px 0;
-      margin-top: 20px;
-      
-
-    }
-
-}
-@media screen and (min-width: 800px) {
-  fieldset{
-    width: 80%;
-    margin: 0 auto;
-  }
-  #search {
-    margin-left: 10%;
-  }
-  
-}
-#catalogue {
-    padding: 30px;
-    .articles {
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        width: 80%;
-        margin: 0 auto;
-    
-        article {
-          width: 20%;
-          min-width: 150px;
-          margin-left: 8px;
-          margin-right: 8px;
-          border-radius: 10px;
-          overflow: hidden;
-          margin-bottom: 40px;
-          transition: all 0.5s ease-in;
-          box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-            rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-          background-color: white;
-    
-          figure img {
-            width: 100%;
-            height: 100%;
-          }
-    
-          .article-content {
-            padding: 12px;
-            background-color: #fff;
-    
-            h2,p {
-             height: 40px;
-             padding:10px 0 ;
-             text-align: center;
-             font-family: $falilyTxt;
-
-            }
-
-    
-           
-          }
-    
-          &:hover {
-            transform: scale(1.1);
-          }
-        }
-      }
-}
-
-@media screen and (min-width: 800px) {
-  body {
-    background: url(../img/Nuages-Kitsutech/nuage-kitsutech-decor.svg) 0 -3% no-repeat, url(../img/icon/7025581-removebg-preview.png) 100% 45% no-repeat, url(../img/icon/kitsune9queue.png) 0 85% no-repeat;
-    background-size: 20vw;
-}
-}
+   
+} 

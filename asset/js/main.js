@@ -93,19 +93,6 @@ function handleTouchMove(evt) {
 }
 
 
-//select
-
-
-const select = document.querySelector('select');
-const arrow = document.querySelector('.arrow');
-
-select.addEventListener('click', function () {
-  arrow.classList.toggle('open');
-});
-
-
-
-
 
 
 

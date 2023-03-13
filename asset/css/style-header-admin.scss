@@ -1,3 +1,8 @@
+$orange : #eb5d11;
+$red : #e23b3b;
+$white : #fff;
+$familyCarter: 'Carter One', cursive;
+
 *,
 ::before,
 ::after {
@@ -10,25 +15,27 @@ a {
     text-decoration: none;
 }
 
+.row-limit-size {
+    max-width: 1300px;
+    width: 100vh;
+    margin: 0 auto;
+}
+
 header {
     box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgba(235, 93, 17, 0.45);
     border-right: 2px solid #EB5D11;
-    
     width: 140px;
-    overflow: auto;
     height: 100vh;
-
-
+    overflow: auto;
 
     a {
-        margin: 0 auto;
+        margin: 20px auto;
         width: 70px;
         display: block;
 
         #logo {
             width: 70px;
             height: 70px;
-
         }
     }
 
@@ -38,21 +45,15 @@ header {
         ul {
             list-style: none;
 
-
             li {
                 margin: 0 auto;
                 padding: 20px 0;
                 width: 70px;
             }
 
-
-
             .menu img {
                 width: 70px;
-
             }
-
-
         }
     }
 
@@ -62,12 +63,195 @@ header {
 }
 
 
+// Section New Post
+
+main {
+
+    &>section {
+        position: absolute;
+        top: 10px;
+        left: 10%;
+    }
+
+    &>section.new-post {
+        &>form {
+            margin: 10% 15%;
+            width: 90%;
+
+            &>fieldset.manga-info {
+                margin-right: 30px;
+                padding: 30px;
+                border: 1px solid $red;
+                color: $orange;
+                font-family: $familyCarter;
+
+
+                div {
+                    display: grid;
+                    grid-template-columns: 200px 400px;
+
+                    label {
+                        justify-self: end;
+                        margin-right: 10px;
+
+                    }
+
+                    &>select {
+                        color: $orange;
+                        font-family: $familyCarter;
+                        border: none;
+                        border-bottom: 1px solid $red;
+                        width: 90%;
+                    }
+
+                    &>input,
+                    textarea {
+                        border-top: none;
+                        border-right: none;
+                        border-left: none;
+                        border-bottom: 1px solid $red;
+                        width: 90%;
+
+                    }
+
+                    &>textarea{
+                        resize: none;
+                    }
+
+
+                    &>span {
+                        font-size: smaller;
+                        font-weight: 200;
+                        color: rgb(145, 145, 145);
+                        text-align: center;
+                    }
+                }
+
+                &>div.category {
+                    display: grid;
+                    grid-template-columns: 150px 50px;
+
+                }
+            }
+
+            &>input[type=submit],
+            &>input[type=reset] {
+                color: $orange;
+                font-family: $familyCarter;
+                border: 1px solid $red;
+                border-radius: 15px 0 15px 0;
+                cursor: pointer;
+                background-color: $white;
+                padding: 10px 15px;
+                margin: 10px;
+                float: right;
+                font-size: 1.1rem;
+
+            }
+        }
+    }
+
+    &>section#list-manga {
+        margin: 30px;
+
+        &>h1 {
+            margin: 10px;
+            font-family: $familyCarter;
+        }
+
+        &>div.list {
+            display: grid;
+            grid-template-columns: 100px 50px 650px;
+            text-align: center;
+            padding: 20px 0;
+            border-radius: 5px;
+
+            &:hover {
+                box-shadow: $orange 0px 1px 2px 0px;
+            }
+
+            &>p {
+                margin-right: 15px;
+                font-family: $familyCarter;
+                color: $orange;
+            }
+
+            &>div {
+                margin-left: 20px;
+
+                &>div.placement {
+                    width: 90%;
+                    align-self: flex-end;
+
+                    &>span {
+                        margin: 10px;
+                    }
+
+                    &>a {
+                        font-family: $familyCarter;
+                    }
+
+                    &>a:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    &>div.modal {
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        overflow: auto;
+        background-color: rgb(71, 78, 93, 50%);
+        padding-top: 50px;
+
+        &>div.modal-content {
+            width: 500px;
+            margin: 5% auto 15% auto;
+            background-color: #fefefe;
+            text-align: center;
+            padding: 16px;
+            padding-bottom: 30px;
+
+            &>h1 {
+                font-size: 1.3rem;
+                display: block;
+                margin-bottom: 30px;
+                color: $orange;
+                font-family: $familyCarter;
+            }
+
+            &>a.btn {
+                font-family: $familyCarter;
+                margin-right: 30px;
+                padding: 5px;
+                font-size: 1rem;
+                display: inline-block;
+                color: #222;
+            }
+
+            &>a.btn:hover {
+                color: $white;
+                background-color: $orange;
+                border-radius: 10px 0 10px 0;
+                text-decoration: none;
+
+            }
+        }
+    }
+}
 
 @media screen and (min-width: 800px) {
     header {
-        
+        border: none;
 
-        #main-menu {
+        nav#main-menu {
             display: block;
         }
     }
