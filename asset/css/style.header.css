@@ -6,6 +6,12 @@
   box-sizing: border-box;
 }
 
+.row-limit-size {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 header {
   overflow: auto;
   box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgb(235, 93, 17);
@@ -41,7 +47,7 @@ header .search-container form button[type=submit] {
   color: white;
   border: none;
   width: 70px;
-  padding: 10px;
+  padding: 11px 10px 10px 10px;
   border-radius: 0 0 25px 0;
   margin-left: -10px;
   cursor: pointer;

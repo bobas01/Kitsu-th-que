@@ -108,7 +108,7 @@ include_once './connexion.php';
                 ?>
                     <article>
                         <figure>
-                            <a href="#"><img src="./asset/img/premiere-page/<?= $article['cover'] ?>" alt="premièrepage"></a>
+                            <a href="./post.php?id=<?= $article['id']?>"><img src="./asset/img/premiere-page/<?= $article['cover'] ?>" alt="premièrepage"></a>
                         </figure>
                         <div class="article-content">
                             <h2 class="article-title"><?= $article['title'] ?></h2>

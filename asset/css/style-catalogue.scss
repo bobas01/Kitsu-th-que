@@ -74,6 +74,10 @@ $black : #0C0C0C;
     border: 2px solid #EB5D11;
     border-radius: 25px 0 25px 0;
     margin-top: 20px;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
 
 
   }

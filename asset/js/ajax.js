@@ -38,7 +38,7 @@ console.log(arrayCategory);
   })
       .then((response) => response.json())
       .then((datas) => console.log(datas))
-    
+    console.log(response);
     
    
    
