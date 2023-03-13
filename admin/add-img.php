@@ -4,9 +4,14 @@ require_once './header-admin.php'
 
 ?>
 
-<section>
-<form action="resize.php" enctype="multipart/form-data" method="POST">
-        <input type="image" name="image" id="image">
+<section class="new-post">
+    <form action="resize.php" enctype="multipart/form-data" method="POST">
+        <fieldset class="manga-info">
+            <legend>Ajouter une image de couverture</legend>
+        
+        <input type="file" name="image" id="image" accept="image/*">        
+        </fieldset>
+        <input type="reset" name="reset" value="Annuler">
         <input type="submit" value="Envoyer">
     </form>
 </section>

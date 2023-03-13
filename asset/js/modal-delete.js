@@ -5,6 +5,7 @@ let main = document.querySelector("main");
 for (let deleteArticles of deleteArticle) {
     deleteArticles.addEventListener("click", function () {
         let titre = this.dataset.titre;
+        let volume = this.dataset.volume;
         let id = this.dataset.id;
 
         //Creation Modal Window
@@ -19,7 +20,7 @@ for (let deleteArticles of deleteArticle) {
         div.appendChild(container);
 
         let warning = document.createElement('h1');
-        warning.innerHTML = 'Vous êtes sûr de vouloir supprimer cet article : ' + titre + ' ?';
+        warning.innerHTML = 'Vous êtes sûr de vouloir supprimer ce manga : ' + titre + ' tome.' + volume + ' ?';
         container.appendChild(warning);
 
         let deletebtn = document.createElement('a');
@@ -30,7 +31,7 @@ for (let deleteArticles of deleteArticle) {
 
         let cancelbtn = document.createElement('a');
         cancelbtn.classList.add('btn');
-        cancelbtn.setAttribute("href", "./list-post.php");
+        cancelbtn.setAttribute("href", "./list.php");
         cancelbtn.innerHTML = 'Annuler';
         container.appendChild(cancelbtn);
 

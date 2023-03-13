@@ -3,9 +3,8 @@
 $tmp_name = $_FILES['image']['tmp_name'];
 $name = $_FILES['image']['name'];
 
-/*resizeImg($tmp_name, 300, 100, 's-' . $name);
-resizeImg($tmp_name, 500, 300, 'm-' . $name);
-resizeImg($tmp_name, 1920, 1080, 'xl-' . $name);*/
+resizeImg($tmp_name, 300, 500, 'm-' . $name);
+resizeImg($tmp_name, 350, 600, 'l-' . $name);
 
 function resizeImg($tmp, $width, $height, $name)
 {
@@ -40,5 +39,5 @@ function resizeImg($tmp, $width, $height, $name)
     $image_p = imagecreatetruecolor($new_width, $new_height);
     imagecopyresampled($image_p, $image, 0, 0, 0, 0, $new_width, $new_height, $x, $y);
 
-    $imageExt($image_p, "img/" . $name);
+    $imageExt($image_p, "../asset/img/" . $name);
 }

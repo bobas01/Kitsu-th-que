@@ -31,7 +31,8 @@ if (isset($_POST['submit'])) {
     $_SESSION['sucess'] = "Produit éditer avec succès !";
     header('Location: ./list.php');
     exit();
-} 
+
+}
 
 $req = $db->prepare("SELECT `id`, `id_genre`, `id_public`, `title`, `volume`, `editor`, `published_at`, `author`,`extract` FROM `manga` WHERE `id`  = :id");
 $req->bindParam('id', $id, PDO::PARAM_INT);
@@ -41,7 +42,7 @@ while ($article = $req->fetch(PDO::FETCH_ASSOC)) {
 ?>
 
     <section class="new-post">
-        <form action="#" method="POST">
+        <form action="./list.php" method="POST">
             <fieldset class="manga-info">
                 <legend>Modification des informations de : <?= $article['title'] ?>, tome.<?= $article['volume'] ?></legend>
                 <div>
@@ -95,13 +96,13 @@ while ($article = $req->fetch(PDO::FETCH_ASSOC)) {
                 <br>
                 <div>
                     <label for="extract">Résumé</label>
-                    <textarea name="extract" id="extract" cols="50" rows="5"><?= $article['extract'] ?></textarea>
+                    <textarea name="extract" id="extract" cols="50" rows="10"><?= $article['extract'] ?></textarea>
                     <span>N'oubliez pas de selectionner les champs "Genre" et "Publique"!</span>
                 </div>
                 
             </fieldset>
-            <input type="reset" name="reset" value="Reset">
-            <input type="submit" name="submit" value=" Edit ">
+            <input type="reset" name="reset" value="Annuler">
+            <input type="submit" name="submit" value="Envoyer">
 
         <?php } ?>
         </form>

@@ -7,6 +7,7 @@ if (!isset($_SESSION['id-user']) && $_SESSION['role-user'] === 'admin' ) {
 }
 
 ?>
+<section>
 <h1>acceuil admin</h1>
 </section>
 </main>
