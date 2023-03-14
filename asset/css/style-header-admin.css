@@ -78,15 +78,11 @@ main > section.new-post > form > fieldset.manga-info div > select {
   color: #eb5d11;
   font-family: "Carter One", cursive;
   border: none;
-  border-bottom: 1px solid #e23b3b;
+  border: 1px solid #e23b3b;
   width: 90%;
 }
-main > section.new-post > form > fieldset.manga-info div > input,
-main > section.new-post > form > fieldset.manga-info div textarea {
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: 1px solid #e23b3b;
+main > section.new-post > form > fieldset.manga-info div > input, main > section.new-post > form > fieldset.manga-info div textarea {
+  border: 1px solid #e23b3b;
   width: 90%;
 }
 main > section.new-post > form > fieldset.manga-info div > textarea {

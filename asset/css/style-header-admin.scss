@@ -100,19 +100,16 @@ main {
                         color: $orange;
                         font-family: $familyCarter;
                         border: none;
-                        border-bottom: 1px solid $red;
+                        border: 1px solid $red;
                         width: 90%;
                     }
 
-                    &>input,
-                    textarea {
-                        border-top: none;
-                        border-right: none;
-                        border-left: none;
-                        border-bottom: 1px solid $red;
+                    &>input, textarea{
+                        border: 1px solid $red;
                         width: 90%;
-
                     }
+
+
 
                     &>textarea{
                         resize: none;

@@ -8,7 +8,7 @@ if (!isset($_SESSION['id-user']) && $_SESSION['role-user'] === 'admin' ) {
 
 ?>
 <section>
-<h1>acceuil admin</h1>
+<h1>accueil admin</h1>
 </section>
 </main>
 <script src="../asset/js/header-admin.js"></script>
