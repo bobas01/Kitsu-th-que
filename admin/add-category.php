@@ -12,13 +12,13 @@ if (isset($_POST['submit'])) {
             $add->bindParam('id', $id, PDO::PARAM_INT);
             $add->bindParam('id_category', $id_category, PDO::PARAM_INT);
             $add->execute();
+        }
 
-            $_SESSION['sucess'] = "Catégorie(s) ajoutée(s) avec succès !";
+        $_SESSION['sucess'] = "Catégorie(s) ajoutée(s) avec succès !";
             header('Location: ./list.php');
             exit();
-        }
     } else {
-        echo "<b> Please select at least one option !</b>";
+        $_SESSION['error'] = "Ajout non effectué. Veuillez réessayer.";
     }
 }
 ?>

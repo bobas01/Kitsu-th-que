@@ -8,7 +8,7 @@ include_once './header-admin.php';
 <section id="list-manga">
     <h1>Listes des mangas</h1>
     <?php
-    $sql = "SELECT `id`,`title`,`volume` FROM `manga` ORDER BY `published_at` DESC ";
+    $sql = "SELECT `id`,`title`,`volume` FROM `manga` ORDER BY `id` ASC";
     $req = $db->query($sql);
 
     while ($manga = $req->fetch(PDO::FETCH_ASSOC)) {
