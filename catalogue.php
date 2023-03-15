@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once './connexion.php';
 ?>
 
@@ -29,7 +30,7 @@ include_once './connexion.php';
             <div id="icon">
                 <a id="logo" href="./index.php"><img src="./asset/img/icon/Logo.svg" alt="logo"></a>
                 <a id="catalogue" href="./catalogue.php"><img src="./asset/img/icon/icons8-livre-ouvert-50.png" alt="catalogue"></a>
-                <a id="connexion" href="./connect.php"><img src="./asset//img//icon/icons-connexion.png" alt="connexion"></a>
+                <a id="connexion" href="#"><img src="./asset//img//icon/icons-connexion.png" alt="connexion"></a>
             </div>
           
             <div class="search-container">
@@ -123,6 +124,9 @@ include_once './connexion.php';
     <?php
    require_once './footer.php';
    ?>
-    <script src="./asset/js/ajax.js"></script>
-</body>
+   <script src="./asset/js/main.js"></script>
+   </body>
+
+</html>
+
 

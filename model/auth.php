@@ -24,8 +24,8 @@ if ($req->rowCount() == 1) {
             header('Location: ../index.php');
         }
     } else {
-        header('Location: ../connect.php?err=1');
+        header('Location: ../index.php/?err=1');
     }
 } else {
-    header('Location: ../connect.php?err=1');
+    header('Location: ../index.php?err=1');
 }

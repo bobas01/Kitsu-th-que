@@ -17,9 +17,7 @@
 
 <body>
 
-</body>
 
-</html>
 <footer>
     <div class="row-limit-size">
         <div id="footer">
@@ -58,3 +56,9 @@
     </div>
     
 </footer>
+
+<script src="./asset/js/main.js"></script>
+<script src="./asset/js/ajax.js"></script>
+</body>
+
+</html>

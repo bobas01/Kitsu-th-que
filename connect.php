@@ -1,4 +1,4 @@
-<?php include_once './header.php'; ?>
+<!-- 
 
 <section>
     <fieldset>
@@ -32,7 +32,7 @@
                 <input type="submit" name="submit" value="Se connecter">
             </form>
         </div>
-    </fieldset>
+    </fieldset> -->
 
 
 </section>
