@@ -1,6 +1,8 @@
 $familyTitle: 'Carter One', cursive;
 $falilyTxt: 'Roboto', sans-serif;
 $black : #0C0C0C;
+$orange: #EB5D11;
+$red: #BF1818;
 
 *,
 ::before,
@@ -345,6 +347,7 @@ input {
         padding: 12px 45px;
       }
 }
+
 
 @media screen and (min-width: 800px) {
   body {

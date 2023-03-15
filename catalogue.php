@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once './connexion.php';
 ?>
 
@@ -10,7 +11,7 @@ include_once './connexion.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kitsuthèque</title>
-    <link rel="stylesheet" href="./asset/css/style.header.css">
+    <link rel="stylesheet" href="./asset/css/style-header.css">
     <link rel="stylesheet" href="./asset/css/style-catalogue.css">
     
 
@@ -29,7 +30,7 @@ include_once './connexion.php';
             <div id="icon">
                 <a id="logo" href="./index.php"><img src="./asset/img/icon/Logo.svg" alt="logo"></a>
                 <a id="catalogue" href="./catalogue.php"><img src="./asset/img/icon/icons8-livre-ouvert-50.png" alt="catalogue"></a>
-                <a id="connexion" href="#"><img src="./asset//img//icon/icons-connexion.png" alt="connexion"></a>
+                <a id="connexion" href="#"><img src="./asset/img/icon/icons-connexion.png" alt="connexion"></a>
             </div>
           
             <div class="search-container">
@@ -162,5 +163,7 @@ include_once './connexion.php';
    require_once './footer.php';
    ?>
     <script src="./asset/js/ajax.js"></script>
+    <script src="./asset/js/popup.js"></script>
 </body>
+</html>
 

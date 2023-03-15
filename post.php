@@ -55,5 +55,44 @@ require_once './connexion.php';
             <?php } ?>
         </div>
     </section>
+    <section id="connect">
+        <div class="container <?= (isset($_GET['err'])) ? "active" : "" ?> <?= (isset($_GET['erro'])) ? "active" : "" ?>" id="container">
+            <div class="form-container sign-up-container">
+                <?php if (isset($_GET['erro'])) { ?>
+                    <p style="color:red;">Identifiant et/ou adresse mail déjà utilisé(s)</p>
+                <?php } ?>
+                <form action="./model/inscription.php" class="formConnect" method="POST">
+                    <h1 class="titleFormConnect">Créer un compte</h1>
+                    <input type="text" name='pseudo' placeholder="pdeudo" />
+                    <input type="email" name="mail" placeholder="Email" />
+                    <input type="password" name="password" placeholder="Password" />
+                    <button class="btnFormConnect">S'inscrire</button>
+                </form>
+            </div>
+            <div class="form-container sign-in-container">
+                <?php if (isset($_GET['err'])) { ?>
+                    <p style="color:red;">Identifiant et/ou mot de passe incorrecte</p>
+                <?php } ?>
+                <form action="./model/auth.php" class="formConnect" method="POST">
+                    <h1 class="titleFormConnect">Se connecter</h1>
+                    <input type="text" name="pseudo" placeholder="Pseudo" />
+                    <input type="password" name="password" placeholder="Mot de passe" />
+                    <a href="#">Mot de passe oublié?</a>
+                    <button class="btnFormConnect">Connexion</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <button class="ghost btnFormConnect" id="signIn">Se connecter</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <button class="ghost btnFormConnect" id="signUp">S'inscrire</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 <?php require_once './footer.php' ?>
+<script src="./asset/js/popup.js"></script>

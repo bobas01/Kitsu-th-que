@@ -1,4 +1,5 @@
 <?php 
+session_start();
 $style= './asset/css/style.css';
 require_once './header.php';
 
@@ -141,6 +142,7 @@ require_once './connexion.php';
    require_once './footer.php';
    ?>
     <script src="./asset/js/main.js"></script>
+    <script src="./asset/js/popup.js"></script>
 </body>
 
 </html>
