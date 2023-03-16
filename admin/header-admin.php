@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -19,10 +22,10 @@
         </a>
         <nav id="main-menu">
             <ul>
-                <li class="menu"><a href="../index.php"><img src="../asset/img/icon/🦆 icon _home_.svg" alt="accueil"></a></li>
                 <li class="menu"><a href="../catalogue.php"><img src="../asset/img/icon/icons8-livre-ouvert-50.png" alt="catalogue"></a></li>
                 <li class="menu"><a href="./list.php"><img src="../asset/img/icon/🦆 icon _view list_.svg" alt="liste"></a></li>
                 <li class="menu"><a href="./new-post.php"><img src="../asset/img/icon/🦆 icon _plus_.svg" alt="Ajouté un manga"></a></li>
+                <li class="menu"><a href="./new-post.php"><img src="../asset/img/icon/icone_deconnexion.svg" alt="Se déconnecter"></a></li>
             </ul>
         </nav>
     </header>
