@@ -59,6 +59,9 @@ header .search-container form button[type=submit] img:hover {
 }
 
 @media screen and (min-width: 600px) {
+  header {
+    padding: 50px 0;
+  }
   header #icon #logo {
     position: relative;
   }
@@ -79,10 +82,14 @@ header .search-container form button[type=submit] img:hover {
   header form {
     position: absolute;
     left: 30%;
-    top: 2%;
+    top: 10%;
   }
 }
 @media screen and (min-width: 1000px) {
+  header #icon a img {
+    width: 80px;
+    height: 80px;
+  }
   header form {
     left: 30%;
     width: 30%;

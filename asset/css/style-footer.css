@@ -37,6 +37,7 @@ footer {
   overflow: auto;
   margin-top: 50px;
   clear: both;
+  padding: 100px 0;
 }
 footer .row-limit-size #footer {
   display: flex;

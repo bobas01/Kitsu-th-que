@@ -22,6 +22,7 @@ if ($req->rowCount() == 1) {
             header('Location: ../admin/dashboard-admin.php');
         } else {
             header('Location: ../index.php');
+           
         }
     } else {
         header('Location: ../connect.php?err=1');

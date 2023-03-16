@@ -16,6 +16,7 @@ $black : #0C0C0C;
 }
 header {
     overflow: auto;
+    
     box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgba(235, 93, 17, 1);
     #icon {
         display: flex;
@@ -62,6 +63,7 @@ header {
                 img {
                     height: 30px;
                     width: 30px;
+                    
                     &:hover {
                         transform: scale(1.2);
                     }
@@ -73,6 +75,7 @@ header {
 }
 @media screen and (min-width: 600px) {
     header {
+        padding: 50px 0;
      #icon {
             #logo {
                 position: relative;
@@ -98,13 +101,17 @@ header {
      form {
         position: absolute;
         left: 30%;
-        top:2%;
+        top:10%;
      }
     } 
  }
 
  @media screen and (min-width: 1000px)  {
     header {
+        #icon a img {
+            width: 80px;
+            height: 80px;
+        }
         form {
             left: 30%;
             width: 30%;

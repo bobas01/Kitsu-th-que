@@ -11,29 +11,39 @@
   INNER JOIN `genre` ON `manga`.`id_genre`=`genre`.`id`
   WHERE `genre`.`slug` =:slugGenre;";
   $req = $db->prepare($sqlGenre);
-  $req->execute(['slugGenre' => $dataGenre[0]]);
+  $req->execute([':slugGenre' => $dataGenre[0]]);
   $genreResults = $req->fetchAll();
   $sqlPublic="SELECT `manga`.`id`,`manga`.`volume`,`manga`.`title`,`manga`.`cover` FROM `manga` 
   INNER JOIN `public` ON `manga`.`id_public`=`public`.`id`
   WHERE `public`.`slug` = :slugPublic";
-  $req = $db->prepare($sqlPublic);
-  $req->execute(['slugPublic' => $dataPublic[1]]);
-  $publicResults = $req->fetchAll();
+  $req2 = $db->prepare($sqlPublic);
+  $req2->execute([':slugPublic' => $dataPublic[0]]);
+  $publicResults = $req2->fetchAll();
   $sqlCat="SELECT `manga`.`id`,`manga`.`volume`,`manga`.`title`,`manga`.`cover` FROM `manga` 
   INNER JOIN `manga_category` ON `manga_category`.`id_manga`= `manga`.`id`
   INNER JOIN `category` ON `manga_category`.`id_category`= `category`.`id`
-  WHERE `category`.`slug` =:slugCat;";
+  WHERE `category`.`slug` =:slugCat;";  
+  $req3 = $db->prepare($sqlCat);
+  $req3->execute(['slugCat' => $dataCat[0]]);
+  $catResults = $req3->fetchAll();
+
+  $genreIds = array_column($genreResults, 'id');
+  $publicIds = array_column($publicResults, 'id');
+  $catIds = array_column($catResults, 'id');
+  $commonIds = array_intersect($genreIds, $publicIds, $catIds);
+ 
+ 
+  $sql = "SELECT `manga`.`id`,`manga`.`volume`,`manga`.`title`,`manga`.`cover` FROM `manga` WHERE `manga`.`id` IN (" . implode(',', $commonIds) . ")";
+  $req = $db->prepare($sql);
+  $req->execute();
+  $dataGroup = $req->fetchAll();
   
-  $req = $db->prepare($sqlCat);
-  $req->execute(['slugCat' => $dataCat[2]]);
-  $catResults = $req->fetchAll();
+  echo json_encode($dataGroup);
+ 
+ 
   
   
   
-  echo json_encode($genreResults);
-  
-  
-  // $dataGroup= array_intersect( $catResults, $genreResults, $publicResults);
   
   
   
