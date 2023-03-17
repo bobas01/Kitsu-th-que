@@ -18,15 +18,17 @@ if ($req->rowCount() == 1) {
     if ($user['password'] === $pass) {
         $_SESSION['id-user'] = $user['id'];
         $_SESSION['role-user'] = $user['role'];
+        $_SESSION['pseudo'] = $user['pseudo'];        
         if ($user['role'] === 'admin') {
             header('Location: ../admin/dashboard-admin.php');
         } else {
             header('Location: ../index.php');
-           
+            $_SESSION['connected'] = true;
+
         }
     } else {
-        header('Location: ../connect.php?err=1');
+        header('Location: ../index.php?err=1');
     }
 } else {
-    header('Location: ../connect.php?err=1');
+    header('Location: ../index.php?err=1');
 }

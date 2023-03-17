@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 include_once './connexion.php';
 ?>
 
@@ -30,7 +31,13 @@ include_once './connexion.php';
             <div id="icon">
                 <a id="logo" href="./index.php"><img src="./asset/img/icon/Logo.svg" alt="logo"></a>
                 <a id="catalogue" href="./catalogue.php"><img src="./asset/img/icon/icons8-livre-ouvert-50.png" alt="catalogue"></a>
-                <a id="connexion" href="#"><img src="./asset/img/icon/icons-connexion.png" alt="connexion"></a>
+                <?php 
+                    if(isset($_SESSION['connected']) && $_SESSION['connected'] == true){ 
+                    ?>
+                <a id="connected" href="./model/deconnexion.php"><img src="./asset/img/icon/renard-orange.svg" alt="connected" title=" <?=$_SESSION['pseudo'];  ?> vous êtes connecter"></a>
+                <?php } else { ?>
+                <a id="connexion" href="#"><img src="./asset/img/icon/renard-noir.svg" alt="connexion"></a>
+                <?php } ?>
             </div>
           
             <div class="search-container">
