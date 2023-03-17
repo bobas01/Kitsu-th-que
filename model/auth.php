@@ -21,6 +21,7 @@ if ($req->rowCount() == 1) {
         $_SESSION['pseudo'] = $user['pseudo'];        
         if ($user['role'] === 'admin') {
             header('Location: ../admin/dashboard-admin.php');
+            $_SESSION['connected'] = true;
         } else {
             header('Location: ../index.php');
             $_SESSION['connected'] = true;

@@ -34,7 +34,7 @@ include_once './connexion.php';
                 <?php 
                     if(isset($_SESSION['connected']) && $_SESSION['connected'] == true){ 
                     ?>
-                <a id="connected" href="./model/deconnexion.php"><img src="./asset/img/icon/renard-orange.svg" alt="connected" title=" <?=$_SESSION['pseudo'];  ?> vous êtes connecter"></a>
+                <a id="connected" href="./model/deconnexion.php"><img src="./asset/img/icon/renard-orange-deconnexion.svg" alt="connected" title=" <?=$_SESSION['pseudo'];  ?> vous êtes connecter"></a>
                 <?php } else { ?>
                 <a id="connexion" href="#"><img src="./asset/img/icon/renard-noir.svg" alt="connexion"></a>
                 <?php } ?>
