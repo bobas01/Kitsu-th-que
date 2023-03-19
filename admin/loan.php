@@ -6,10 +6,12 @@ include('./header-admin.php');
 if (isset($_POST['submit'])) {
     $idManga = $_POST['id_manga'];
     $idUser = $_POST['id_user'];
-
+    $returnDate= $_POST['return_date'];
 
     $loan = $db->query("INSERT INTO `loan`( `id_manga`, `id_user`, `loan_date`, `return_date`, `availible`) 
     VALUES ('$idManga', '$idUser', NOW(), DATE_ADD(NOW(), INTERVAL 4 WEEK), 1);");
+
+
 }
 ?>
 <fieldset>
@@ -21,6 +23,22 @@ if (isset($_POST['submit'])) {
     <div>
         <label for="idUser">idUser</label> <br>
         <input type="number" name="idUser" id="idUser" maxlength="50">
+    </div>
+</fieldset>
+<input type="submit" name="submit" value="Post">
+<input type="reset" name="reset" value="Reset">
+
+<?php 
+if (isset($_POST['submit'])) {
+    $idManga = $_POST['id_manga'];
+$loanReturn=$db->query("UPDATE `loan` SET `return_date`= NOW(),`available`= 0 WHERE `id_manga`='$idManga';");
+}
+?>
+<fieldset>
+<legend>Retour</legend>
+    <div>
+        <label for="idManga">Index du manga</label>
+        <input type="number" name="idManga" id="idManga" maxlength="50">
     </div>
 </fieldset>
 <input type="submit" name="submit" value="Post">
