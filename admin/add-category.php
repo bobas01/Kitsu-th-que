@@ -21,23 +21,19 @@ if (isset($_POST['submit'])) {
         $_SESSION['error'] = "Ajout non effectué. Veuillez réessayer.";
     }
 }
+
+$sql = "SELECT `id`,`name`,`slug` FROM `category`";
+$req = $db->query($sql);
 ?>
 
 <section class="new-post">
     <form action="#" method="POST">
         <fieldset class="manga-info">
             <legend>Ajouter une catégorie</legend>
-            <div class="category">
-                <?php
-                $sql = "SELECT `id`,`name`,`slug` FROM `category`";
-                $req = $db->query($sql);
-                
-                while ($category = $req->fetch(PDO::FETCH_ASSOC)) { ?>
+                <?php while ($category = $req->fetch(PDO::FETCH_ASSOC)) { ?>
                     <label for="<?= $category['slug'] ?>"><?= $category['name'] ?></label>
                     <input type="checkbox" id="<?= $category['slug'] ?>" name="check_list[]" value="<?= $category['id'] ?>">
                 <?php } ?>
-                <br>
-            </div>
         </fieldset>
         <input type="reset" name="reset" value="Annuler">
         <input type="submit" name="submit" value="Ajouter">
@@ -47,5 +43,4 @@ if (isset($_POST['submit'])) {
 </main>
 <script src="../asset/js/header-admin.js"></script>
 </body>
-
 </html>
