@@ -14,7 +14,7 @@ require_once './connexion.php';
             </article>
             <?php
             $id = $_GET['id'];
-            $reqArticle = $db->prepare("SELECT `id`, `title`, `extract`, `cover`,`published_at`, `author`, `volume`  FROM `manga` WHERE `id`= :id");
+            $reqArticle = $db->prepare("SELECT `id`, `title`, `extract`, `cover`,`published_at`, `author`, `volume`, `bookshelf` FROM `manga` WHERE `id`= :id");
             $reqArticle->bindParam('id', $id, PDO::PARAM_INT);
             $reqArticle->execute();
 
@@ -45,8 +45,24 @@ require_once './connexion.php';
                                 <h3>Auteur :
                                    <span> <?= " " . $reqFetchArticle['author'] ?></span>
                                 </h3>
-                                <h3>Emplacement</h3>
-
+                                <h3>Emplacement :
+                                    <span><?= " " . $reqFetchArticle['bookshelf'] ?></span>
+                                </h3>
+                              <?php 
+                              if (isset($_POST['submit'])) {
+                                $idManga = $_POST['id_mange'] =$reqFetchArticle['id'];
+                                $idUser = $_POST['id_user'] = $_SESSION['id-user'];
+                                
+                                  
+                                                          
+                            
+                                $loan = $db->query("INSERT INTO `loan`( `id_manga`, `id_user`, `loan_date`,`return_date`, `reservation_loan`, `available`) 
+                                VALUES ($idManga, $idUser,NOW(),NULL,DATE_ADD(NOW(), INTERVAL 3 HOUR)  , 1);");                           
+                            } 
+                         
+                              ?>
+                              <input type="submit" name="submit" value="Réserver">
+                            
                                 
                             </form>
                         </div>
