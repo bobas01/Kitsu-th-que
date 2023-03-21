@@ -49,7 +49,7 @@ include('./header-admin.php');
             }
             ?>
     <?php
-        } else {
+        } else if($dateReserv < $dateActual && $dateReserv > 0) {
             $id = $confirmReserv['id'];
             $delete->bindParam(':id', $id);
             $delete->execute();
