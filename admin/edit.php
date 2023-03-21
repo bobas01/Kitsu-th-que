@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['id-user']) && $_SESSION['role-user'] === 'admin' ) {
+    header('Location: ./connect.php');
+}
+
 require_once '../connexion.php';
 include_once './header-admin.php';
 

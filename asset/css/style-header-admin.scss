@@ -23,10 +23,9 @@ li {
 
 .row-limit-size {
     max-width: 1200px;
-    width: 100vh;
-    margin: 0;
+    width: 100%;
+    margin: 0 auto;
 }
-
 
 header {
     box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgba(235, 93, 17, 0.45);
@@ -36,44 +35,205 @@ header {
     position: fixed;
     top: 0px;
     float: left;
+    background-color: $white;
 
-    a {
-        margin: 20px auto;
-        width: 70px;
+    @media screen and (max-width: 1100px) {
+        box-shadow: none;
+    }
+
+    @media screen and (max-width: 850px) {
+        height: auto;
+        position: fixed absolute;
+        z-index: 9999;
+        top: 0;
+
+    }
+
+    &>a#burger {
         display: block;
+        margin: 10px 0 0 15px;
+        padding: 15px;
+        line-height: 50px;
 
-        #logo {
+        &>img#logo {
             width: 70px;
-            height: 70px;
-            margin-top: 20px;
+
+            @media screen and (max-width: 400px) {
+                width: 50px;
+            }
+
         }
     }
 
-    #main-menu {
+    nav#main-menu {
         display: block;
 
         ul {
             list-style: none;
 
             li {
-                margin: 0 auto;
+                margin: 15px auto;
                 padding: 15px 0;
                 width: 60px;
             }
 
             .menu img {
                 width: 50px;
+
+                @media screen and (max-width: 400px) {
+                    width: 40px;
+            
+                }
             }
         }
+
+        @media screen and (max-width: 850px) {
+            display: none;
+        }
+    }
+
+    nav#main-menu.active {
+        display: block;
+
     }
 }
 
-
-// Section New Post
+// SECTIONS 
 
 main {
     padding-left: 14%;
-    padding-top: 5%;
+
+    @media screen and (max-width: 850px) {
+        padding: 0;
+    }
+
+    &>section#admin-search-bar {
+        margin: 0 50px 30px 30px;
+        display: flex;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        height: 100px;
+        background-color: $white;
+        
+        @media screen and (max-width: 470px) {
+            margin-right: 10px;
+        }
+
+
+        &>form {
+            @media screen and (max-width: 850px) {
+                position: relative;
+                left: 260px;
+            }
+
+            @media screen and (max-width: 750px) {
+                position: relative;
+                left: 210px;
+            }
+
+            @media screen and (max-width: 600px) {
+                position: relative;
+                left: 140px;
+            }
+
+            @media screen and (max-width: 470px) {
+                position: absolute;
+                left: 180px;
+            }
+
+            @media screen and (max-width: 350px) {
+                position: absolute;
+                left: 100px;
+            }
+
+
+            &>input[type="search"] {
+                height: 30px;
+                border: none;
+                border-bottom: 1px solid $red;
+                padding: 10px;
+                font-size: 18px;
+                letter-spacing: 2px;
+                outline: 0;
+
+                @media screen and (max-width: 470px) {
+                    width: 200px;
+                    
+                }
+
+                @media screen and (max-width: 400px) {
+                    width: 200px;
+                }
+            }
+
+            &>button {
+                position: relative;
+                z-index: 9999;
+                top: 5px;
+                left: -35px;
+                width: 30px;
+                border: none;
+                background-color: $white;
+                cursor: pointer;
+
+                &>img {
+                    width: 18px;
+                }
+
+                @media screen and (max-width: 470px) {
+                    position: absolute;
+                    left: 170px;
+                }
+
+                @media screen and (max-width: 400px) {
+                    position: absolute;
+                    left: 150px;
+                }
+            }
+        }
+
+        &>span {
+            font-family: $familyCarter;
+
+            @media screen and (max-width: 850px) {
+                display: none;
+            }
+
+        }
+
+        &>:last-child {
+            color: #e23b3b;
+
+            @media screen and (max-width: 850px) {
+                display: block;
+            }
+
+            @media screen and (max-width: 470px) {
+                position: absolute;
+                top: 75px;
+                left: 320px;
+                z-index: 99999;
+            }
+
+            @media screen and (max-width: 400px) {
+                position: absolute;
+                top: 75px;
+                left: 300px;
+                z-index: 99999;
+            }
+
+            @media screen and (max-width: 350px) {
+                position: absolute;
+                left: 240px;
+            }
+        }
+
+    }
+
+    // CSS NEW POST ET EDIT 
 
     &>section.new-post {
         &>form {
@@ -134,26 +294,30 @@ main {
         }
     }
 
+    // CSS LIST MANGA
 
     &>section#list-manga {
-        width: 50rem;
+        margin-left: 30px;
         padding: 10px;
         border-radius: 5px;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        overflow: hidden;
+
+        @media screen and (max-width: 850px) {
+            margin: 0;
+            padding: 0;
+        }
 
         &>h1 {
             margin: 10px;
             font-family: $familyCarter;
-            position: sticky;
-            top: 0;
-            background-color: $white;
             border-radius: 10px;
             text-align: center;
         }
 
         &>div.list {
-            display: grid;
-            grid-template-columns: 0.5fr 0.2fr 1fr;
+            display: flex;
+            justify-content: space-evenly;
             text-align: center;
             padding: 20px 0;
             border-radius: 5px;
@@ -164,17 +328,18 @@ main {
             }
 
             &>p {
-                font-size: 900;
                 font-family: $familyCarter;
                 color: $orange;
             }
 
             &>div.placement {
                 &>ul#menu-list {
+                    width: inherit;
                     display: flex;
                     justify-content: space-evenly;
 
                     &>li {
+                        padding-left: 20px;
 
                         &>a {
                             &>img {
@@ -187,12 +352,14 @@ main {
         }
     }
 
+    // CSS POP UP DELETE
+
     &>div.modal {
         display: none;
         width: 100%;
         height: 100%;
         position: absolute;
-        z-index: 1;
+        z-index: 9999;
         left: 0;
         top: 0;
         overflow: auto;
@@ -200,15 +367,18 @@ main {
         padding-top: 50px;
 
         &>div.modal-content {
-            width: 500px;
-            margin: 5% auto 15% auto;
+            width: 400px;
+            margin: 15% auto 15% auto;
             background-color: #fefefe;
             text-align: center;
             padding: 16px;
-            padding-bottom: 30px;
+            padding-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
             &>h1 {
-                font-size: 1.3rem;
+                font-size: 1.1rem;
+                font-weight: 100;
                 display: block;
                 margin-bottom: 30px;
                 color: $orange;
@@ -231,30 +401,6 @@ main {
                 text-decoration: none;
 
             }
-        }
-    }
-}
-
-@media screen and (max-width: 990px) {
-    header {
-        box-shadow: none;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    header {
-        box-shadow: none;
-        height: auto;
-
-        nav#main-menu {
-            display: none;
-
-        }
-
-        nav#main-menu.active {
-            display: block;
-
-
         }
     }
 }

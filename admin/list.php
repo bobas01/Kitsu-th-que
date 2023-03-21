@@ -1,10 +1,15 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['id-user']) && $_SESSION['role-user'] === 'admin' ) {
+    header('Location: ./connect.php');
+}
+
 include_once '../connexion.php';
 include_once './header-admin.php';
 ?>
 
-<section id="list-manga">
+<section id="list-manga" class="row-limit-size">
     <h1>Listes des mangas</h1>
     <?php
     $sql = "SELECT `id`,`title`,`volume` FROM `manga` ORDER BY `id` DESC";
@@ -14,7 +19,7 @@ include_once './header-admin.php';
     ?>
         <div class="list">
             <p><?= $manga['title'] ?></p>
-            <p><?= $manga['volume'] ?></p>
+            <p>Tome <?= $manga['volume'] ?></p>
             <div class="placement">
                 <ul id="menu-list">
                     <li><a href="./add-img.php?id=<?= $manga['id'] ?>" class="add-img"><img src="../asset/img/icon/icon_img.svg" alt="Icone ajouter une image" title="Ajouter une image de couverture"></a></li>
