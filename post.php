@@ -25,8 +25,7 @@ require_once './connexion.php';
                     <?php while ($reqFetchArticle = $reqArticle->fetch(PDO::FETCH_ASSOC)) { ?>
 
                         <div id="postIt">
-                            <figure><img src="./asset/img/premiere-page/<?= $reqFetchArticle['cover'] ?>"
-                                    alt="<?= $reqFetchArticle['title'] ?>"></figure>
+                            <figure><img src="./asset/img/premiere-page/<?= $reqFetchArticle['cover'] ?>" alt="<?= $reqFetchArticle['title'] ?>"></figure>
                             <form action="" method="POST">
 
                                 <h2>
@@ -40,38 +39,43 @@ require_once './connexion.php';
                                     <?= $reqFetchArticle['extract'] ?>
                                 </p>
                                 <h3>Date de publication :
-                                   <span> <?= $reqFetchArticle['published_at'] ?></span>
+                                    <span> <?= $reqFetchArticle['published_at'] ?></span>
                                 </h3>
                                 <h3>Auteur :
-                                   <span> <?= " " . $reqFetchArticle['author'] ?></span>
+                                    <span> <?= " " . $reqFetchArticle['author'] ?></span>
                                 </h3>
                                 <h3>Emplacement :
                                     <span><?= " " . $reqFetchArticle['bookshelf'] ?></span>
                                 </h3>
-                              <?php 
-                              if (isset($_POST['submit'])) {
-                                $idManga = $_POST['id_mange'] =$reqFetchArticle['id'];
-                                $idUser = $_POST['id_user'] = $_SESSION['id-user'];
+                                <?php
+                                if (isset($_POST['submit'])) {
+                                    $idManga = $_POST['id_manga'] = $reqFetchArticle['id'];
+                                    $idUser = $_POST['id_user'] = $_SESSION['id-user'];
+                                    $reservation = $db->query("INSERT INTO `loan`( `id_manga`, `id_user`, `loan_date`,`return_date`, `reservation_loan`, `available`) 
+                                VALUES ($idManga, $idUser,NOW(),NULL,DATE_ADD(NOW(), INTERVAL 3 HOUR)  , 1);");
+                                }
+                                $idManga = $reqFetchArticle['id'];
+                                $query = $db->query("SELECT * FROM `loan` WHERE `id_manga` = $idManga AND `available` = 1");
+                                if ($query->rowCount() > 0) {
+                                    echo "Indisponible";
+                                } else {
+                                    ?>
+                                  <form method="POST">
+                                    <input type="hidden" name="id_manga" value=" <?=$reqFetchArticle['id']?> ">
+                                    <input type="submit" name="submit" value="Réserver">
+                               <?php }
+
+                                ?>
                                 
-                                  
-                                                          
-                            
-                                $loan = $db->query("INSERT INTO `loan`( `id_manga`, `id_user`, `loan_date`,`return_date`, `reservation_loan`, `available`) 
-                                VALUES ($idManga, $idUser,NOW(),NULL,DATE_ADD(NOW(), INTERVAL 3 HOUR)  , 1);");                           
-                            } 
-                         
-                              ?>
-                              <input type="submit" name="submit" value="Réserver">
-                            
-                                
+
+
                             </form>
                         </div>
                     <?php } ?>
                 </div>
             </section>
             <section id="connect">
-                <div class="container <?= (isset($_GET['err'])) ? "active" : "" ?> <?= (isset($_GET['erro'])) ? "active" : "" ?>"
-                    id="container">
+                <div class="container <?= (isset($_GET['err'])) ? "active" : "" ?> <?= (isset($_GET['erro'])) ? "active" : "" ?>" id="container">
                     <div class="form-container sign-up-container">
                         <?php if (isset($_GET['erro'])) { ?>
                             <p style="color:red;">Identifiant et/ou adresse mail déjà utilisé(s)</p>
