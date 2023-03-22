@@ -1,23 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+$style= './asset/css/style.css';
+require_once './header.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
-    <link rel="stylesheet" href="./asset/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
-</head>
+require_once './connexion.php';
+?>
 
-<body>
-
-    <main>
+    <main >
         <section id="news">
             <div class="row-limit-size">
                 <article class="titleDiv">
@@ -29,12 +17,14 @@
                     </div>
                     <div id="window-slider">
                         <div id="list-slide">
-                            <div class="slide"><img src="./asset/img/première-page/One-Pieceédition-originale-t.103.jpg" alt="One Piece - édition originale t.103"></div>
-                            <div class="slide"><img src="./asset/img/première-page/OnePiecedition-originalet.102.jpg" alt="One Piece - édition originale t.102.jpg"></div>
-                            <div class="slide"><img src="./asset/img/première-page/OnePieceédition-originale-t.101.jpeg" alt="One Piece - édition originale t.101.jpg"></div>
-                            <div class="slide"><img src="./asset/img/première-page/OnePieceéditionoriginalet.100.jpeg" alt="One Piece - édition originale t.100.jpg"></div>
-                            <div class="slide"><img src="./asset/img/première-page/OnePieceédition-originalet.99.jpg" alt="One Piece - édition originale t.99.jpg"></div>
-                            <div class="slide"><img src="./asset/img/première-page/One-Pieceédition-originale-t.103.jpg" alt="One Piece - édition originale t.103"></div>
+                        <?php
+        
+        $reqArticle = $db->query("SELECT `id`, `title`, `cover`  FROM `manga` ORDER BY `id` DESC LIMIT 5");
+        
+        while ($reqFetchArticle = $reqArticle->fetch(PDO::FETCH_ASSOC)) {
+        ?>
+                            <div class="slide"><a href="./post.php?id=<?= $reqFetchArticle['id']?>"><img src="./asset/img/premiere-page/<?= $reqFetchArticle['cover']?>" alt="<?= $reqFetchArticle['title']?>"></a></div>
+                            <?php } ?>
                         </div>
                     </div>
                     <div id="rightArrow">
@@ -57,7 +47,7 @@
                 <div id=eventran>
                     <div id="imgEvent">
                         <img src="./asset/img/photo/kevin-tran-250.jpg" alt="Kévin Tran">
-                        <img src="./asset/img/première-page/ki&hi.png" alt="KI&HI">
+                        <img src="./asset/img/premiere-page/ki&hi.png" alt="KI&HI">
                     </div>
                     <p>Dédicace de Kevin Tran le 30/03/2023 de 14h à 18h pour son dernier manga KI & HI.</p>
                 </div>
@@ -91,9 +81,16 @@
 
                 <div id="suggestion-container">
                     <p>Envoyer nous  vos suggestions pour les prochains tomes ou nouveau manga qui vous interresserai :</p>
-                    <form action="/submit-suggestion">
-                        
-                        <input type="text" id="suggestion" name="suggestion" placeholder="Vos suggestion">
+                    <form action="#" method="POST">
+                    <?php   if (isset($_POST['suggestion'])) {
+                              $suggestion = addslashes($_POST['suggestion']);
+                              $reqSug=$db->prepare("INSERT INTO `suggestion`( `suggestion`) VALUES (:suggestion)");
+                              $reqSug->bindParam('suggestion', $suggestion,PDO::PARAM_STR );
+                              $reqSug->execute();
+                              header('Location: ./index.php');
+                    }
+                    ?>
+                        <input type="text" id="suggestion" name="suggestion" placeholder="Vos suggestions">
                         <button type="submit">Envoyer</button>
                     </form>
                 </div>
@@ -102,7 +99,9 @@
         </section>
 
     </main>
-   
+   <?php
+   require_once './footer.php';
+   ?>
     <script src="./asset/js/main.js"></script>
 </body>
 

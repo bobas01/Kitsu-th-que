@@ -1,8 +1,6 @@
 <?php
-include_once './connexion.php'
-
+include_once './connexion.php';
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,8 +9,12 @@ include_once './connexion.php'
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
+    <title>kitsuthèque</title>
+    <link rel="stylesheet" href="./asset/css/style.header.css">
     <link rel="stylesheet" href="./asset/css/style-catalogue.css">
+
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
@@ -22,6 +24,23 @@ include_once './connexion.php'
 </head>
 
 <body>
+    <header>
+        <div class="row-limit-size">
+            <div id="icon">
+                <a id="logo" href="./index.php"><img src="./asset/img/icon/Logo.svg" alt="logo"></a>
+                <a id="catalogue" href="./catalogue.php"><img src="./asset/img/icon/icons8-livre-ouvert-50.png" alt="catalogue"></a>
+                <a id="connexion" href="./connect.php"><img src="./asset//img//icon/icons-connexion.png" alt="connexion"></a>
+            </div>
+
+            <div class="search-container">
+                <form action="./result-search.php" method="GET">
+                    <input type="search" placeholder="Rechercher" name="search">
+                    <button type="submit" name='research' value="rechercher"><img src="./asset/img/icon/🦆 icon _search_.svg" alt="icon loupe"></button>
+                </form>
+            </div>
+        </div>
+    </header>
+
 
     <main>
         <section id="check_box">
@@ -42,7 +61,7 @@ include_once './connexion.php'
                         }
                         ?>
 
-            
+
 
                     </fieldset>
                     <fieldset>
@@ -56,7 +75,7 @@ include_once './connexion.php'
                         <?php
                         }
                         ?>
-                     
+
 
 
 
@@ -70,9 +89,9 @@ include_once './connexion.php'
                             <input class="category" type="checkbox" name="category[]" value="<?= $articleCategory['slug'] ?>">
                             <label for="<?= $articleCategory['slug'] ?>"><?= $articleCategory['name'] ?></label>
                         <?php
-                        }?>
-     
-               
+                        } ?>
+
+
                     </fieldset>
 
                     <button id="search" type="submit">Rechercher</button>
@@ -80,7 +99,7 @@ include_once './connexion.php'
             </div>
 
         </section>
-        <section id="catalogue">
+        <section id="catalogues">
             <div class="articles">
                 <?php
 
@@ -89,7 +108,7 @@ include_once './connexion.php'
                 ?>
                     <article>
                         <figure>
-                            <a href="#"><img src="./asset/img/premiere-page/<?= $article['cover'] ?>" alt="premièrepage"></a>
+                            <a href="./post.php?id=<?= $article['id'] ?>"><img src="./asset/img/premiere-page/<?= $article['cover'] ?>" alt="premièrepage"></a>
                         </figure>
                         <div class="article-content">
                             <h2 class="article-title"><?= $article['title'] ?></h2>
@@ -101,6 +120,8 @@ include_once './connexion.php'
 
         </section>
     </main>
+    <?php
+    require_once './footer.php';
+    ?>
     <script src="./asset/js/ajax.js"></script>
 </body>
-

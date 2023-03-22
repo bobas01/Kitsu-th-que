@@ -9,7 +9,11 @@ $black : #0C0C0C;
     margin: 0;
     box-sizing: border-box;
 }
-
+.row-limit-size {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
 header {
     overflow: auto;
     box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgba(235, 93, 17, 1);
@@ -20,6 +24,11 @@ header {
         a {
             img {
                 width: 70px;
+                height: 60px;
+                margin: 10px 0;
+                &:hover{
+                    transform: scale(0.8);
+                }
             }
         }
     }
@@ -28,14 +37,13 @@ header {
         justify-content: center;
     
         form {
-    
-            input[type="text"] {
+            input[type="search"] {
                 padding: 18px 0 10px 10px;
                 border: 2px solid #EB5D11;
-                border-right: 0px;
+                
                 border-radius: 5px;
                 width: calc(100% - 80px);
-                border-radius: 25px 0 0 0;
+                border-radius: 25px 0 25px 0;
                 margin-bottom: 10px;
             }
     
@@ -46,13 +54,16 @@ header {
                 width: 70px;
                 padding: 10px;
                 border-radius: 0 0 25px 0;
-                margin-left: -10px;
+
                 cursor: pointer;
-                border: 2px  solid #EB5D11;
-                border-left: 0px;
+                
     
                 img {
-                    height: 20px;
+                    height: 30px;
+                    width: 30px;
+                    &:hover {
+                        transform: scale(1.2);
+                    }
                 }
             }
         }
@@ -71,6 +82,7 @@ header {
                     font-weight: 900;
                     position: absolute;
                     top: 40%;
+                    left: 120%;
                     font-size: 0.8rem;
                 }
             }

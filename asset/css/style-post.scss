@@ -1,0 +1,134 @@
+$familyTitle: 'Carter One', cursive;
+$falilyTxt: 'Roboto', sans-serif;
+$black : #0C0C0C;
+$orange : #EB5D11;
+$red : #BF1818;
+
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#post {
+    .row-limit-size {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+
+        #titleDiv {
+            width: 100%;
+
+            #title {
+                margin: 0 auto;
+                font-size: 1.9rem;
+                font-family: $familyTitle;
+                position: relative;
+                color: $black;
+                height: 100px;
+                width: 250px;
+
+
+                &::after {
+                    content: url(../img/Nuages-Kitsutech/nuage-souligneur.svg);
+                    position: absolute;
+                    top: 30%;
+                    left: 0;
+
+
+                }
+
+            }
+        }
+
+        #postIt {
+            padding-bottom: 20px;
+            overflow: auto;
+
+            figure {
+                width: 90%;
+                max-width: 350px;
+                margin: 0 auto;
+                padding-bottom: 20px;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            form {
+                width: 90%;
+                margin: 0 auto;
+
+                div {
+                    label {
+                        float: left;
+
+                        max-width: 100px;
+                        padding: 5px 0;
+                        margin: 5px 0;
+                        font-size: 1rem;
+                        font-weight: 700;
+                        color: $orange;
+                        font-family: $falilyTxt;
+                    }
+
+                    input,
+                    textarea {
+                        float: right;
+                        width: 100%;
+
+                        padding: 5px 0;
+                        margin: 5px 0;
+                        border: 2px solid $orange;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    body {
+        background: url(../img/Nuages-Kitsutech/nuage-kitsutech-decor.svg) 0 5% no-repeat, 
+        url(../img/icon/7025581-removebg-preview.png) 100% 35% no-repeat, 
+        url(../img/icon/katana.png) 0 65% no-repeat,
+        url(../img/icon/kitsune9queue.png) 100% 85% no-repeat ;       
+        background-size: 15vw;
+                
+        #post {
+            #postIt {
+                width: 100%;
+                max-width: 800px;
+                display: flex;
+                margin: 0 auto;
+
+                figure {
+                    padding-right: 10px;
+
+                    img {
+                        height: 616px;
+                    }
+
+
+
+                }
+
+                form {
+                    width: 50%;
+
+                    input,
+                    textarea {
+                        width: 90%;
+                        margin: 0 auto;
+                    }
+
+                }
+            }
+
+        }
+
+    }
+}

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['id-user']) && $_SESSION['role-user'] === 'admin' ) {
+if (!isset($_SESSION['id-user']) && $_SESSION['role-user'] === 'admin') {
     header('Location: ./connect.php');
 }
 
@@ -38,4 +38,5 @@ include_once './header-admin.php';
 <script src="../asset/js/header-admin.js"></script>
 <script src="../asset/js/modal-delete.js"></script>
 </body>
+
 </html>

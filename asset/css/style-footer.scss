@@ -1,0 +1,65 @@
+$familyTitle: 'Carter One', cursive;
+$falilyTxt: 'Roboto', sans-serif;
+$black : #0C0C0C;
+
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+.row-limit-size {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+h4,
+.pFooter,
+span {
+    font-size: 1rem;
+    font-family: $falilyTxt;
+    color: #fff;
+}
+
+h4 {
+    font-weight: 900;
+}
+
+p {
+    font-weight: 100;
+}
+
+span {
+    font-weight: 600;
+}
+
+footer {
+    background-color: #BF1818;
+    overflow: auto;
+    margin-top: 50px;
+    clear: both;
+
+    .row-limit-size {
+        #footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+            .info {
+                padding: 10px 0;
+
+                #socialMedia {
+                    a {
+                        padding-right: 10px;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
