@@ -167,10 +167,13 @@ include_once './connexion.php';
     </section>
     </main>
     <?php
-    require_once './footer.php';
-    ?>
-    <script src="./asset/js/ajax.js"></script>
+
+
+   require_once './footer.php';
+   ?>
+   <script src="./asset/js/main.js"></script>
+
     <script src="./asset/js/popup.js"></script>
-</body>
+   </body>
 </html>
 

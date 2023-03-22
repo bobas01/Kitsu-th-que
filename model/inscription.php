@@ -19,7 +19,7 @@ if (!empty($_POST)) {
     $result = $req->fetch(PDO::FETCH_ASSOC);
 
     if ($result['count'] > 0) {
-        header('Location: ../connect.php?erro=1');
+        header('Location: ../index.php?erro=1');
         exit();
     } else {
         $req = $db->prepare("INSERT INTO `user` (`role`, `pseudo`, `password`, `mail`) VALUES (:roles, :pseudo, :pass, :mail)");
