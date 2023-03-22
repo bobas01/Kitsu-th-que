@@ -10,100 +10,258 @@ a {
   text-decoration: none;
 }
 
+li {
+  list-style-type: none;
+}
+
 .row-limit-size {
-  max-width: 1300px;
-  width: 100vh;
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
 }
 
 header {
+  box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgba(235, 93, 17, 0.45);
   width: 140px;
   height: 100vh;
   overflow: auto;
+  position: fixed;
+  top: 0px;
+  float: left;
+  background-color: #fff;
 }
-header a {
-  margin: 20px auto;
+@media screen and (max-width: 1100px) {
+  header {
+    box-shadow: none;
+  }
+}
+@media screen and (max-width: 850px) {
+  header {
+    height: auto;
+    position: fixed absolute;
+    z-index: 9999;
+    top: 0;
+  }
+}
+header > a#burger {
+  display: block;
+  margin: 10px 0 0 15px;
+  padding: 15px;
+  line-height: 50px;
+}
+header > a#burger > img#logo {
   width: 70px;
+}
+@media screen and (max-width: 400px) {
+  header > a#burger > img#logo {
+    width: 50px;
+  }
+}
+header nav#main-menu {
   display: block;
 }
-header a #logo {
-  width: 70px;
-  height: 70px;
-  margin-top: 20px;
-}
-header #main-menu {
-  display: none;
-}
-header #main-menu ul {
+header nav#main-menu ul {
   list-style: none;
 }
-header #main-menu ul li {
-  margin: 0 auto;
-  padding: 20px 0;
-  width: 70px;
+header nav#main-menu ul li {
+  margin: 15px auto;
+  padding: 15px 0;
+  width: 60px;
 }
-header #main-menu ul .menu img {
-  width: 70px;
+header nav#main-menu ul .menu img {
+  width: 50px;
 }
-header #main-menu.active {
+@media screen and (max-width: 400px) {
+  header nav#main-menu ul .menu img {
+    width: 40px;
+  }
+}
+@media screen and (max-width: 850px) {
+  header nav#main-menu {
+    display: none;
+  }
+}
+header nav#main-menu.active {
   display: block;
-  box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgba(235, 93, 17, 0.45);
-  border-right: 2px solid #EB5D11;
 }
 
-main > section {
-  position: absolute;
-  top: 10px;
-  left: 10%;
+main {
+  padding-left: 14%;
+}
+@media screen and (max-width: 850px) {
+  main {
+    padding: 0;
+  }
+}
+main > section#admin-search-bar {
+  margin: 0 50px 30px 30px;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  height: 100px;
+  background-color: #fff;
+}
+@media screen and (max-width: 470px) {
+  main > section#admin-search-bar {
+    margin-right: 10px;
+  }
+}
+@media screen and (max-width: 850px) {
+  main > section#admin-search-bar > form {
+    position: relative;
+    left: 260px;
+  }
+}
+@media screen and (max-width: 750px) {
+  main > section#admin-search-bar > form {
+    position: relative;
+    left: 210px;
+  }
+}
+@media screen and (max-width: 600px) {
+  main > section#admin-search-bar > form {
+    position: relative;
+    left: 140px;
+  }
+}
+@media screen and (max-width: 470px) {
+  main > section#admin-search-bar > form {
+    position: absolute;
+    left: 180px;
+  }
+}
+@media screen and (max-width: 350px) {
+  main > section#admin-search-bar > form {
+    position: absolute;
+    left: 100px;
+  }
+}
+main > section#admin-search-bar > form > input[type=search] {
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid #e23b3b;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  outline: 0;
+}
+@media screen and (max-width: 470px) {
+  main > section#admin-search-bar > form > input[type=search] {
+    width: 200px;
+  }
+}
+@media screen and (max-width: 400px) {
+  main > section#admin-search-bar > form > input[type=search] {
+    width: 200px;
+  }
+}
+main > section#admin-search-bar > form > button {
+  position: relative;
+  z-index: 9999;
+  top: 5px;
+  left: -35px;
+  width: 30px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+main > section#admin-search-bar > form > button > img {
+  width: 18px;
+}
+@media screen and (max-width: 470px) {
+  main > section#admin-search-bar > form > button {
+    position: absolute;
+    left: 170px;
+  }
+}
+@media screen and (max-width: 400px) {
+  main > section#admin-search-bar > form > button {
+    position: absolute;
+    left: 150px;
+  }
+}
+main > section#admin-search-bar > span {
+  font-family: "Carter One", cursive;
+}
+@media screen and (max-width: 850px) {
+  main > section#admin-search-bar > span {
+    display: none;
+  }
+}
+main > section#admin-search-bar > :last-child {
+  color: #e23b3b;
+}
+@media screen and (max-width: 850px) {
+  main > section#admin-search-bar > :last-child {
+    display: block;
+  }
+}
+@media screen and (max-width: 470px) {
+  main > section#admin-search-bar > :last-child {
+    position: absolute;
+    top: 75px;
+    left: 320px;
+    z-index: 99999;
+  }
+}
+@media screen and (max-width: 400px) {
+  main > section#admin-search-bar > :last-child {
+    position: absolute;
+    top: 75px;
+    left: 300px;
+    z-index: 99999;
+  }
+}
+@media screen and (max-width: 350px) {
+  main > section#admin-search-bar > :last-child {
+    position: absolute;
+    left: 240px;
+  }
 }
 main > section.new-post > form {
-  margin: 10% 15%;
-  width: 90%;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 main > section.new-post > form > fieldset.manga-info {
-  margin-right: 30px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-content: center;
+  width: -moz-fit-content;
+  width: fit-content;
   padding: 30px;
   border: 1px solid #e23b3b;
   color: #eb5d11;
   font-family: "Carter One", cursive;
 }
-main > section.new-post > form > fieldset.manga-info div {
-  display: grid;
-  grid-template-columns: 200px 400px;
-}
-main > section.new-post > form > fieldset.manga-info div label {
+main > section.new-post > form > fieldset.manga-info label {
   justify-self: end;
   margin-right: 10px;
 }
-main > section.new-post > form > fieldset.manga-info div > select {
+main > section.new-post > form > fieldset.manga-info > select {
+  margin-bottom: 10px;
   color: #eb5d11;
   font-family: "Carter One", cursive;
-  border: none;
-  border-bottom: 1px solid #e23b3b;
-  width: 90%;
+  border: 1px solid #e23b3b;
+  width: -moz-fit-content;
+  width: fit-content;
 }
-main > section.new-post > form > fieldset.manga-info div > input,
-main > section.new-post > form > fieldset.manga-info div textarea {
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: 1px solid #e23b3b;
-  width: 90%;
+main > section.new-post > form > fieldset.manga-info > input {
+  padding: 2px;
+  border: 1px solid #e23b3b;
+  margin-bottom: 10px;
+  height: 25px;
 }
-main > section.new-post > form > fieldset.manga-info div > textarea {
+main > section.new-post > form > fieldset.manga-info > textarea {
+  padding: 2px;
+  border: 1px solid #e23b3b;
+  width: -moz-max-content;
+  width: max-content;
   resize: none;
 }
-main > section.new-post > form > fieldset.manga-info div > span {
-  font-size: smaller;
-  font-weight: 200;
-  color: rgb(145, 145, 145);
-  text-align: center;
-}
-main > section.new-post > form > fieldset.manga-info > div.category {
-  display: grid;
-  grid-template-columns: 150px 50px;
-}
-main > section.new-post > form > input[type=submit], main > section.new-post > form > input[type=reset] {
+main > section.new-post > form > input[type=submit], main > section.new-post > form > input[type=reset], main > section.new-post > form > a {
   color: #eb5d11;
   font-family: "Carter One", cursive;
   border: 1px solid #e23b3b;
@@ -116,49 +274,56 @@ main > section.new-post > form > input[type=submit], main > section.new-post > f
   font-size: 1.1rem;
 }
 main > section#list-manga {
-  margin: 30px;
+  margin-left: 30px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  overflow: hidden;
+}
+@media screen and (max-width: 850px) {
+  main > section#list-manga {
+    margin: 0;
+    padding: 0;
+  }
 }
 main > section#list-manga > h1 {
   margin: 10px;
   font-family: "Carter One", cursive;
+  border-radius: 10px;
+  text-align: center;
 }
 main > section#list-manga > div.list {
-  display: grid;
-  grid-template-columns: 100px 50px 650px;
+  display: flex;
+  justify-content: space-evenly;
   text-align: center;
   padding: 20px 0;
   border-radius: 5px;
 }
 main > section#list-manga > div.list:hover {
-  box-shadow: #eb5d11 0px 1px 2px 0px;
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 main > section#list-manga > div.list > p {
-  margin-right: 15px;
   font-family: "Carter One", cursive;
   color: #eb5d11;
 }
-main > section#list-manga > div.list > div {
-  margin-left: 20px;
+main > section#list-manga > div.list > div.placement > ul#menu-list {
+  width: inherit;
+  display: flex;
+  justify-content: space-evenly;
 }
-main > section#list-manga > div.list > div > div.placement {
-  width: 90%;
-  align-self: flex-end;
+main > section#list-manga > div.list > div.placement > ul#menu-list > li {
+  padding-left: 20px;
 }
-main > section#list-manga > div.list > div > div.placement > span {
-  margin: 10px;
-}
-main > section#list-manga > div.list > div > div.placement > a {
-  font-family: "Carter One", cursive;
-}
-main > section#list-manga > div.list > div > div.placement > a:hover {
-  text-decoration: underline;
+main > section#list-manga > div.list > div.placement > ul#menu-list > li > a > img {
+  width: 25px;
 }
 main > div.modal {
   display: none;
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: 1;
+  z-index: 9999;
   left: 0;
   top: 0;
   overflow: auto;
@@ -166,15 +331,18 @@ main > div.modal {
   padding-top: 50px;
 }
 main > div.modal > div.modal-content {
-  width: 500px;
-  margin: 5% auto 15% auto;
+  width: 400px;
+  margin: 15% auto 15% auto;
   background-color: #fefefe;
   text-align: center;
   padding: 16px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 main > div.modal > div.modal-content > h1 {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
+  font-weight: 100;
   display: block;
   margin-bottom: 30px;
   color: #eb5d11;
@@ -193,17 +361,4 @@ main > div.modal > div.modal-content > a.btn:hover {
   background-color: #eb5d11;
   border-radius: 10px 0 10px 0;
   text-decoration: none;
-}
-
-@media screen and (min-width: 800px) {
-  header {
-    border: none;
-    box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgba(235, 93, 17, 0.45);
-    border-right: 2px solid #EB5D11;
-  }
-  header nav#main-menu {
-    display: block;
-    box-shadow: unset;
-    border-right: unset;
-  }
 }/*# sourceMappingURL=style-header-admin.css.map */

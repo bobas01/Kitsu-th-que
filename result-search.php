@@ -13,8 +13,6 @@ include_once './connexion.php';
     <link rel="stylesheet" href="./asset/css/style-header.css">
     
     <link rel="stylesheet" href="./asset/css/style-catalogue.css">
-
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
@@ -67,7 +65,7 @@ include_once './connexion.php';
                     <input type="search" placeholder="Rechercher" name="search">
                     <button type="submit" name='research' value="rechercher"><img src="./asset/img/icon/🦆 icon _search_.svg" alt="icon loupe"></button>
                 </form>
-   
+
             </div>
         </div>
     </header>

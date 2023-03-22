@@ -14,7 +14,7 @@ include_once './connexion.php';
     <title>kitsuthèque</title>
     <link rel="stylesheet" href="./asset/css/style-header.css">
     <link rel="stylesheet" href="./asset/css/style-catalogue.css">
-    
+
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,10 +39,10 @@ include_once './connexion.php';
                 <a id="connexion" href="#"><img src="./asset/img/icon/renard-noir.svg" alt="connexion"></a>
                 <?php } ?>
             </div>
-          
+
             <div class="search-container">
                 <form action="./result-search.php" method="GET">
-                    <input type="search" placeholder="Rechercher" name="search" >
+                    <input type="search" placeholder="Rechercher" name="search">
                     <button type="submit" name='research' value="rechercher"><img src="./asset/img/icon/🦆 icon _search_.svg" alt="icon loupe"></button>
                 </form>
             </div>
@@ -69,7 +69,7 @@ include_once './connexion.php';
                         }
                         ?>
 
-            
+
 
                     </fieldset>
                     <fieldset>
@@ -83,7 +83,7 @@ include_once './connexion.php';
                         <?php
                         }
                         ?>
-                     
+
 
 
 
@@ -97,9 +97,9 @@ include_once './connexion.php';
                             <input class="category" type="checkbox" name="category[]" value="<?= $articleCategory['slug'] ?>">
                             <label for="<?= $articleCategory['slug'] ?>"><?= $articleCategory['name'] ?></label>
                         <?php
-                        }?>
-     
-               
+                        } ?>
+
+
                     </fieldset>
 
                     <button id="search" type="submit">Rechercher</button>
@@ -116,7 +116,7 @@ include_once './connexion.php';
                 ?>
                     <article>
                         <figure>
-                            <a href="./post.php?id=<?= $article['id']?>"><img src="./asset/img/premiere-page/<?= $article['cover'] ?>" alt="premièrepage"></a>
+                            <a href="./post.php?id=<?= $article['id'] ?>"><img src="./asset/img/premiere-page/<?= $article['cover'] ?>" alt="premièrepage"></a>
                         </figure>
                         <div class="article-content">
                             <h2 class="article-title"><?= $article['title'] ?></h2>
@@ -167,9 +167,12 @@ include_once './connexion.php';
     </section>
     </main>
     <?php
+
+
    require_once './footer.php';
    ?>
    <script src="./asset/js/main.js"></script>
+
     <script src="./asset/js/popup.js"></script>
    </body>
 </html>

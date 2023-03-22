@@ -7,6 +7,7 @@
 }
 
 /*list checkbox*/
+/*list checkbox*/
 .row-limit-size {
   max-width: 1200px;
   width: 100%;
@@ -111,7 +112,91 @@
   text-align: center;
   font-family: "Roboto", sans-serif;
 }
-#catalogues .articles article:hover {
+#catalogues .articles article .article-content h2 .title,
+#catalogues .articles article .article-content p .title {
+  margin: 0 auto;
+  font-size: 1.9rem;
+  font-family: "Carter One", cursive;
+  position: relative;
+  color: #0C0C0C;
+  height: 100px;
+  width: 160px;
+}
+#catalogues .articles article .article-content:hover {
+  transform: scale(1.1);
+}
+#catalogues .articles article fieldset {
+  border: 2px solid #EB5D11;
+}
+#catalogues .articles article fieldset legend {
+  font-family: "Carter One", cursive;
+  font-size: 1.2rem;
+  color: #BF1818;
+}
+#catalogues .articles article fieldset label {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #0C0C0C;
+  padding-right: 10px;
+}
+#catalogues .articles article #search {
+  width: 150px;
+  padding: 10px 0;
+  color: #0C0C0C;
+  font-family: "Carter One", cursive;
+  background-color: #fff;
+  border: 2px solid #EB5D11;
+  border-radius: 25px 0 25px 0;
+  margin-top: 20px;
+}
+@media screen and (min-width: 800px) {
+  #catalogues .articles fieldset {
+    width: 80%;
+    margin: 0 auto;
+  }
+  #catalogues .articles #search {
+    margin-left: 10%;
+  }
+}
+#catalogues .articles #catalogue {
+  padding: 30px;
+}
+#catalogues .articles #catalogue .articles {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+}
+#catalogues .articles #catalogue .articles article {
+  width: 20%;
+  min-width: 150px;
+  margin-left: 8px;
+  margin-right: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  transition: all 0.5s ease-in;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  background-color: white;
+}
+#catalogues .articles #catalogue .articles article figure img {
+  width: 100%;
+  height: 100%;
+}
+#catalogues .articles #catalogue .articles article .article-content {
+  padding: 12px;
+  background-color: #fff;
+}
+#catalogues .articles #catalogue .articles article .article-content h2,
+#catalogues .articles #catalogue .articles article .article-content p {
+  height: 40px;
+  padding: 10px 0;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+#catalogues .articles #catalogue .articles article:hover {
   transform: scale(1.1);
 }
 
