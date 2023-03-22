@@ -62,7 +62,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 ?>
 <section class="new-post">
     <form action="#" method="POST">
-        <fieldset class="manga-info">
+        <fieldset class="manga-info edit">
             <?php
             $req = $db->prepare("SELECT `id`, `id_genre`, `id_public`, `title`, `volume`, `editor`, `published_at`, `author`,`extract`,`bookshelf` FROM `manga` WHERE `id`  = :id");
             $req->bindParam('id', $id, PDO::PARAM_INT);

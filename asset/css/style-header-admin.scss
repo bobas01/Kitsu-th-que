@@ -58,7 +58,7 @@ header {
         &>img#logo {
             width: 70px;
 
-            @media screen and (max-width: 400px) {
+            @media screen and (max-width: 520px) {
                 width: 50px;
             }
 
@@ -82,7 +82,7 @@ header {
 
                 @media screen and (max-width: 400px) {
                     width: 40px;
-            
+
                 }
             }
         }
@@ -98,7 +98,7 @@ header {
     }
 }
 
-// SECTIONS 
+// CSS SECTIONS 
 
 main {
     padding-left: 14%;
@@ -106,6 +106,8 @@ main {
     @media screen and (max-width: 850px) {
         padding: 0;
     }
+
+    // CSS BARRE DE RECHERCHE ADMIN
 
     &>section#admin-search-bar {
         margin: 0 50px 30px 30px;
@@ -117,7 +119,7 @@ main {
         padding-bottom: 30px;
         height: 100px;
         background-color: $white;
-        
+
         @media screen and (max-width: 470px) {
             margin-right: 10px;
         }
@@ -139,14 +141,10 @@ main {
                 left: 140px;
             }
 
-            @media screen and (max-width: 470px) {
+            @media screen and (max-width: 520px) {
                 position: absolute;
-                left: 180px;
-            }
-
-            @media screen and (max-width: 350px) {
-                position: absolute;
-                left: 100px;
+                top: 70px;
+                left: 120px;
             }
 
 
@@ -161,11 +159,20 @@ main {
 
                 @media screen and (max-width: 470px) {
                     width: 200px;
-                    
+
                 }
 
                 @media screen and (max-width: 400px) {
-                    width: 200px;
+                    width: 150px;
+                }
+
+
+            }
+
+            &>input::placeholder {
+                @media screen and (max-width: 400px) {
+                    font-size: medium;
+
                 }
             }
 
@@ -190,13 +197,14 @@ main {
 
                 @media screen and (max-width: 400px) {
                     position: absolute;
-                    left: 150px;
+                    left: 120px;
                 }
             }
         }
 
         &>span {
             font-family: $familyCarter;
+            color: $orange;
 
             @media screen and (max-width: 850px) {
                 display: none;
@@ -211,26 +219,63 @@ main {
                 display: block;
             }
 
-            @media screen and (max-width: 470px) {
+            @media screen and (max-width: 520px) {
                 position: absolute;
-                top: 75px;
-                left: 320px;
+                top: 20px;
+                left: 120px;
                 z-index: 99999;
-            }
-
-            @media screen and (max-width: 400px) {
-                position: absolute;
-                top: 75px;
-                left: 300px;
-                z-index: 99999;
-            }
-
-            @media screen and (max-width: 350px) {
-                position: absolute;
-                left: 240px;
             }
         }
+    }
 
+    // CSS POP UP ADD CATEGORIES
+
+    &>section#list-category {
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        background-color: rgba(217, 221, 231, 0.5);
+        padding-top: 50px;
+
+        &>form#form-category {
+            position: relative;
+            margin: 50px auto;
+
+            &>fieldset.manga-info {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                justify-content: center;
+            }
+        }
+        
+    }
+
+    &>section#upload-img {
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        background-color: rgba(217, 221, 231, 0.5);
+        padding-top: 50px;
+
+        &>form#form-img {
+            position: relative;
+            margin: 50px auto;
+
+            &>fieldset.manga-info {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                justify-content: center;
+            }
+        }
+        
     }
 
     // CSS NEW POST ET EDIT 
@@ -248,6 +293,12 @@ main {
                 border: 1px solid $red;
                 color: $orange;
                 font-family: $familyCarter;
+                background-color: $white;
+
+                @media screen and (max-width: 520px) {
+                    display: flex;
+                    flex-direction: column;
+                }
 
                 label {
                     justify-self: end;
@@ -301,7 +352,6 @@ main {
         padding: 10px;
         border-radius: 5px;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        overflow: hidden;
 
         @media screen and (max-width: 850px) {
             margin: 0;
@@ -362,9 +412,9 @@ main {
         z-index: 9999;
         left: 0;
         top: 0;
-        overflow: auto;
         background-color: rgb(71, 78, 93, 50%);
         padding-top: 50px;
+
 
         &>div.modal-content {
             width: 400px;
@@ -375,6 +425,11 @@ main {
             padding-bottom: 20px;
             border-radius: 5px;
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+            @media screen and (max-width: 350px) {
+                position: absolute;
+                left: 120px;
+            }
 
             &>h1 {
                 font-size: 1.1rem;
@@ -403,4 +458,7 @@ main {
             }
         }
     }
+
+
+
 }

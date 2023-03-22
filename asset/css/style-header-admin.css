@@ -52,7 +52,7 @@ header > a#burger {
 header > a#burger > img#logo {
   width: 70px;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 520px) {
   header > a#burger > img#logo {
     width: 50px;
   }
@@ -127,16 +127,11 @@ main > section#admin-search-bar {
     left: 140px;
   }
 }
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 520px) {
   main > section#admin-search-bar > form {
     position: absolute;
-    left: 180px;
-  }
-}
-@media screen and (max-width: 350px) {
-  main > section#admin-search-bar > form {
-    position: absolute;
-    left: 100px;
+    top: 70px;
+    left: 120px;
   }
 }
 main > section#admin-search-bar > form > input[type=search] {
@@ -155,7 +150,15 @@ main > section#admin-search-bar > form > input[type=search] {
 }
 @media screen and (max-width: 400px) {
   main > section#admin-search-bar > form > input[type=search] {
-    width: 200px;
+    width: 150px;
+  }
+}
+@media screen and (max-width: 400px) {
+  main > section#admin-search-bar > form > input::-moz-placeholder {
+    font-size: medium;
+  }
+  main > section#admin-search-bar > form > input::placeholder {
+    font-size: medium;
   }
 }
 main > section#admin-search-bar > form > button {
@@ -180,11 +183,12 @@ main > section#admin-search-bar > form > button > img {
 @media screen and (max-width: 400px) {
   main > section#admin-search-bar > form > button {
     position: absolute;
-    left: 150px;
+    left: 120px;
   }
 }
 main > section#admin-search-bar > span {
   font-family: "Carter One", cursive;
+  color: #eb5d11;
 }
 @media screen and (max-width: 850px) {
   main > section#admin-search-bar > span {
@@ -199,27 +203,53 @@ main > section#admin-search-bar > :last-child {
     display: block;
   }
 }
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 520px) {
   main > section#admin-search-bar > :last-child {
     position: absolute;
-    top: 75px;
-    left: 320px;
+    top: 20px;
+    left: 120px;
     z-index: 99999;
   }
 }
-@media screen and (max-width: 400px) {
-  main > section#admin-search-bar > :last-child {
-    position: absolute;
-    top: 75px;
-    left: 300px;
-    z-index: 99999;
-  }
+main > section#list-category {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  background-color: rgba(217, 221, 231, 0.5);
+  padding-top: 50px;
 }
-@media screen and (max-width: 350px) {
-  main > section#admin-search-bar > :last-child {
-    position: absolute;
-    left: 240px;
-  }
+main > section#list-category > form#form-category {
+  position: relative;
+  margin: 50px auto;
+}
+main > section#list-category > form#form-category > fieldset.manga-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+}
+main > section#upload-img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  background-color: rgba(217, 221, 231, 0.5);
+  padding-top: 50px;
+}
+main > section#upload-img > form#form-img {
+  position: relative;
+  margin: 50px auto;
+}
+main > section#upload-img > form#form-img > fieldset.manga-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
 }
 main > section.new-post > form {
   width: -moz-fit-content;
@@ -235,6 +265,13 @@ main > section.new-post > form > fieldset.manga-info {
   border: 1px solid #e23b3b;
   color: #eb5d11;
   font-family: "Carter One", cursive;
+  background-color: #fff;
+}
+@media screen and (max-width: 520px) {
+  main > section.new-post > form > fieldset.manga-info {
+    display: flex;
+    flex-direction: column;
+  }
 }
 main > section.new-post > form > fieldset.manga-info label {
   justify-self: end;
@@ -278,7 +315,6 @@ main > section#list-manga {
   padding: 10px;
   border-radius: 5px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  overflow: hidden;
 }
 @media screen and (max-width: 850px) {
   main > section#list-manga {
@@ -326,7 +362,6 @@ main > div.modal {
   z-index: 9999;
   left: 0;
   top: 0;
-  overflow: auto;
   background-color: rgba(71, 78, 93, 0.5);
   padding-top: 50px;
 }
@@ -339,6 +374,12 @@ main > div.modal > div.modal-content {
   padding-bottom: 20px;
   border-radius: 5px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+@media screen and (max-width: 350px) {
+  main > div.modal > div.modal-content {
+    position: absolute;
+    left: 120px;
+  }
 }
 main > div.modal > div.modal-content > h1 {
   font-size: 1.1rem;

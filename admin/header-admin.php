@@ -30,7 +30,7 @@ require_once '../connexion.php';
                 <li class="menu"><a href="./list.php"><img src="../asset/img/icon/🦆 icon _view list_.svg" alt="liste"></a></li>
                 <li class="menu"><a href="./new-post.php"><img src="../asset/img/icon/🦆 icon _plus_.svg" alt="Ajouté un manga"></a></li>
                 <li class="menu"><a href=""><img src="../asset/img/icon/icon_users.svg" alt="gestion des utilisateurs"></a></li>
-                <li class="menu"><a href="../deconnexion.php"><img src="../asset/img/icon/icone_deconnexion.svg" alt="Se déconnecter"></a></li>
+                <li class="menu"><a href="../model/deconnexion.php"><img src="../asset/img/icon/icone_deconnexion.svg" alt="Se déconnecter"></a></li>
             </ul>
         </nav>
     </header>
@@ -69,7 +69,7 @@ require_once '../connexion.php';
                     <img src="../asset/img/icon/icon_search_bar.svg" alt="icon loupe">
                 </button>
             </form>
-            <span>Manga disponible:
+            <span>Disponible:
                 <?php
                 $sql = "SELECT COUNT(`id`) AS `total` FROM `manga`";
                 $req = $db->query($sql);
@@ -77,7 +77,7 @@ require_once '../connexion.php';
                 ?>
                 <?= $result['total'] ?>
             </span>
-            <span>Manga réservé :
+            <span>Réservé :
                 <?php
                 $sql2 = "SELECT COUNT(`available`) AS `reserved` FROM `loan`";
                 $req2 = $db->query($sql2);
