@@ -15,7 +15,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 
-<body>
 
 
 <footer>
@@ -56,6 +55,9 @@
     </div>
     
 </footer>
+</body>
+
+</html>
 
 <script src="./asset/js/main.js"></script>
 <script src="./asset/js/ajax.js"></script>

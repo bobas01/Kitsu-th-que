@@ -1,5 +1,7 @@
-<?php
-$style = './asset/css/style.css';
+<?php 
+session_start();
+
+$style= './asset/css/style.css';
 require_once './header.php';
 
 require_once './connexion.php';

@@ -14,6 +14,7 @@
 
 .titleDiv {
   width: 100%;
+  padding: 100px 0;
 }
 
 .title {
@@ -108,9 +109,6 @@
 #event {
   overflow: auto;
 }
-#event .titleDiv {
-  padding: 50px 0 30px 0;
-}
 #event .titleDiv .title {
   width: 260px;
 }
@@ -154,9 +152,6 @@
 #place {
   overflow: auto;
 }
-#place .titleDiv {
-  padding: 50px 0 30px 0;
-}
 #place .titleDiv .title {
   width: 320px;
 }
@@ -172,7 +167,7 @@
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   color: #0C0C0C;
-  padding-bottom: 20px;
+  padding-bottom: 100px;
 }
 #place #placeKitsu #imgPlace {
   width: 90%;
@@ -231,9 +226,6 @@
 /*suggestion phone*/
 #suggestion {
   overflow: auto;
-}
-#suggestion .titleDiv {
-  padding: 50px 0 30px 0;
 }
 #suggestion .titleDiv .title {
   width: 250px;
@@ -477,7 +469,7 @@ a {
 }
 @media screen and (min-width: 800px) {
   body {
-    background: url(../img/Nuages-Kitsutech/nuage-kitsutech-decor.svg) 0 2% no-repeat, url(../img/icon/7025581-removebg-preview.png) 100% 45% no-repeat, url(../img/icon/katana.png) 0 75% no-repeat, url(../img/icon/kitsune9queue.png) 100% 93% no-repeat;
+    background: url(../img/Nuages-Kitsutech/nuage-kitsutech-decor.svg) 0 10% no-repeat, url(../img/icon/7025581-removebg-preview.png) 100% 35% no-repeat, url(../img/icon/katana.png) 0 65% no-repeat, url(../img/icon/kitsune9queue.png) 100% 89% no-repeat;
     background-size: 20vw;
   }
 }/*# sourceMappingURL=style.css.map */
