@@ -1,6 +1,8 @@
 $familyTitle: 'Carter One', cursive;
 $falilyTxt: 'Roboto', sans-serif;
 $black : #0C0C0C;
+$orange: #EB5D11;
+$red: #BF1818;
 
 *,
 ::before,
@@ -23,6 +25,7 @@ header {
         justify-content: space-between;
         position: relative;
         a {
+            
             img {
                 width: 70px;
                 height: 60px;
@@ -31,6 +34,11 @@ header {
                     transform: scale(0.8);
                 }
             }
+        }
+        #connected {
+            text-align: center;
+            color: $black;
+            font-family: $familyTitle;
         }
     }
     .search-container {
@@ -43,25 +51,28 @@ header {
                 padding: 18px 0 10px 10px;
                 border: 2px solid #EB5D11;
                 
-                border-radius: 5px;
+               
                 width: calc(100% - 80px);
-                border-radius: 25px 0 25px 0;
+                border-radius: 25px 0  0 0 ;
+                border-right: none;
                 margin-bottom: 10px;
             }
     
             button[type="submit"] {
                 background-color: white;
                 color: white;
-                border: none;
+                border: 2px solid $orange;
+                border-left: none;
                 width: 70px;
-                padding: 10px;
+                padding: 6px 10px 10px 10px;
+                margin-left: -10px;
                 border-radius: 0 0 25px 0;
                 
                 cursor: pointer;
                 
     
                 img {
-                    height: 30px;
+                    height: 25px;
                     width: 30px;
                     
                     &:hover {
@@ -101,7 +112,7 @@ header {
      form {
         position: absolute;
         left: 30%;
-        top:10%;
+        top:8%;
      }
     } 
  }

@@ -42,26 +42,18 @@ include_once './connexion.php';
                 $research = trim($research);
                 $research = strip_tags($research);
                 
-            } // $select_research = $db->prepare("SELECT `manga`.`volume`,`manga`.`extract`,`manga`.`title`,`manga`.`cover`  FROM `manga` 
-                // INNER JOIN `genre`
-                // ON `manga`.`id_genre`=`genre`.`id`
-                // INNER JOIN `public`
-                // ON `manga`.`id_public`=`public`.`id`
-                // INNER JOIN `manga_category`
-                // ON `manga_category`.`id_manga`= `manga`.`id`
-                // INNER JOIN `category`
-                // ON `manga_category`.`id_category`= `category`.`id`               
-                // WHERE CONCAT(`manga`.`volume`,`manga`.`author`,`manga`.`extract`,`manga`.`title`,`category`.`slug`, `genre`.`slug`, `public`.`slug`) LIKE :search");
+            } 
                 if (!empty($research)) {
                     $research = strtolower($research);
                     $search_term = '%' . $research . '%';
-                    $select_research = $db->prepare("SELECT `manga`.`id`,`manga`.`volume`,`manga`.`extract`,`manga`.`title`,`manga`.`cover` FROM `manga` 
+                    $select_research = $db->prepare("SELECT DISTINCT `manga`.`id`,`manga`.`volume`,`manga`.`extract`,`manga`.`title`,`manga`.`cover` FROM `manga` 
                     INNER JOIN `genre` ON `manga`.`id_genre`=`genre`.`id`
                     INNER JOIN `public` ON `manga`.`id_public`=`public`.`id`
-                               
-                    WHERE `manga`.`volume` LIKE :search_term OR `manga`.`author` LIKE :search_term OR `manga`.`extract` LIKE :search_term
-                    OR `manga`.`title` LIKE  :search_term OR  `genre`.`slug` LIKE  :search_term OR
-                    `public`.`slug` LIKE   :search_term ORDER BY id ;");
+                    INNER JOIN `manga_category` ON `manga_category`.`id_manga`= `manga`.`id`
+                    INNER JOIN `category` ON `manga_category`.`id_category`= `category`.`id`             
+                    WHERE `manga`.`volume` LIKE :search_term OR `manga`.`author` LIKE :search_term OR `manga`.`title` LIKE  :search_term 
+                    OR  `genre`.`slug` LIKE  :search_term OR`category`.`slug` LIKE  :search_term OR `public`.`slug` LIKE   :search_term 
+                    ORDER BY id ;");
                     $select_research->bindValue(':search_term', $search_term, PDO::PARAM_STR);
                     
                     $select_research->execute();
@@ -79,23 +71,17 @@ include_once './connexion.php';
             </div>
         </div>
     </header>
-
-
     <main>
         <section id="check_box">
             <div class="row-limit-size">
                 <article class="titleDiv">
-                    <h1 class="title"> &nbsp&nbsp &nbspRésultat  </h1>
-                </article>
-                
-              
+                    <h1 class="title"> &nbsp&nbsp&nbsp Résultat</h1>
+                </article>        
             </div>
-
         </section>
         <section id="catalogues">
             <div class="articles">
-                <?php
-               
+                <?php               
      while($research_find = $select_research->fetch()) { ?>
         <article>
             <figure>

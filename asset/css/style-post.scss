@@ -20,6 +20,7 @@ $red : #BF1818;
 
         #titleDiv {
             width: 100%;
+            padding: 30px 0 30px 15px;
 
             #title {
                 margin: 0 auto;
@@ -61,30 +62,32 @@ $red : #BF1818;
             form {
                 width: 90%;
                 margin: 0 auto;
-
-                div {
-                    label {
-                        float: left;
-
-                        max-width: 100px;
-                        padding: 5px 0;
-                        margin: 5px 0;
-                        font-size: 1rem;
-                        font-weight: 700;
-                        color: $orange;
-                        font-family: $falilyTxt;
-                    }
-
-                    input,
-                    textarea {
-                        float: right;
-                        width: 100%;
-
-                        padding: 5px 0;
-                        margin: 5px 0;
-                        border: 2px solid $orange;
-                    }
+                h2, h3 {
+                    font-family: $familyTitle;                    
+                    color: $black;
+                    padding-bottom: 20px;
+                } 
+                h2{
+                    font-size: 1.5rem;
                 }
+                #extract {
+                    padding: unset;
+                } 
+                h3 {
+                    font-size:  1rem;
+                    span {
+                        font-family: $falilyTxt;
+                        font-size: 1rem;
+                        color: $black;
+                    }
+                } 
+                p {
+                      font-family: $falilyTxt;
+                        font-size: 1rem;
+                        color: $black;
+                        padding-bottom: 20px;
+                        text-align: justify;
+                }             
             }
         }
     }
@@ -92,10 +95,9 @@ $red : #BF1818;
 
 @media screen and (min-width: 800px) {
     body {
-        background: url(../img/Nuages-Kitsutech/nuage-kitsutech-decor.svg) 0 5% no-repeat, 
+        background: url(../img/Nuages-Kitsutech/nuage-kitsutech-decor.svg) 0 10% no-repeat, 
         url(../img/icon/7025581-removebg-preview.png) 100% 35% no-repeat, 
-        url(../img/icon/katana.png) 0 65% no-repeat,
-        url(../img/icon/kitsune9queue.png) 100% 85% no-repeat ;       
+        url(../img/icon/katana.png) 0 65% no-repeat;           
         background-size: 15vw;
                 
         #post {

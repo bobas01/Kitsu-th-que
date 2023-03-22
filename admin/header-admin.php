@@ -14,7 +14,7 @@
 
 <body>
     <header>
-        <a id=burger href="./dashboard-admin.php">
+        <a id=burger href="#">
             <img id="logo" src="../asset/img/icon/Logo.svg" alt="kitsuthèque-logo">
         </a>
         <nav id="main-menu">
