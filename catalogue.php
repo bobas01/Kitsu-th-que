@@ -31,12 +31,12 @@ include_once './connexion.php';
             <div id="icon">
                 <a id="logo" href="./index.php"><img src="./asset/img/icon/Logo.svg" alt="logo"></a>
                 <a id="catalogue" href="./catalogue.php"><img src="./asset/img/icon/icons8-livre-ouvert-50.png" alt="catalogue"></a>
-                <?php 
-                    if(isset($_SESSION['connected']) && $_SESSION['connected'] == true){ 
-                    ?>
-                <a id="connected" href="./model/deconnexion.php"><img src="./asset/img/icon/renard-orange-deconnexion.svg" alt="connected" title=" <?=$_SESSION['pseudo'];  ?> vous êtes connecter"></a>
+                <?php
+                if (isset($_SESSION['connected']) && $_SESSION['connected'] == true) {
+                ?>
+                    <a id="connected" href="./model/deconnexion.php"><img src="./asset/img/icon/renard-orange-deconnexion.svg" alt="connected" title=" <?= $_SESSION['pseudo'];  ?> vous êtes connecter"></a>
                 <?php } else { ?>
-                <a id="connexion" href="#"><img src="./asset/img/icon/renard-noir.svg" alt="connexion"></a>
+                    <a id="connexion" href="#"><img src="./asset/img/icon/renard-noir.svg" alt="connexion"></a>
                 <?php } ?>
             </div>
 
@@ -108,7 +108,7 @@ include_once './connexion.php';
 
         </section>
         <section id="catalogues">
-            <div class="articles">
+            <div id="articles">
                 <?php
 
                 $req = $db->query("SELECT `id`,`cover`,`title`,`volume` FROM `manga` ORDER BY `id` DESC;");
@@ -128,52 +128,52 @@ include_once './connexion.php';
 
         </section>
         <section id="connect">
-        <div class="container <?= (isset($_GET['err'])) ? "active" : "" ?> <?= (isset($_GET['erro'])) ? "active" : "" ?>" id="container">
-            <div class="form-container sign-up-container">
-                <?php if (isset($_GET['erro'])) { ?>
-                    <p style="color:red;">Identifiant et/ou adresse mail déjà utilisé(s)</p>
-                <?php } ?>
-                <form action="./model/inscription.php" class="formConnect" method="POST">
-                    <h1 class="titleFormConnect">Créer un compte</h1>
-                    <input type="text" name='pseudo' placeholder="pdeudo" />
-                    <input type="email" name="mail" placeholder="Email" />
-                    <input type="password" name="password" placeholder="Password" />
-                    <button class="btnFormConnect">S'inscrire</button>
-                </form>
-            </div>
-            <div class="form-container sign-in-container">
-                <?php if (isset($_GET['err'])) { ?>
-                    <p style="color:red;">Identifiant et/ou mot de passe incorrecte</p>
-                <?php } ?>
-                <form action="./model/auth.php" class="formConnect" method="POST">
-                    <h1 class="titleFormConnect">Se connecter</h1>
-                    <input type="text" name="pseudo" placeholder="Pseudo" />
-                    <input type="password" name="password" placeholder="Mot de passe" />
-                    <a href="#">Mot de passe oublié?</a>
-                    <button class="btnFormConnect">Connexion</button>
-                </form>
-            </div>
-            <div class="overlay-container">
-                <div class="overlay">
-                    <div class="overlay-panel overlay-left">
-                        <button class="ghost btnFormConnect" id="signIn">Se connecter</button>
-                    </div>
-                    <div class="overlay-panel overlay-right">
-                        <button class="ghost btnFormConnect" id="signUp">S'inscrire</button>
+            <div class="container <?= (isset($_GET['err'])) ? "active" : "" ?> <?= (isset($_GET['erro'])) ? "active" : "" ?>" id="container">
+                <div class="form-container sign-up-container">
+                    <?php if (isset($_GET['erro'])) { ?>
+                        <p style="color:red;">Identifiant et/ou adresse mail déjà utilisé(s)</p>
+                    <?php } ?>
+                    <form action="./model/inscription.php" class="formConnect" method="POST">
+                        <h1 class="titleFormConnect">Créer un compte</h1>
+                        <input type="text" name='pseudo' placeholder="pdeudo" />
+                        <input type="email" name="mail" placeholder="Email" />
+                        <input type="password" name="password" placeholder="Password" />
+                        <button class="btnFormConnect">S'inscrire</button>
+                    </form>
+                </div>
+                <div class="form-container sign-in-container">
+                    <?php if (isset($_GET['err'])) { ?>
+                        <p style="color:red;">Identifiant et/ou mot de passe incorrecte</p>
+                    <?php } ?>
+                    <form action="./model/auth.php" class="formConnect" method="POST">
+                        <h1 class="titleFormConnect">Se connecter</h1>
+                        <input type="text" name="pseudo" placeholder="Pseudo" />
+                        <input type="password" name="password" placeholder="Mot de passe" />
+                        <a href="#">Mot de passe oublié?</a>
+                        <button class="btnFormConnect">Connexion</button>
+                    </form>
+                </div>
+                <div class="overlay-container">
+                    <div class="overlay">
+                        <div class="overlay-panel overlay-left">
+                            <button class="ghost btnFormConnect" id="signIn">Se connecter</button>
+                        </div>
+                        <div class="overlay-panel overlay-right">
+                            <button class="ghost btnFormConnect" id="signUp">S'inscrire</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     </main>
     <?php
 
 
-   require_once './footer.php';
-   ?>
-   <script src="./asset/js/main.js"></script>
+    require_once './footer.php';
+    ?>
 
+    <script src="./asset/js/ajax.js"></script>
     <script src="./asset/js/popup.js"></script>
-   </body>
-</html>
+</body>
 
+</html>

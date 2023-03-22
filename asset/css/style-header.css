@@ -42,18 +42,16 @@ header .search-container form input[type=search] {
   padding: 18px 0 10px 10px;
   border: 2px solid #EB5D11;
   width: calc(100% - 80px);
-  border-radius: 25px 0 0 0;
-  border-right: none;
+  border-radius: 25px 0;
   margin-bottom: 10px;
+  outline-style: none;
 }
 header .search-container form button[type=submit] {
   background-color: white;
   color: white;
-  border: 2px solid #EB5D11;
-  border-left: none;
+  border: none;
   width: 70px;
   padding: 6px 10px 10px 10px;
-  margin-left: -10px;
   border-radius: 0 0 25px 0;
   cursor: pointer;
 }

@@ -1,6 +1,7 @@
 $orange : #eb5d11;
 $red : #e23b3b;
 $white : #fff;
+$black : #0C0C0C;
 $familyCarter: 'Carter One', cursive;
 $familyRoboto: 'Roboto';
 
@@ -82,7 +83,7 @@ header {
 
                 @media screen and (max-width: 400px) {
                     width: 40px;
-            
+
                 }
             }
         }
@@ -117,7 +118,7 @@ main {
         padding-bottom: 30px;
         height: 100px;
         background-color: $white;
-        
+
         @media screen and (max-width: 470px) {
             margin-right: 10px;
         }
@@ -161,7 +162,7 @@ main {
 
                 @media screen and (max-width: 470px) {
                     width: 200px;
-                    
+
                 }
 
                 @media screen and (max-width: 400px) {
@@ -403,4 +404,170 @@ main {
             }
         }
     }
+}
+
+/*phone reservation*/
+
+#listReserv {
+    .row-limit-size {
+        h1 {
+            text-align: center;
+            font-family: $familyCarter;
+            padding: 50px 0;
+            color: $black;
+        }
+
+        .listReserv {
+            width: 200px;
+            margin: 0 auto;
+
+            ul {
+                padding-bottom: 10px;
+
+                li {
+                    font-family: $familyRoboto;
+                    color: $black;
+                    font-weight: 600;
+
+                    span {
+                        font-weight: 100;
+                    }
+                }
+            }
+
+            form {
+                padding-bottom: 30px;
+
+                input {
+                    padding: 10px;
+                    color: $black;
+                    background-color: #fff;
+                    border: 2px solid $orange;
+                    font-family: $familyRoboto;
+                    border-radius: 25px 0;
+                    font-weight: 600;
+
+                    &:hover {
+                        background-color: $orange;
+                        color: #fff;
+                    }
+                }
+
+            }
+
+        }
+    }
+}
+
+@media screen and (min-width: 500px) {
+    #listReserv .row-limit-size {
+
+        .listReserv {
+
+            width: 300px;
+        }
+    }
+
+}
+
+/*list reserve desktop*/
+
+@media screen and (min-width: 800px) {
+    #listReserv .row-limit-size {
+        h1 {
+            text-align: left;
+        }
+
+        .listReserv {
+            margin: unset;
+
+        }
+    }
+
+}
+
+/*loan phone*/
+#loan {
+    .row-limit-size {
+        form {
+            fieldset {
+                border: 2px solid $orange;
+                width: 90%;
+                max-width: 500px;
+                margin: 0 auto;
+
+                legend {
+                    color: $black;
+                    font-family: $familyCarter;
+                }
+
+                div {
+                    padding: 10px;
+
+                    label {
+                        font-family: $familyRoboto;
+                        font-weight: 500;
+                    }
+
+                    input[type="number"] {
+                        border: 1px solid $orange;
+                    }
+                }
+
+            }
+
+            input[type="submit"],
+            input[type="reset"] {
+                padding: 10px;
+                color: $black;
+                background-color: #fff;
+                border: 2px solid $orange;
+                font-family: $familyRoboto;
+                border-radius: 25px 0;
+                font-weight: 600;
+                margin: 10px 10px 50px 20px;
+                padding: 10px 20px;
+
+                &:hover {
+                    background-color: $orange;
+                    color: #fff;
+                }
+            }
+        }
+        h1 {
+            text-align: center;
+            font-family: $familyCarter;
+            padding: 50px 0;
+            color: $black;
+        }
+
+
+        #listLoan {
+
+            width: 200px;
+            margin: 0 auto;
+
+            ul {
+               margin-bottom: 10px;
+
+                border: 1px solid $orange;
+
+                li {
+                    font-family: $familyRoboto;
+                    color: $black;
+                    font-weight: 600;
+
+                    span {
+                        font-weight: 100;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+/*tablet loan*/
+#loan {
+    
 }

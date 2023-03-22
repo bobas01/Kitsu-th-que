@@ -1,5 +1,5 @@
 <?php 
-session_start();
+
 
 $style= './asset/css/style.css';
 require_once './header.php';
@@ -21,7 +21,7 @@ require_once './connexion.php';
                     <div id="list-slide">
                         <?php
 
-                        $reqArticle = $db->query("SELECT `id`, `title`, `cover`  FROM `manga` ORDER BY `id` DESC LIMIT 5");
+                        $reqArticle = $db->query("SELECT `id`, `title`, `cover`  FROM `manga` ORDER BY `id` DESC LIMIT 6");
 
                         while ($reqFetchArticle = $reqArticle->fetch(PDO::FETCH_ASSOC)) {
                             ?>
