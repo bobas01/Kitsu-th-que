@@ -477,4 +477,27 @@ main > div.modal > div.modal-content > a.btn:hover {
   font-weight: 100;
 }
 
-/*tablet loan*//*# sourceMappingURL=style-header-admin.css.map */
+/*tablet loan*/
+@media screen and (min-width: 500px) {
+  #loan .row-limit-size form fieldset {
+    margin: unset;
+  }
+  #loan .row-limit-size h1 {
+    text-align: left;
+  }
+  #loan .row-limit-size #listLoan {
+    width: 500px;
+    margin: unset;
+  }
+  #loan .row-limit-size #listLoan ul {
+    margin-bottom: 10px;
+  }
+  #loan .row-limit-size #listLoan ul li {
+    font-family: "Roboto";
+    color: #0C0C0C;
+    font-weight: 600;
+  }
+  #loan .row-limit-size #listLoan ul li span {
+    font-weight: 100;
+  }
+}/*# sourceMappingURL=style-header-admin.css.map */

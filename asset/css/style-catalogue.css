@@ -401,7 +401,7 @@ a {
 }
 @media screen and (min-width: 800px) {
   body {
-    background: url(../img/Nuages-Kitsutech/nuage-kitsutech-decor.svg) 0 110px no-repeat, url(../img/icon/7025581-removebg-preview.png) 100% 35% no-repeat, url(../img/icon/katana.png) 0 65% no-repeat;
+    background: url(../img/Nuages-Kitsutech/nuage-kitsutech-decor.svg) 0 150px no-repeat, url(../img/icon/7025581-removebg-preview.png) 100% 35% no-repeat, url(../img/icon/katana.png) 0 65% no-repeat;
     background-size: 20vw;
   }
   body main {

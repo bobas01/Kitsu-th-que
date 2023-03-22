@@ -55,9 +55,10 @@ include('./header-admin.php');
            
             <?php
             $listLoan = $db->query("SELECT `manga`.`title`, `manga`.`volume`, `loan`.`return_date`, `user`.`pseudo` FROM `loan` 
-                       INNER JOIN `manga`ON `manga`.`id`=`loan`.`id` 
+                       INNER JOIN `manga`ON `manga`.`id`=`loan`.`id_manga` 
                        INNER JOIN `user` ON `user`.`id`=`loan`.`id_user`
-                       ORDER BY `loan`.`return_date`  ;");
+                       WHERE `loan`.`return_date`> CURRENT_DATE 
+                       ORDER BY `loan`.`return_date` DESC LIMIT 30 ;");
             while ($listLoanFetch = $listLoan->fetch(PDO::FETCH_ASSOC)) {;
 
             ?>
