@@ -72,6 +72,11 @@ form.addEventListener('submit', function (e) {
   })
     .then((response) => response.json())
     .then((datas) => {
+
+
+
+
+
       // effacer les résultats précédents
       catalogue.innerHTML = '';
       // créer un élément HTML pour chaque article et les ajouter à la page
