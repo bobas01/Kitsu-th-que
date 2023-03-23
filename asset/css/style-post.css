@@ -73,10 +73,25 @@
   padding-bottom: 20px;
   text-align: justify;
 }
+#post .row-limit-size #postIt form input[type=submit] {
+  padding: 15px;
+  border: 2px solid #EB5D11;
+  border-radius: 25px 0;
+  background-color: #fff;
+  color: #0C0C0C;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
+#post .row-limit-size #postIt form input[type=submit]:hover {
+  background-color: #EB5D11;
+  color: #fff;
+}
 
 @media screen and (min-width: 800px) {
   body {
-    background: url(../img/Nuages-Kitsutech/nuage-kitsutech-decor.svg) 0 10% no-repeat, url(../img/icon/7025581-removebg-preview.png) 100% 35% no-repeat, url(../img/icon/katana.png) 0 65% no-repeat;
+    background: url(../img/Nuages-Kitsutech/nuage-kitsutech-decor.svg) 0 15% no-repeat, url(../img/icon/7025581-removebg-preview.png) 100% 45% no-repeat, url(../img/icon/katana.png) 0 71% no-repeat;
     background-size: 15vw;
   }
   body #post #postIt {
@@ -94,7 +109,6 @@
   body #post #postIt form {
     width: 50%;
   }
-  body #post #postIt form input,
   body #post #postIt form textarea {
     width: 90%;
     margin: 0 auto;

@@ -1,4 +1,5 @@
 <?php
+
 require_once '../connexion.php';
 ?>
 
@@ -29,8 +30,8 @@ require_once '../connexion.php';
                 <li class="menu"><a href="../catalogue.php"><img src="../asset/img/icon/icons8-livre-ouvert-50.png" alt="catalogue"></a></li>
                 <li class="menu"><a href="./list.php"><img src="../asset/img/icon/🦆 icon _view list_.svg" alt="liste"></a></li>
                 <li class="menu"><a href="./new-post.php"><img src="../asset/img/icon/🦆 icon _plus_.svg" alt="Ajouté un manga"></a></li>
-                <li class="menu"><a href=""><img src="../asset/img/icon/icon_users.svg" alt="gestion des utilisateurs"></a></li>
-                <li class="menu"><a href="../deconnexion.php"><img src="../asset/img/icon/icone_deconnexion.svg" alt="Se déconnecter"></a></li>
+                <li class="menu"><a href="./loan.php"><img src="../asset/img/icon/icons8-emprunter-un-livre-64 1.svg" alt="gestion des utilisateurs"></a></li>
+                <li class="menu"><a href="../model/deconnexion.php"><img src="../asset/img/icon/icone_deconnexion.svg" alt="Se déconnecter"></a></li>
             </ul>
         </nav>
     </header>
@@ -87,7 +88,8 @@ require_once '../connexion.php';
             </span>
             <span>
                 <?php
-                $sql3 = "SELECT `pseudo` FROM `user`";
+                $id= $_SESSION['id-user'] ;
+                $sql3 = "SELECT `pseudo` FROM `user`WHERE `id`=$id";
                 $req3 = $db->query($sql3);
                 $pseudo = $req3->fetch(PDO::FETCH_ASSOC)
                 ?>

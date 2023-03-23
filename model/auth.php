@@ -2,7 +2,6 @@
 session_start();
 require_once '../connexion.php';
 
-
 $pseudo = $_POST['pseudo'];
 $pass = $_POST['password'];
 
@@ -15,12 +14,12 @@ $req->execute();
 if ($req->rowCount() == 1) {
     $user = $req->fetch(PDO::FETCH_ASSOC);
 
-    if ($user['password'] === $pass) {
+    if (password_verify($pass, $user['password'])) {
         $_SESSION['id-user'] = $user['id'];
         $_SESSION['role-user'] = $user['role'];
         $_SESSION['pseudo'] = $user['pseudo'];        
         if ($user['role'] === 'admin') {
-            header('Location: ../admin/dashboard-admin.php');
+            header('Location: ../admin/list.php');
             $_SESSION['connected'] = true;
         } else {
             header('Location: ../index.php');

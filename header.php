@@ -27,7 +27,10 @@ session_start();
                 <a id="logo" href="./index.php"><img src="./asset/img/icon/Logo.svg" alt="logo"></a>
                 <a id="catalogue" href="./catalogue.php"><img src="./asset/img/icon/icons8-livre-ouvert-50.png" alt="catalogue"></a>
                 <?php if(isset($_SESSION['connected']) && $_SESSION['connected'] == true){ ?>
-                <a id="connected" href="./model/deconnexion.php"><img src="./asset/img/icon/renard-orange-deconnexion.svg" alt="connected" title="<?=$_SESSION['pseudo'];  ?>  déconnexion">  </a>
+                <a id="connected" href="./model/deconnexion.php">
+                    <img src="./asset/img/icon/renard-orange-deconnexion.svg" alt="connected" title="<?=$_SESSION['pseudo'];  ?>  déconnexion"></a>
+                    <a  id="pseudo" href="./dashboard-reader.php"><?=$_SESSION['pseudo']?></a>
+               
                 <?php } else { ?>
                 <a id="connexion" href="#"><img src="./asset/img/icon/renard-noir.svg" alt="connexion"></a>
                 <?php } ?>

@@ -11,85 +11,108 @@ $red: #BF1818;
     margin: 0;
     box-sizing: border-box;
 }
+
 .row-limit-size {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
 }
+
 header {
     overflow: auto;
-    
     box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgba(235, 93, 17, 1);
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 9999;
+
     #icon {
         display: flex;
         justify-content: space-between;
         position: relative;
+
         a {
-            
+
             img {
                 width: 70px;
                 height: 60px;
                 margin: 10px 0;
-                &:hover{
+
+                &:hover {
                     transform: scale(0.8);
                 }
             }
         }
-        #connected {
-            text-align: center;
-            color: $black;
+
+        #connected img {
+            height: 40px;
+        }
+
+        #pseudo {
+            position: absolute;
+            top: 50px;
+            right: 18px;
             font-family: $familyTitle;
+            color: #BF1818;
+            font-size: 1rem;
+            text-decoration: none;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+
         }
     }
+
     .search-container {
         display: flex;
         justify-content: center;
-    
+
         form {
+            width: 332px;
+            margin: 0 auto;
+
             input[type="search"] {
                 padding: 18px 0 10px 10px;
                 border: 2px solid #EB5D11;
-                
-               
                 width: calc(100% - 80px);
-                border-radius: 25px 0  0 0 ;
-                border-right: none;
+                border-radius: 25px 0;
                 margin-bottom: 10px;
+                outline-style: none;
             }
-    
+
             button[type="submit"] {
                 background-color: white;
                 color: white;
-                border: 2px solid $orange;
-                border-left: none;
+                border: none;
                 width: 70px;
                 padding: 6px 10px 10px 10px;
-                margin-left: -10px;
                 border-radius: 0 0 25px 0;
-
                 cursor: pointer;
-                
-    
+
                 img {
                     height: 25px;
                     width: 30px;
-                    
+
                     &:hover {
                         transform: scale(1.2);
                     }
                 }
             }
         }
-    
+
     }
 }
+
 @media screen and (min-width: 600px) {
     header {
         padding: 30px 0;
-     #icon {
+
+        #icon {
             #logo {
                 position: relative;
-                &::after{
+
+                &::after {
                     content: "KITSUTHEQUE";
                     font-family: $familyTitle;
                     color: $black;
@@ -100,32 +123,78 @@ header {
                     font-size: 0.8rem;
                 }
             }
-              #catalogue {
-             position: absolute ;
-             left: 75%;
-             
-         }
-                
-        
-     }
-     form {
-        position: absolute;
-        left: 30%;
-        top:8%;
-     }
-    } 
- }
 
- @media screen and (min-width: 1000px)  {
-    header {
-        #icon a img {
-            width: 80px;
-            height: 80px;
+            #catalogue {
+                position: absolute;
+                left: 75%;
+
+            }
+
+
         }
-        form {
-            left: 30%;
-            width: 30%;
+
+        .search-container {
+            form {
+                position: absolute;
+                top: 38%;
+                width: 250px;
+            }
+
         }
     }
- }
- 
+}
+
+
+@media screen and (min-width: 800px) {
+    header {
+        padding: 30px 0;
+
+
+
+        .search-container {
+            form {
+                left: 25%;
+                width: 350px;
+            }
+
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    header {
+        #icon {
+            a img {
+                width: 80px;
+                height: 80px;
+            }
+            #connected img {
+                height: 60px;
+            }
+            #pseudo {
+                top: 80px;
+                right: 20px;
+                font-size: 1.2rem;
+            }
+
+        }
+
+        .search-container {
+            form {
+
+                width: 500px;
+            }
+
+        }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    body {
+        background: url(../img/Nuages-Kitsutech/nuage-kitsutech-decor.svg) 0 15% no-repeat,
+            url(../img/icon/7025581-removebg-preview.png) 100% 45% no-repeat,
+            url(../img/icon/katana.png) 0 71% no-repeat,
+            url(../img/icon/kitsune9queue.png) 100% 86.5% no-repeat;
+        background-size: 20vw;
+    }
+}

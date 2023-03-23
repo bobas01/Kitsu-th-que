@@ -361,4 +361,165 @@ main > div.modal > div.modal-content > a.btn:hover {
   background-color: #eb5d11;
   border-radius: 10px 0 10px 0;
   text-decoration: none;
+}
+
+/*phone reservation*/
+#listReserv .row-limit-size h1 {
+  text-align: center;
+  font-family: "Carter One", cursive;
+  padding: 50px 0;
+  color: #0C0C0C;
+}
+#listReserv .row-limit-size .listReserv {
+  width: 200px;
+  margin: 0 auto;
+}
+#listReserv .row-limit-size .listReserv ul {
+  padding-bottom: 10px;
+}
+#listReserv .row-limit-size .listReserv ul li {
+  font-family: "Roboto";
+  color: #0C0C0C;
+  font-weight: 600;
+}
+#listReserv .row-limit-size .listReserv ul li span {
+  font-weight: 100;
+}
+#listReserv .row-limit-size .listReserv form {
+  padding-bottom: 30px;
+}
+#listReserv .row-limit-size .listReserv form input {
+  padding: 10px;
+  color: #0C0C0C;
+  background-color: #fff;
+  border: 2px solid #eb5d11;
+  font-family: "Carter One", cursive;
+  border-radius: 25px 0;
+  cursor: pointer;
+}
+#listReserv .row-limit-size .listReserv form input:hover {
+  background-color: #eb5d11;
+  color: #fff;
+}
+
+@media screen and (min-width: 500px) {
+  #listReserv .row-limit-size .listReserv {
+    width: 300px;
+  }
+}
+/*list reserve desktop*/
+@media screen and (min-width: 800px) {
+  #listReserv .row-limit-size h1 {
+    text-align: left;
+  }
+  #listReserv .row-limit-size .listReserv {
+    margin: unset;
+  }
+}
+/*loan phone*/
+#loan .row-limit-size form fieldset {
+  border: 2px solid #eb5d11;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+#loan .row-limit-size form fieldset legend {
+  color: #0C0C0C;
+  font-family: "Carter One", cursive;
+  font-family: 1rem;
+}
+#loan .row-limit-size form fieldset div {
+  padding: 10px;
+}
+#loan .row-limit-size form fieldset div label {
+  font-family: "Roboto";
+  font-weight: 500;
+}
+#loan .row-limit-size form fieldset div input[type=number] {
+  border: 1px solid #eb5d11;
+}
+#loan .row-limit-size form input[type=submit],
+#loan .row-limit-size form input[type=reset] {
+  padding: 10px;
+  color: #0C0C0C;
+  background-color: #fff;
+  border: 2px solid #eb5d11;
+  font-family: "Carter One", cursive;
+  font-size: 1rem;
+  border-radius: 25px 0;
+  margin: 10px 10px 50px 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+#loan .row-limit-size form input[type=submit]:hover,
+#loan .row-limit-size form input[type=reset]:hover {
+  background-color: #eb5d11;
+  color: #fff;
+}
+#loan .row-limit-size a {
+  font-family: "Carter One", cursive;
+  font-size: 1rem;
+  color: #0C0C0C;
+  display: block;
+  width: 165px;
+  margin: 0 auto;
+}
+#loan .row-limit-size a:hover {
+  color: #eb5d11;
+}
+#loan .row-limit-size h1 {
+  text-align: center;
+  font-family: "Carter One", cursive;
+  padding: 50px 0;
+  color: #0C0C0C;
+}
+#loan .row-limit-size #listLoan {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+#loan .row-limit-size #listLoan ul {
+  margin-bottom: 10px;
+  border: 2px solid #eb5d11;
+  padding: 20px 20px 10px;
+}
+#loan .row-limit-size #listLoan ul li {
+  font-family: "Roboto";
+  color: #0C0C0C;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+#loan .row-limit-size #listLoan ul li span {
+  font-weight: 100;
+}
+
+/*tablet loan*/
+@media screen and (min-width: 500px) {
+  #loan .row-limit-size form fieldset {
+    margin: unset;
+    margin-left: 20px;
+  }
+  #loan .row-limit-size h1 {
+    text-align: left;
+    margin-left: 20px;
+  }
+  #loan .row-limit-size a {
+    margin: unset;
+    margin-left: 20px;
+  }
+  #loan .row-limit-size #listLoan {
+    margin: unset;
+    margin-left: 20px;
+  }
+  #loan .row-limit-size #listLoan ul {
+    margin-bottom: 10px;
+  }
+  #loan .row-limit-size #listLoan ul li {
+    font-family: "Roboto";
+    color: #0C0C0C;
+    font-weight: 600;
+  }
+  #loan .row-limit-size #listLoan ul li span {
+    font-weight: 100;
+  }
 }/*# sourceMappingURL=style-header-admin.css.map */
