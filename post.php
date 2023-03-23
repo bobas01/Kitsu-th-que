@@ -57,10 +57,10 @@ require_once './connexion.php';
                                 $idManga = $reqFetchArticle['id'];
                                 $query = $db->query("SELECT * FROM `loan` WHERE `id_manga` = $idManga AND `available` = 1");
                                 if ($query->rowCount() > 0) {
-                                    echo "<h3>Indisponible</h3>";
+                                    echo "Indisponible";
                                 } else {
                                     ?>
-                                  
+                                  <form method="POST">
                                     <input type="hidden" name="id_manga" value=" <?=$reqFetchArticle['id']?> ">
                                     <input type="submit" name="submit" value="Réserver">
                                <?php }

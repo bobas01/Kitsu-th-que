@@ -26,6 +26,9 @@ include_once './connexion.php';
 </head>
 
 <body>
+    <div id="btnUp">
+        <img src="./asset/img/icon/arrow-up-solid.svg" alt="up">
+    </div>
     <header>
         <div class="row-limit-size">
             <div id="icon">
@@ -34,7 +37,9 @@ include_once './connexion.php';
                 <?php
                 if (isset($_SESSION['connected']) && $_SESSION['connected'] == true) {
                 ?>
-                    <a id="connected" href="./model/deconnexion.php"><img src="./asset/img/icon/renard-orange-deconnexion.svg" alt="connected" title=" <?= $_SESSION['pseudo'];  ?> vous êtes connecter"></a>
+                    <a id="connected" href="./model/deconnexion.php">
+                        <img src="./asset/img/icon/renard-orange-deconnexion.svg" alt="connected" title=" <?= $_SESSION['pseudo'];  ?> vous êtes connecter"></a>
+                    <a id="pseudo" href="./dashboard-reader.php"><?= $_SESSION['pseudo'] ?></a>
                 <?php } else { ?>
                     <a id="connexion" href="#"><img src="./asset/img/icon/renard-noir.svg" alt="connexion"></a>
                 <?php } ?>
@@ -174,6 +179,7 @@ include_once './connexion.php';
 
     <script src="./asset/js/ajax.js"></script>
     <script src="./asset/js/popup.js"></script>
+    <script src="./asset/js/scrollUp.js"></script>
 </body>
 
 </html>

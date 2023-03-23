@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION['id-user']) || $_SESSION['role-user'] !== 'admin') {
+    header('Location: ../index.php');
+    exit();
+}
 include_once('../connexion.php');
 include('./header-admin.php');
 ?>
@@ -13,7 +17,7 @@ include('./header-admin.php');
             $idUser = $_POST['id_user'];
 
 
-            $loan = $db->query("INSERT INTO `loan` (`id_manga`, `id_user`, `loan_date`, `return_date`, `available`, `reservation_loan`) 
+            $loan = $db->query("INSERT INTO `loan` ( `id_manga`, `id_user`, `loan_date`, `return_date`, `available`, `reservation_loan`) 
         VALUES ($idManga, $idUser, NOW(), DATE_ADD(NOW(), INTERVAL 4 WEEK), 1, NULL);");
         }
         ?>
@@ -50,11 +54,12 @@ include('./header-admin.php');
             <input type="submit" name="submit" value="Post">
             <input type="reset" name="reset" value="Reset">
         </form>
-         <h1>Liste des emprunts</h1>
+        <a href="./reservation.php">Liste des reservations</a>
+        <h1>Liste des emprunts</h1>
         <div id="listLoan">
-           
+
             <?php
-            $listLoan = $db->query("SELECT `manga`.`title`, `manga`.`volume`, `loan`.`return_date`, `user`.`pseudo` FROM `loan` 
+            $listLoan = $db->query("SELECT `manga`.`title`, `manga`.`volume`,`loan`.`id_manga`, `loan`.`return_date`, `user`.`pseudo` FROM `loan` 
                        INNER JOIN `manga`ON `manga`.`id`=`loan`.`id_manga` 
                        INNER JOIN `user` ON `user`.`id`=`loan`.`id_user`
                        WHERE `loan`.`return_date`> CURRENT_DATE 
@@ -65,9 +70,10 @@ include('./header-admin.php');
 
                 <ul>
                     <li><?= $listLoanFetch["title"] ?></li>
-                    <li>Tome: <?=" ". $listLoanFetch["volume"] ?></li>
-                    <li>Date de retour: <span><?=" ". $listLoanFetch["return_date"] ?></span></li>
-                    <li>Identifiant client:<span><?=" ". $listLoanFetch["pseudo"] ?></span></li>
+                    <li>Tome: <?= " " . $listLoanFetch["volume"] ?></li>
+                    <li>Identifiant manga: <span><?= " " . $listLoanFetch["id_manga"] ?></span></li>
+                    <li>Date de retour: <span><?= " " . $listLoanFetch["return_date"] ?></span></li>
+                    <li>Identifiant client:<span><?= " " . $listLoanFetch["pseudo"] ?></span></li>
 
                 </ul>
             <?php } ?>

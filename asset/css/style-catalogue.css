@@ -7,7 +7,6 @@
 }
 
 /*list checkbox*/
-/*list checkbox*/
 .row-limit-size {
   max-width: 1200px;
   width: 100%;
@@ -60,7 +59,8 @@
   cursor: pointer;
 }
 .row-limit-size #search:hover {
-  transform: scale(1.1);
+  background-color: #EB5D11;
+  color: #fff;
 }
 
 @media screen and (min-width: 800px) {
@@ -403,6 +403,22 @@ a {
   body {
     background: url(../img/Nuages-Kitsutech/nuage-kitsutech-decor.svg) 0 150px no-repeat, url(../img/icon/7025581-removebg-preview.png) 100% 35% no-repeat, url(../img/icon/katana.png) 0 65% no-repeat;
     background-size: 20vw;
+  }
+  body #btnUp {
+    height: 50px;
+    width: 50px;
+    background: #EB5D11;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+  }
+  body #btnUp img {
+    width: 25px;
   }
   body main {
     background: url(../img/icon/kitsune9queue.png) 100% 100% no-repeat;

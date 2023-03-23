@@ -82,6 +82,7 @@
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 1rem;
+  cursor: pointer;
 }
 #post .row-limit-size #postIt form input[type=submit]:hover {
   background-color: #EB5D11;

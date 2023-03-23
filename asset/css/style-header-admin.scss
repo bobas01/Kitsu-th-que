@@ -443,9 +443,10 @@ main {
                     color: $black;
                     background-color: #fff;
                     border: 2px solid $orange;
-                    font-family: $familyRoboto;
+                    font-family: $familyCarter;
                     border-radius: 25px 0;
-                    font-weight: 600;
+                    cursor: pointer;
+                   
 
                     &:hover {
                         background-color: $orange;
@@ -499,6 +500,7 @@ main {
                 legend {
                     color: $black;
                     font-family: $familyCarter;
+                    font-family: 1rem;
                 }
 
                 div {
@@ -522,16 +524,29 @@ main {
                 color: $black;
                 background-color: #fff;
                 border: 2px solid $orange;
-                font-family: $familyRoboto;
-                border-radius: 25px 0;
-                font-weight: 600;
+                font-family: $familyCarter;
+                font-size: 1rem;
+                border-radius: 25px 0;                
                 margin: 10px 10px 50px 20px;
                 padding: 10px 20px;
+                cursor: pointer;
 
                 &:hover {
                     background-color: $orange;
                     color: #fff;
                 }
+            }
+        }
+        a {
+            font-family: $familyCarter;
+            font-size: 1rem;
+            color: $black;
+            display: block;
+            width: 165px;
+            margin: 0 auto;
+            
+            &:hover{
+                color: $orange;
             }
         }
 
@@ -545,18 +560,20 @@ main {
 
         #listLoan {
 
-            width: 200px;
+            width: 90%;
+            max-width: 500px;
             margin: 0 auto;
 
             ul {
                 margin-bottom: 10px;
-
-                border: 1px solid $orange;
+                border: 2px solid $orange;
+                padding: 20px 20px 10px;
 
                 li {
                     font-family: $familyRoboto;
                     color: $black;
                     font-weight: 600;
+                    padding-bottom: 10px;
 
                     span {
                         font-weight: 100;
@@ -573,16 +590,22 @@ main {
     #loan .row-limit-size {
         form fieldset {
             margin: unset;
+            margin-left: 20px;
 
         }
 
         h1 {
             text-align: left;
+            margin-left: 20px;
+        }
+        a{
+            margin: unset;
+            margin-left: 20px;
         }
         #listLoan {
 
-            width: 500px;
             margin: unset;
+            margin-left: 20px;
 
             ul {
                 margin-bottom: 10px;
