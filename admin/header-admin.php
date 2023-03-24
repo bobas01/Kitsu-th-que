@@ -71,12 +71,14 @@ require_once '../connexion.php';
                 </button>
             </form>
             <span>Manga disponible:
-                <?php
-                $sql = "SELECT COUNT(`id`) AS `total` FROM `manga`";
-                $req = $db->query($sql);
-                $result = $req->fetch(PDO::FETCH_ASSOC)
+                <?php          
+                $req = $db->query("SELECT COUNT(`id`) AS `nbManga` FROM `manga`");
+                $resultManga = $req->fetch(PDO::FETCH_ASSOC);           
+                
+                $req2 = $db->query("SELECT COUNT(`id`) AS `nbLoan` FROM `loan`");
+                $resultLoan = $req2->fetch(PDO::FETCH_ASSOC);
                 ?>
-                <?= $result['total'] ?>
+                <?=$total= $resultManga['nbManga']-$resultLoan['nbLoan'] ?>
             </span>
             <span>Manga réservé :
                 <?php

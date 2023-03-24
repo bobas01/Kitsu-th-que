@@ -73,11 +73,8 @@ form.addEventListener('submit', function (e) {
   })
     .then((response) => response.json())
     .then((datas) => {
-
-
-
-
-
+     
+       console.log(datas)
       // effacer les résultats précédents
       articles.innerHTML = '';
       // créer un élément HTML pour chaque article et les ajouter à la page

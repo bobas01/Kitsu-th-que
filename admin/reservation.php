@@ -19,7 +19,7 @@ include('./header-admin.php');
                             $validation->execute();}
             $reserv = $db->query('SELECT `id`,`id_manga`,`loan_date`,`id_user`,`return_date`,`reservation_loan` FROM `loan` ORDER BY `id` DESC LIMIT 30;');
 
-            $delete = $db->prepare("DELETE FROM `loan` WHERE `id`=:id;");
+            
            
             while ($confirmReserv = $reserv->fetch(PDO::FETCH_ASSOC)) {
                 $dateReserv = strtotime($confirmReserv['reservation_loan']);
@@ -56,6 +56,7 @@ include('./header-admin.php');
                 <?php
                 } else if ($dateReserv < $dateActual && $dateReserv > 0) {
                     $id = $confirmReserv['id'];
+                    $delete = $db->prepare("DELETE FROM `loan` WHERE `id`=:id;");
                     $delete->bindParam(':id', $id);
                     $delete->execute();
                 }
