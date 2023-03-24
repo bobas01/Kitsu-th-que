@@ -306,7 +306,7 @@ a {
 #container.active {
   display: block;
   position: absolute;
-  top: 15%;
+  top: 30%;
   left: 50%;
   transform: translateX(-50%);
 }
