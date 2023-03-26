@@ -7,7 +7,6 @@
 }
 
 /*list checkbox*/
-/*list checkbox*/
 .row-limit-size {
   max-width: 1200px;
   width: 100%;
@@ -60,7 +59,8 @@
   cursor: pointer;
 }
 .row-limit-size #search:hover {
-  transform: scale(1.1);
+  background-color: #EB5D11;
+  color: #fff;
 }
 
 @media screen and (min-width: 800px) {
@@ -72,17 +72,18 @@
     margin-left: 10%;
   }
 }
+/*sectioncatalogue phone*/
 #catalogues {
   padding: 30px;
 }
-#catalogues .articles {
+#catalogues #articles {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   width: 80%;
   margin: 0 auto;
 }
-#catalogues .articles article {
+#catalogues #articles article {
   width: 20%;
   min-width: 150px;
   margin-left: 8px;
@@ -94,53 +95,51 @@
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   background-color: white;
 }
-#catalogues .articles article figure img {
-  width: 100%;
-  height: 100%;
+#catalogues #articles article:hover {
+  transform: scale(1.05);
 }
-#catalogues .articles article .article-content {
+#catalogues #articles article figure img {
+  width: 100%;
+  height: 250px;
+}
+#catalogues #articles article .article-content {
   padding: 12px;
   background-color: #fff;
 }
-#catalogues .articles article .article-content > .artcle-tome {
+#catalogues #articles article .article-content > .article-tome {
   color: #0C0C0C;
 }
-#catalogues .articles article .article-content h2,
-#catalogues .articles article .article-content p {
+#catalogues #articles article .article-content h2 {
+  font-size: 1rem;
+  position: relative;
+  margin-bottom: 10px;
+}
+#catalogues #articles article .article-content p {
+  font-size: 0.9rem;
+}
+#catalogues #articles article .article-content h2,
+#catalogues #articles article .article-content p {
   height: 40px;
   padding: 10px 0;
   text-align: center;
   font-family: "Roboto", sans-serif;
 }
-#catalogues .articles article .article-content h2 .title,
-#catalogues .articles article .article-content p .title {
-  margin: 0 auto;
-  font-size: 1.9rem;
-  font-family: "Carter One", cursive;
-  position: relative;
-  color: #0C0C0C;
-  height: 100px;
-  width: 160px;
-}
-#catalogues .articles article .article-content:hover {
-  transform: scale(1.1);
-}
-#catalogues .articles article fieldset {
+#catalogues #articles article fieldset {
   border: 2px solid #EB5D11;
 }
-#catalogues .articles article fieldset legend {
+#catalogues #articles article fieldset legend {
   font-family: "Carter One", cursive;
   font-size: 1.2rem;
   color: #BF1818;
 }
-#catalogues .articles article fieldset label {
+#catalogues #articles article fieldset label {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   color: #0C0C0C;
   padding-right: 10px;
 }
-#catalogues .articles article #search {
+#catalogues #articles article #search {
   width: 150px;
   padding: 10px 0;
   color: #0C0C0C;
@@ -150,56 +149,62 @@
   border-radius: 25px 0 25px 0;
   margin-top: 20px;
 }
+
+/* tablet section catalogue*/
 @media screen and (min-width: 800px) {
-  #catalogues .articles fieldset {
+  fieldset {
     width: 80%;
     margin: 0 auto;
   }
-  #catalogues .articles #search {
+  #search {
     margin-left: 10%;
   }
+  #catalogues {
+    padding: 30px;
+  }
+  #catalogues #articles {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+  }
+  #catalogues #articles article {
+    width: 20%;
+    min-width: 150px;
+    margin-left: 8px;
+    margin-right: 8px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    transition: all 0.5s ease-in;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    background-color: white;
+  }
+  #catalogues #articles article figure img {
+    width: 100%;
+  }
+  #catalogues #articles article .article-content {
+    padding: 12px;
+    background-color: #fff;
+  }
+  #catalogues #articles article .article-content h2,
+  #catalogues #articles article .article-content p {
+    height: 40px;
+    padding: 10px 0;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+  }
+  #catalogues #articles article:hover {
+    transform: scale(1.1);
+  }
 }
-#catalogues .articles #catalogue {
-  padding: 30px;
+/*desktop caltalogues*/
+@media screen and (min-width: 1200px) {
+  #catalogues #articles article figure img {
+    height: 300px;
+  }
 }
-#catalogues .articles #catalogue .articles {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  width: 80%;
-  margin: 0 auto;
-}
-#catalogues .articles #catalogue .articles article {
-  width: 20%;
-  min-width: 150px;
-  margin-left: 8px;
-  margin-right: 8px;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 40px;
-  transition: all 0.5s ease-in;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-  background-color: white;
-}
-#catalogues .articles #catalogue .articles article figure img {
-  width: 100%;
-  height: 100%;
-}
-#catalogues .articles #catalogue .articles article .article-content {
-  padding: 12px;
-  background-color: #fff;
-}
-#catalogues .articles #catalogue .articles article .article-content h2,
-#catalogues .articles #catalogue .articles article .article-content p {
-  height: 40px;
-  padding: 10px 0;
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-}
-#catalogues .articles #catalogue .articles article:hover {
-  transform: scale(1.1);
-}
-
 /*formulaire de co phone*/
 a {
   color: #0C0C0C;
@@ -221,7 +226,7 @@ a {
 #container.active {
   display: block;
   position: absolute;
-  top: 15%;
+  top: 30%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -396,7 +401,27 @@ a {
 }
 @media screen and (min-width: 800px) {
   body {
-    background: url(../img/Nuages-Kitsutech/nuage-kitsutech-decor.svg) 0 10% no-repeat, url(../img/icon/7025581-removebg-preview.png) 100% 35% no-repeat, url(../img/icon/katana.png) 0 65% no-repeat, url(../img/icon/kitsune9queue.png) 100% 89% no-repeat;
+    background: url(../img/Nuages-Kitsutech/nuage-kitsutech-decor.svg) 0 150px no-repeat, url(../img/icon/7025581-removebg-preview.png) 100% 35% no-repeat, url(../img/icon/katana.png) 0 65% no-repeat;
+    background-size: 20vw;
+  }
+  body #btnUp {
+    height: 50px;
+    width: 50px;
+    background: #EB5D11;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+  }
+  body #btnUp img {
+    width: 25px;
+  }
+  body main {
+    background: url(../img/icon/kitsune9queue.png) 100% 100% no-repeat;
     background-size: 20vw;
   }
 }/*# sourceMappingURL=style-catalogue.css.map */

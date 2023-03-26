@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 $style = './asset/css/style-post.css';
 require_once './header.php';
 

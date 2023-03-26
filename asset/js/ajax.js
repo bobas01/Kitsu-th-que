@@ -6,8 +6,9 @@ const arrayPublic = []
 const arrayCategory = []
 const inputPublic = document.getElementsByClassName('public');
 const inputCategory = document.getElementsByClassName('category');
-
 const catalogue = document.getElementById('catalogues');
+const articles = document.getElementById('articles');
+
 
 // fonction pour créer un élément HTML pour chaque article
 function createArticle(article) {
@@ -72,23 +73,20 @@ form.addEventListener('submit', function (e) {
   })
     .then((response) => response.json())
     .then((datas) => {
-
-
-
-
-
+     
+       console.log(datas)
       // effacer les résultats précédents
-      catalogue.innerHTML = '';
+      articles.innerHTML = '';
       // créer un élément HTML pour chaque article et les ajouter à la page
       datas.forEach(article => {
         const articleElement = createArticle(article);
-        catalogue.appendChild(articleElement);
-        catalogue.style.display='flex';
-        catalogue.style.flexWrap='wrap';
-        catalogue.style.justifyContent='space-evenly';
-        catalogue.style.maxWidth='1200px';
-        catalogue.style.width='100%';
-        catalogue.style.margin='0 auto';
+        articles.appendChild(articleElement);
+        articles.style.display='flex';
+        articles.style.flexWrap='wrap';
+        articles.style.justifyContent='space-evenly';
+        articles.style.maxWidth='1200px';
+        articles.style.width='100%';
+        articles.style.margin='0 auto';
       });
     })
     .catch(error => console.log(error));

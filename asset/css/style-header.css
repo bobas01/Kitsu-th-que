@@ -15,6 +15,10 @@
 header {
   overflow: auto;
   box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgb(235, 93, 17);
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 9999;
 }
 header #icon {
   display: flex;
@@ -29,31 +33,43 @@ header #icon a img {
 header #icon a img:hover {
   transform: scale(0.8);
 }
-header #icon #connected {
-  text-align: center;
-  color: #0C0C0C;
+header #icon #connected img {
+  height: 40px;
+}
+header #icon #pseudo {
+  position: absolute;
+  top: 50px;
+  right: 18px;
   font-family: "Carter One", cursive;
+  color: #BF1818;
+  font-size: 1rem;
+  text-decoration: none;
+}
+header #icon #pseudo:hover {
+  transform: scale(1.2);
 }
 header .search-container {
   display: flex;
   justify-content: center;
 }
+header .search-container form {
+  width: 332px;
+  margin: 0 auto;
+}
 header .search-container form input[type=search] {
   padding: 18px 0 10px 10px;
   border: 2px solid #EB5D11;
   width: calc(100% - 80px);
-  border-radius: 25px 0 0 0;
-  border-right: none;
+  border-radius: 25px 0;
   margin-bottom: 10px;
+  outline-style: none;
 }
 header .search-container form button[type=submit] {
   background-color: white;
   color: white;
-  border: 2px solid #EB5D11;
-  border-left: none;
+  border: none;
   width: 70px;
   padding: 6px 10px 10px 10px;
-  margin-left: -10px;
   border-radius: 0 0 25px 0;
   cursor: pointer;
 }
@@ -86,10 +102,19 @@ header .search-container form button[type=submit] img:hover {
     position: absolute;
     left: 75%;
   }
-  header form {
+  header .search-container form {
     position: absolute;
-    left: 30%;
-    top: 8%;
+    top: 38%;
+    width: 250px;
+  }
+}
+@media screen and (min-width: 800px) {
+  header {
+    padding: 30px 0;
+  }
+  header .search-container form {
+    left: 25%;
+    width: 350px;
   }
 }
 @media screen and (min-width: 1000px) {
@@ -97,8 +122,21 @@ header .search-container form button[type=submit] img:hover {
     width: 80px;
     height: 80px;
   }
-  header form {
-    left: 30%;
-    width: 30%;
+  header #icon #connected img {
+    height: 60px;
+  }
+  header #icon #pseudo {
+    top: 80px;
+    right: 20px;
+    font-size: 1.2rem;
+  }
+  header .search-container form {
+    width: 500px;
+  }
+}
+@media screen and (min-width: 800px) {
+  body {
+    background: url(../img/Nuages-Kitsutech/nuage-kitsutech-decor.svg) 0 15% no-repeat, url(../img/icon/7025581-removebg-preview.png) 100% 45% no-repeat, url(../img/icon/katana.png) 0 71% no-repeat, url(../img/icon/kitsune9queue.png) 100% 86.5% no-repeat;
+    background-size: 20vw;
   }
 }/*# sourceMappingURL=style-header.css.map */

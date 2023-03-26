@@ -1,10 +1,15 @@
-<?php 
-$style= './asset/css/style.css';
+<?php
+
+
+$style = './asset/css/style.css';
 require_once './header.php';
 require_once './connexion.php';
 ?>
 
 <main>
+    <div id="btnUp">
+        <img src="./asset/img/icon/arrow-up-solid.svg" alt="up">
+    </div>
     <section id="news">
         <div class="row-limit-size">
             <article class="titleDiv">
@@ -18,13 +23,11 @@ require_once './connexion.php';
                     <div id="list-slide">
                         <?php
 
-                        $reqArticle = $db->query("SELECT `id`, `title`, `cover`  FROM `manga` ORDER BY `id` DESC LIMIT 5");
+                        $reqArticle = $db->query("SELECT `id`, `title`, `cover`  FROM `manga` ORDER BY `id` DESC LIMIT 6");
 
                         while ($reqFetchArticle = $reqArticle->fetch(PDO::FETCH_ASSOC)) {
-                            ?>
-                            <div class="slide"><a href="./post.php?id=<?= $reqFetchArticle['id'] ?>"><img
-                                        src="./asset/img/premiere-page/<?= $reqFetchArticle['cover'] ?>"
-                                        alt="<?= $reqFetchArticle['title'] ?>"></a></div>
+                        ?>
+                            <div class="slide"><a href="./post.php?id=<?= $reqFetchArticle['id'] ?>"><img src="./asset/img/premiere-page/<?= $reqFetchArticle['cover'] ?>" alt="<?= $reqFetchArticle['title'] ?>"></a></div>
                         <?php } ?>
                     </div>
                 </div>
@@ -34,8 +37,7 @@ require_once './connexion.php';
 
 
             </div>
-            <figure id="swipe"><img src="./asset/img/icon/icon-swipe.svg" alt="swipe"
-                    style="width: 50px; height: 50px;"></figure>
+            <figure id="swipe"><img src="./asset/img/icon/icon-swipe.svg" alt="swipe" style="width: 50px; height: 50px;"></figure>
 
 
         </div>
@@ -68,8 +70,7 @@ require_once './connexion.php';
                     pour lire sur place ou chez vous avec un personnel très accueillant. </p>
                 <div id="imgPlace">
                     <img id="firstImgPlace" src="./asset/img/photo/musee-manga-kyoto-3.jpg" alt="Kespace de lecture">
-                    <img id="secondImgPlace" src="./asset/img/photo/espace-accuieller.jpg"
-                        alt="rayon de la mangathèque">
+                    <img id="secondImgPlace" src="./asset/img/photo/espace-accuieller.jpg" alt="rayon de la mangathèque">
                     <img id="thirdImgPlace" src="./asset/img/photo/trogstad_public_library_no_013.jpg" alt="accueil">
                 </div>
 
@@ -143,6 +144,7 @@ require_once './connexion.php';
 require_once './footer.php';
 ?>
 <script src="./asset/js/main.js"></script>
+<script src="./asset/js/scrollUp.js"></script>
 </body>
 
 </html>

@@ -32,6 +32,3 @@ if ($req->rowCount() == 1) {
 } else {
     header('Location: ../index.php?err=1');
 }
-
-
-
