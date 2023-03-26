@@ -20,23 +20,26 @@ header {
   background-color: #fff;
   z-index: 9999;
 }
-header #icon {
+header .row-limit-size {
+  position: relative;
+}
+header .row-limit-size #icon {
   display: flex;
   justify-content: space-between;
   position: relative;
 }
-header #icon a img {
+header .row-limit-size #icon a img {
   width: 70px;
   height: 60px;
   margin: 10px 0;
 }
-header #icon a img:hover {
+header .row-limit-size #icon a img:hover {
   transform: scale(0.8);
 }
-header #icon #connected img {
+header .row-limit-size #icon #connected img {
   height: 40px;
 }
-header #icon #pseudo {
+header .row-limit-size #icon #pseudo {
   position: absolute;
   top: 50px;
   right: 18px;
@@ -45,18 +48,18 @@ header #icon #pseudo {
   font-size: 1rem;
   text-decoration: none;
 }
-header #icon #pseudo:hover {
+header .row-limit-size #icon #pseudo:hover {
   transform: scale(1.2);
 }
-header .search-container {
+header .row-limit-size .search-container {
   display: flex;
   justify-content: center;
 }
-header .search-container form {
+header .row-limit-size .search-container form {
   width: 332px;
   margin: 0 auto;
 }
-header .search-container form input[type=search] {
+header .row-limit-size .search-container form input[type=search] {
   padding: 18px 0 10px 10px;
   border: 2px solid #EB5D11;
   width: calc(100% - 80px);
@@ -64,7 +67,7 @@ header .search-container form input[type=search] {
   margin-bottom: 10px;
   outline-style: none;
 }
-header .search-container form button[type=submit] {
+header .row-limit-size .search-container form button[type=submit] {
   background-color: white;
   color: white;
   border: none;
@@ -73,11 +76,11 @@ header .search-container form button[type=submit] {
   border-radius: 0 0 25px 0;
   cursor: pointer;
 }
-header .search-container form button[type=submit] img {
+header .row-limit-size .search-container form button[type=submit] img {
   height: 25px;
   width: 30px;
 }
-header .search-container form button[type=submit] img:hover {
+header .row-limit-size .search-container form button[type=submit] img:hover {
   transform: scale(1.2);
 }
 
@@ -112,25 +115,25 @@ header .search-container form button[type=submit] img:hover {
   header {
     padding: 30px 0;
   }
-  header .search-container form {
+  header .row-limit-size .search-container form {
     left: 25%;
     width: 350px;
   }
 }
 @media screen and (min-width: 1000px) {
-  header #icon a img {
+  header .row-limit-size #icon a img {
     width: 80px;
     height: 80px;
   }
-  header #icon #connected img {
+  header .row-limit-size #icon #connected img {
     height: 60px;
   }
-  header #icon #pseudo {
+  header .row-limit-size #icon #pseudo {
     top: 80px;
     right: 20px;
     font-size: 1.2rem;
   }
-  header .search-container form {
+  header .row-limit-size .search-container form {
     width: 500px;
   }
 }
