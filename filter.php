@@ -113,11 +113,11 @@ $sql = "SELECT DISTINCT `manga`.`id`,`manga`.`volume`,`manga`.`title`,`manga`.`c
   INNER JOIN `genre` ON `manga`.`id_genre`=`genre`.`id`
   INNER JOIN `public` ON `manga`.`id_public`=`public`.`id`";
 $conditions = [];
-$parameters=[];
+$parameters = [];
 
 if (!empty($datas["public"])) {
   $cond = " `public`.`slug` IN (";
-  for($i=0 ; $i<count($dataPublic) ; $i++) {
+  for ($i = 0; $i < count($dataPublic); $i++) {
     if ($i > 0) {
       $cond .= ",";
     }
@@ -129,7 +129,7 @@ if (!empty($datas["public"])) {
 
 if (!empty($datas["genre"])) {
   $cond = " `genre`.`slug` IN (";
-  for($i=0 ; $i<count($dataGenre) ; $i++) {
+  for ($i = 0; $i < count($dataGenre); $i++) {
     if ($i > 0) {
       $cond .= ",";
     }
@@ -141,7 +141,7 @@ if (!empty($datas["genre"])) {
 
 if (!empty($datas["category"])) {
   $cond = " `category`.`slug` IN (";
-  for($i=0 ; $i<count($dataCat) ; $i++) {
+  for ($i = 0; $i < count($dataCat); $i++) {
     if ($i > 0) {
       $cond .= ",";
     }
@@ -157,12 +157,11 @@ if (!empty($conditions)) {
   foreach ($conditions as $condition) {
     if ($first) {
       $sql .= " WHERE ";
-      $first=false;
+      $first = false;
+    } else {
+      $sql .= " AND ";
     }
-    else {
-      $sql.= " AND ";
-    }
-    $sql.=$condition;
+    $sql .= $condition;
   }
 }
 
