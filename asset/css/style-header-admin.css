@@ -21,7 +21,7 @@ li {
 }
 
 header {
-  box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgba(235, 93, 17, 0.45);
+  box-shadow: 25px 0 20px -20px rgba(235, 93, 17, 0.45);
   width: 140px;
   height: 100vh;
   overflow: auto;
@@ -54,7 +54,7 @@ header > a#burger > img#logo {
 }
 @media screen and (max-width: 520px) {
   header > a#burger > img#logo {
-    width: 50px;
+    width: 60px;
   }
 }
 header nav#main-menu {
@@ -103,9 +103,22 @@ main > section#admin-search-bar {
   height: 100px;
   background-color: #fff;
 }
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 850px) {
   main > section#admin-search-bar {
-    margin-right: 10px;
+    margin: 0;
+    margin-bottom: 50px;
+  }
+}
+@media screen and (min-width: 850px) {
+  main > section#admin-search-bar {
+    margin-left: 50px;
+    margin-bottom: 50px;
+  }
+}
+@media screen and (max-width: 520px) {
+  main > section#admin-search-bar {
+    margin-left: 30px;
+    margin-bottom: 50px;
   }
 }
 @media screen and (max-width: 850px) {
@@ -200,35 +213,17 @@ main > section#admin-search-bar > :last-child {
 @media screen and (max-width: 850px) {
   main > section#admin-search-bar > :last-child {
     display: block;
+    margin-right: 10px;
   }
 }
 @media screen and (max-width: 520px) {
   main > section#admin-search-bar > :last-child {
+    margin: 0;
     position: absolute;
     top: 20px;
     left: 120px;
     z-index: 99999;
   }
-}
-main > section#list-category {
-  display: none;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  background-color: rgba(217, 221, 231, 0.5);
-  padding-top: 50px;
-}
-main > section#list-category > form#form-category {
-  position: relative;
-  margin: 50px auto;
-}
-main > section#list-category > form#form-category > fieldset.manga-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: center;
 }
 main > section.new-post > form {
   width: -moz-fit-content;
@@ -289,6 +284,89 @@ main > section.new-post > form > input[type=submit], main > section.new-post > f
   float: right;
   font-size: 1.1rem;
 }
+main > section.new-post > form > fieldset.cat-info {
+  margin-left: 50px;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  justify-content: center;
+  width: 300px;
+  padding: 30px;
+  border: 1px solid #e23b3b;
+  color: #eb5d11;
+  font-family: "Carter One", cursive;
+  background-color: #fff;
+}
+@media screen and (max-width: 850px) {
+  main > section.new-post > form > fieldset.cat-info {
+    margin-left: 150px;
+  }
+}
+@media screen and (max-width: 520px) {
+  main > section.new-post > form > fieldset.cat-info {
+    margin-left: 75px;
+  }
+}
+@media screen and (max-width: 400px) {
+  main > section.new-post > form > fieldset.cat-info {
+    margin-left: 45px;
+  }
+}
+@media screen and (max-width: 320px) {
+  main > section.new-post > form > fieldset.cat-info {
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width: 300px) {
+  main > section.new-post > form > fieldset.cat-info {
+    margin: 0;
+  }
+}
+main > section.new-post > form > fieldset.cat-info > label {
+  justify-self: end;
+  margin: 5px;
+}
+main > section.new-post > form > fieldset.cat-info > input {
+  margin: 5px;
+}
+main > section.new-post > form > fieldset.send-img {
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 350px;
+  padding: 20px;
+  border: 1px solid #e23b3b;
+  color: #eb5d11;
+  font-family: "Carter One", cursive;
+  background-color: #fff;
+}
+@media screen and (max-width: 850px) {
+  main > section.new-post > form > fieldset.send-img {
+    margin-left: 150px;
+  }
+}
+@media screen and (max-width: 520px) {
+  main > section.new-post > form > fieldset.send-img {
+    margin-left: 75px;
+  }
+}
+@media screen and (max-width: 400px) {
+  main > section.new-post > form > fieldset.send-img {
+    margin-left: 45px;
+  }
+}
+@media screen and (max-width: 370px) {
+  main > section.new-post > form > fieldset.send-img {
+    margin: 0;
+  }
+}
+main > section.new-post > form > fieldset.send-img > label {
+  justify-self: end;
+  margin: 5px;
+}
+main > section.new-post > form > fieldset.send-img > input {
+  margin: 5px;
+}
 main > section#list-manga {
   margin-left: 30px;
   padding: 10px;
@@ -299,6 +377,7 @@ main > section#list-manga {
   main > section#list-manga {
     margin: 0;
     padding: 0;
+    box-shadow: none;
   }
 }
 main > section#list-manga > h1 {

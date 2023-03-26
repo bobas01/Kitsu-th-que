@@ -50,7 +50,7 @@ function resizeImg($tmp_name, $width, $height, $name)
 
 <section class="new-post row-limit-size">
     <form action="#" enctype="multipart/form-data" method="POST">
-        <fieldset class="manga-info">
+        <fieldset class="send-img">
             <?php
             $sql = $db->prepare("SELECT `id`,`title`,`volume` FROM `manga` WHERE `id` = :id");
             $sql->bindParam(':id', $id, PDO::PARAM_STR);
@@ -64,7 +64,6 @@ function resizeImg($tmp_name, $width, $height, $name)
         </fieldset>
         <a href="./list.php" class="annuler">Annuler</a>
         <input type="submit" name="submit" value="Envoyer">
-
         <?php
         try {
             if (isset($_FILES['cover'])) {

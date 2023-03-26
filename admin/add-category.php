@@ -37,7 +37,7 @@ $req = $db->query($sql);
 
 <section class="new-post row-limit-size">
     <form action="#" method="POST">
-        <fieldset class="manga-info">
+        <fieldset class="cat-info">
             <?php
             $sql = $db->prepare("SELECT `id`,`title`,`volume` FROM `manga` WHERE `id` = :id");
             $sql->bindParam(':id', $id, PDO::PARAM_STR);

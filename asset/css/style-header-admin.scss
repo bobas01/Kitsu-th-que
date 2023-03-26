@@ -28,7 +28,7 @@ li {
 }
 
 header {
-    box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgba(235, 93, 17, 0.45);
+    box-shadow: 25px 0 20px -20px rgba(235, 93, 17, 0.45);
     width: 140px;
     height: 100vh;
     overflow: auto;
@@ -49,6 +49,7 @@ header {
 
     }
 
+
     &>a#burger {
         display: block;
         margin: 10px 0 0 15px;
@@ -59,7 +60,7 @@ header {
             width: 70px;
 
             @media screen and (max-width: 520px) {
-                width: 50px;
+                width: 60px;
             }
 
         }
@@ -119,8 +120,19 @@ main {
         height: 100px;
         background-color: $white;
 
-        @media screen and (max-width: 470px) {
-            margin-right: 10px;
+        @media screen and (max-width: 850px) {
+            margin: 0;
+            margin-bottom: 50px;
+        }
+
+        @media screen and (min-width: 850px) {
+            margin-left: 50px;
+            margin-bottom: 50px;
+        }
+
+        @media screen and (max-width: 520px) {
+            margin-left: 30px;
+            margin-bottom: 50px;
         }
 
 
@@ -214,9 +226,11 @@ main {
 
             @media screen and (max-width: 850px) {
                 display: block;
+                margin-right: 10px;
             }
 
             @media screen and (max-width: 520px) {
+                margin: 0;
                 position: absolute;
                 top: 20px;
                 left: 120px;
@@ -224,32 +238,6 @@ main {
             }
         }
     }
-
-    // CSS POP UP ADD CATEGORIES
-
-    &>section#list-category {
-        display: none;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        z-index: 9999;
-        left: 0;
-        top: 0;
-        background-color: rgba(217, 221, 231, 0.5);
-        padding-top: 50px;
-
-        &>form#form-category {
-            position: relative;
-            margin: 50px auto;
-
-            &>fieldset.manga-info {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                justify-content: center;
-            }
-        }
-    }
-
 
     // CSS NEW POST ET EDIT 
 
@@ -315,6 +303,89 @@ main {
                 float: right;
                 font-size: 1.1rem;
             }
+
+            &>fieldset.cat-info {
+                margin-left: 50px;
+                display: grid;
+                grid-template-columns: 60% 40%;
+                justify-content: center;
+                width: 300px;
+                padding: 30px;
+                border: 1px solid $red;
+                color: $orange;
+                font-family: $familyCarter;
+                background-color: $white;
+
+                @media screen and (max-width: 850px) {
+                    margin-left: 150px;
+                }
+
+                @media screen and (max-width: 520px) {
+                    margin-left: 75px;
+                }
+
+                @media screen and (max-width: 400px) {
+                    margin-left: 45px;
+                }
+
+                @media screen and (max-width: 320px) {
+                    margin-left: 20px;
+                }
+
+                @media screen and (max-width: 300px) {
+                    margin: 0;
+                }
+
+                &>label {
+                    justify-self: end;
+                    margin: 5px;
+                }
+
+                &>input {
+                    margin: 5px;
+                }
+            }
+
+            &>fieldset.send-img {
+                margin-left: 50px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 350px;
+                padding: 20px;
+                border: 1px solid $red;
+                color: $orange;
+                font-family: $familyCarter;
+                background-color: $white;
+
+                @media screen and (max-width: 850px) {
+                    margin-left: 150px;
+                }
+
+                @media screen and (max-width: 520px) {
+                    margin-left: 75px;
+                }
+
+                @media screen and (max-width: 400px) {
+                    margin-left: 45px;
+                }
+
+                @media screen and (max-width: 370px) {
+                    margin: 0;
+                    
+
+                }
+
+                &>label {
+                    justify-self: end;
+                    margin: 5px;
+                }
+
+                &>input {
+                    margin: 5px;
+                }
+
+            }
         }
     }
 
@@ -329,6 +400,7 @@ main {
         @media screen and (max-width: 850px) {
             margin: 0;
             padding: 0;
+            box-shadow: none;
         }
 
         &>h1 {
@@ -382,6 +454,7 @@ main {
                             display: inline-block;
                             height: 30px;
                             line-height: 30px;
+
                             &>img {
                                 width: 25px;
 
@@ -450,9 +523,9 @@ main {
             }
         }
     }
-     
-    // CSS POP UP SUCCESS & ERROR1/2
-    
+
+    // CSS MESSAGE SUCCESS & ERROR1/2
+
     div.success,
     div.error {
         position: absolute;
