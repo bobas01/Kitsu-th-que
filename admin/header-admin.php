@@ -34,37 +34,39 @@
     </header>
     <main>
         <section id="admin-search-bar" class="row-limit-size">
-            <form action="./research-list.php" method="GET">
-                <input type="search" placeholder="Rechercher" name="search" class="search-admin">
-                <button type="submit" name="research" value="rechercher..." class="search-admin">
-                    <img src="../asset/img/icon/icon_search_bar.svg" alt="icon loupe">
-                </button>
-            </form>
-            <span>Manga disponible:
-                <?php          
-                $req = $db->query("SELECT COUNT(`id`) AS `nbManga` FROM `manga`");
-                $resultManga = $req->fetch(PDO::FETCH_ASSOC);           
-                
-                $req2 = $db->query("SELECT COUNT(`id`) AS `nbLoan` FROM `loan`");
-                $resultLoan = $req2->fetch(PDO::FETCH_ASSOC);
-                ?>
-                <?=$total= $resultManga['nbManga']-$resultLoan['nbLoan'] ?>
-            </span>
-            <span>Réservé :
-                <?php
-                $sql2 = "SELECT COUNT(`available`) AS `reserved` FROM `loan`";
-                $req2 = $db->query($sql2);
-                $reserved = $req2->fetch(PDO::FETCH_ASSOC)
-                ?>
-                <?= $reserved['reserved'] ?>
-            </span>
-            <span>
-                <?php
-                $id= $_SESSION['id-user'] ;
-                $sql3 = "SELECT `pseudo` FROM `user`WHERE `id`=$id";
-                $req3 = $db->query($sql3);
-                $pseudo = $req3->fetch(PDO::FETCH_ASSOC)
-                ?>
-                <?= ucfirst($pseudo['pseudo']) ?>
-            </span>
+            <div>
+                <form action="./research-list.php" method="GET">
+                    <input type="search" placeholder="Rechercher" name="search" class="search-admin">
+                    <button type="submit" name="research" value="rechercher..." class="search-admin">
+                        <img src="../asset/img/icon/icon_search_bar.svg" alt="icon loupe">
+                    </button>
+                </form>
+                <span>Manga disponible:
+                    <?php
+                    $req = $db->query("SELECT COUNT(`id`) AS `nbManga` FROM `manga`");
+                    $resultManga = $req->fetch(PDO::FETCH_ASSOC);
+
+                    $req2 = $db->query("SELECT COUNT(`id`) AS `nbLoan` FROM `loan`");
+                    $resultLoan = $req2->fetch(PDO::FETCH_ASSOC);
+                    ?>
+                    <?= $total = $resultManga['nbManga'] - $resultLoan['nbLoan'] ?>
+                </span>
+                <span>Réservé :
+                    <?php
+                    $sql2 = "SELECT COUNT(`available`) AS `reserved` FROM `loan`";
+                    $req2 = $db->query($sql2);
+                    $reserved = $req2->fetch(PDO::FETCH_ASSOC)
+                    ?>
+                    <?= $reserved['reserved'] ?>
+                </span>
+                <span>
+                    <?php
+                    $id = $_SESSION['id-user'];
+                    $sql3 = "SELECT `pseudo` FROM `user`WHERE `id`=$id";
+                    $req3 = $db->query($sql3);
+                    $pseudo = $req3->fetch(PDO::FETCH_ASSOC)
+                    ?>
+                    <?= ucfirst($pseudo['pseudo']) ?>
+                </span>
+            </div>
         </section>

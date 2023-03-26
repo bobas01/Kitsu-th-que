@@ -112,130 +112,128 @@ main {
     // CSS BARRE DE RECHERCHE ADMIN
 
     &>section#admin-search-bar {
-        margin: 0 50px 30px 30px;
-        display: flex;
-        justify-content: space-between;
+        margin: 0;
         position: sticky;
         top: 0;
-        padding: 30px 10px;
-        height: 100px;
-        background-color: $white;
 
-        @media screen and (max-width: 850px) {
-            margin: 0;
-            margin-bottom: 50px;
-        }
+        &>div {
+            display: flex;
+            justify-content: space-around;
 
-        @media screen and (min-width: 850px) {
-            margin-left: 50px;
-            margin-bottom: 50px;
-        }
-
-        @media screen and (max-width: 520px) {
-            margin-left: 30px;
-            margin-bottom: 50px;
-        }
-
-
-        &>form {
-            @media screen and (max-width: 850px) {
-                position: relative;
-                left: 260px;
-            }
-
-            @media screen and (max-width: 750px) {
-                position: relative;
-                left: 210px;
-            }
-
-            @media screen and (max-width: 600px) {
-                position: relative;
-                left: 140px;
-            }
-
-            @media screen and (max-width: 520px) {
-                position: absolute;
-                top: 70px;
-                left: 120px;
-            }
-
-
-            &>input[type="search"] {
-                height: 30px;
-                border: none;
-                border-bottom: 1px solid $red;
-                padding: 10px;
-                font-size: 18px;
-                letter-spacing: 2px;
-                outline: 0;
-
-                @media screen and (max-width: 470px) {
-                    width: 200px;
-
-                }
-
-                @media screen and (max-width: 400px) {
-                    width: 150px;
-                }
-            }
-
-            &>input::placeholder {
-                @media screen and (max-width: 400px) {
-                    font-size: medium;
-
-                }
-            }
-
-            &>button {
-                position: relative;
-                z-index: 9999;
-                top: 5px;
-                left: -35px;
-                width: 30px;
-                border: none;
-                background-color: $white;
-                cursor: pointer;
-
-                &>img {
-                    width: 18px;
-                }
-
-                @media screen and (max-width: 470px) {
-                    position: absolute;
-                    left: 170px;
-                }
-
-                @media screen and (max-width: 400px) {
-                    position: absolute;
-                    left: 120px;
-                }
-            }
-        }
-
-        &>span {
-            font-family: $familyCarter;
-            color: $orange;
+            padding: 30px 0 30px 40px;
+            height: 150px;
+            background-color: $white;
 
             @media screen and (max-width: 850px) {
-                display: none;
-            }
-
-        }
-
-        &>:last-child {
-            color: #e23b3b;
-
-            @media screen and (max-width: 850px) {
-                display: block;
-                margin-right: 10px;
-            }
-
-            @media screen and (max-width: 520px) {
                 margin: 0;
-                position: absolute;
-                top: 20px;
-                left: 120px;
-                z-index: 99999;
+                margin-bottom: 50px;
+            }
+
+            @media screen and (min-width: 850px) {
+                margin-left: 50px;
+                margin-bottom: 50px;
+            }
+
+            @media screen and (max-width: 520px) {
+                margin-left: 30px;
+                margin-bottom: 50px;
+            }
+
+            &>form {
+                @media screen and (max-width: 850px) {
+                    position: relative;
+                    left: 140px;
+                }
+
+                @media screen and (max-width: 600px) {
+                    position: relative;
+                    left: 100px;
+                }
+
+                @media screen and (max-width: 520px) {
+                    position: absolute;
+                    top: 70px;
+                    left: 140px;
+                }
+
+
+                &>input[type="search"] {
+                    height: 30px;
+                    border: none;
+                    border-bottom: 1px solid $red;
+                    padding: 10px;
+                    font-size: 18px;
+                    letter-spacing: 2px;
+                    outline: 0;
+
+                    @media screen and (max-width: 470px) {
+                        width: 200px;
+
+                    }
+
+                    @media screen and (max-width: 400px) {
+                        width: 150px;
+                    }
+                }
+
+                &>input::placeholder {
+                    @media screen and (max-width: 400px) {
+                        font-size: medium;
+
+                    }
+                }
+
+                &>button {
+                    position: relative;
+                    z-index: 9999;
+                    top: 5px;
+                    left: -35px;
+                    width: 30px;
+                    border: none;
+                    background-color: $white;
+                    cursor: pointer;
+
+                    &>img {
+                        width: 18px;
+                    }
+
+                    @media screen and (max-width: 470px) {
+                        position: absolute;
+                        left: 170px;
+                    }
+
+                    @media screen and (max-width: 400px) {
+                        position: absolute;
+                        left: 120px;
+                    }
+                }
+            }
+
+            &>span {
+                font-family: $familyCarter;
+                color: $orange;
+
+                @media screen and (max-width: 850px) {
+                    display: none;
+                }
+
+            }
+
+            &>:last-child {
+                color: #e23b3b;
+
+                @media screen and (max-width: 850px) {
+                    display: block;
+                    margin-right: 10px;
+                }
+
+                @media screen and (max-width: 520px) {
+                    margin: 0;
+                    position: absolute;
+                    top: 20px;
+                    left: 140px;
+                    z-index: 99999;
+                }
             }
         }
     }
@@ -373,7 +371,7 @@ main {
 
                 @media screen and (max-width: 370px) {
                     margin: 0;
-                    
+
 
                 }
 
@@ -603,7 +601,7 @@ main {
                     font-family: $familyCarter;
                     border-radius: 25px 0;
                     cursor: pointer;
-                   
+
 
                     &:hover {
                         background-color: $orange;
@@ -683,7 +681,7 @@ main {
                 border: 2px solid $orange;
                 font-family: $familyCarter;
                 font-size: 1rem;
-                border-radius: 25px 0;                
+                border-radius: 25px 0;
                 margin: 10px 10px 50px 20px;
                 padding: 10px 20px;
                 cursor: pointer;
@@ -694,6 +692,7 @@ main {
                 }
             }
         }
+
         a {
             font-family: $familyCarter;
             font-size: 1rem;
@@ -701,8 +700,8 @@ main {
             display: block;
             width: 165px;
             margin: 0 auto;
-            
-            &:hover{
+
+            &:hover {
                 color: $orange;
             }
         }
@@ -755,10 +754,12 @@ main {
             text-align: left;
             margin-left: 20px;
         }
-        a{
+
+        a {
             margin: unset;
             margin-left: 20px;
         }
+
         #listLoan {
 
             margin: unset;
@@ -767,7 +768,7 @@ main {
             ul {
                 margin-bottom: 10px;
 
-                
+
 
                 li {
                     font-family: $familyRoboto;
