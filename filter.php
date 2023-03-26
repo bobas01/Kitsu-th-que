@@ -173,4 +173,4 @@ $req->execute($parameters);
 
 $datas = $req->fetchAll(PDO::FETCH_ASSOC);
 
-echo json_encode(array_values($datas));
+echo json_encode($datas);
