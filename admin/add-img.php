@@ -1,7 +1,12 @@
 <?php
 session_start();
-require_once '../connexion.php';
-require_once './header-admin.php';
+
+if (!isset($_SESSION['id-user']) || $_SESSION['role-user'] !== 'admin') {
+    header('Location: ../index.php');
+    exit();
+}
+include_once '../connexion.php';
+include_once './header-admin.php';
 
 $id = $_GET['id'];
 
@@ -38,42 +43,51 @@ function resizeImg($tmp_name, $width, $height, $name)
     $image_p = imagecreatetruecolor($new_width, $new_height);
     imagecopyresampled($image_p, $image, 0, 0, 0, 0, $new_width, $new_height, $x, $y);
 
-    $imageExt($image_p, "../asset/img/" . $name);
+    $imageExt($image_p, "../asset/img/premiere-page" . $name);
 }
 
 ?>
 
-<section class="new-post">
+<section class="new-post row-limit-size">
     <form action="#" enctype="multipart/form-data" method="POST">
-        <fieldset class="manga-info">
-            <legend>Ajouter une image de couverture</legend>
+        <fieldset class="send-img">
+            <?php
+            $sql = $db->prepare("SELECT `id`,`title`,`volume` FROM `manga` WHERE `id` = :id");
+            $sql->bindParam(':id', $id, PDO::PARAM_STR);
+            $sql->execute();
+            while ($manga = $sql->fetch(PDO::FETCH_ASSOC)) {
+            ?>
+                <legend>Ajouter une image à <?= $manga['title'] ?> T. <?= $manga['volume'] ?></legend>
+            <?php } ?>
             <label for="cover">Image de couverture</label>
             <input type="file" name="cover" accept="image/*">
         </fieldset>
-        <input type="reset" name="reset" value="Annuler">
+        <a href="./list.php" class="annuler">Annuler</a>
         <input type="submit" name="submit" value="Envoyer">
-
         <?php
-        if (isset($_FILES['cover'])) {
+        try {
+            if (isset($_FILES['cover'])) {
 
-            $tmp_name = $_FILES['cover']['tmp_name'];
-            $name = $_FILES['cover']['name'];
-            $cover = $name;
+                $tmp_name = $_FILES['cover']['tmp_name'];
+                $name = $_FILES['cover']['name'];
+                $cover = $name;
 
-            $manga = $db->prepare("UPDATE `manga`SET `cover`= :cover WHERE `id`= :id");
-            $manga->bindParam(':id', $id, PDO::PARAM_INT);
-            $manga->bindParam(':cover', $cover, PDO::PARAM_STR);
-            $manga->execute();
+                $manga = $db->prepare("UPDATE `manga` SET `cover`= :cover WHERE `id`= :id");
+                $manga->bindParam(':id', $id, PDO::PARAM_INT);
+                $manga->bindParam(':cover', $cover, PDO::PARAM_STR);
+                $manga->execute();
 
-            resizeImg($tmp_name, 350, 600, $name);
+                resizeImg($tmp_name, 350, 600, $name);
 
-            $_SESSION['added'] = "Image ajouté avec succes!";
-            header('Location: list.php');
+                header('Location: ./list.php');
+                $_SESSION['success'] = "Image ajoutée";
+                exit();
+            }
+        } catch (PDOException $e) {
+            header('Location: ./list.php');
+            $_SESSION['error1'] = "Ajout non effectué";
             exit();
-        } else {
-            $_SESSION['error'] = "Ajout non effectué. Veuillez réessayer.";
-        }
-        ?>
+        } ?>
     </form>
 </section>
 </main>

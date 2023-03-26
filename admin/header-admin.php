@@ -1,7 +1,4 @@
-<?php
-
-require_once '../connexion.php';
-?>
+<?php require_once '../connexion.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +7,7 @@ require_once '../connexion.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>header-admin</title>
+    <title>Header admin</title>
     <link rel="stylesheet" href="../asset/css/style-header-admin.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,37 +33,10 @@ require_once '../connexion.php';
         </nav>
     </header>
     <main>
-        <section id="admin-search-bar">
-            <?php
-            if (isset($_GET["search"])) {
-                $_GET["search"] = htmlspecialchars($_GET["search"]);
-                $research = $_GET['search'];
-                $research = trim($research);
-                $research = strip_tags($research);
-            }
-
-            if (!empty($research)) {
-                $research = strtolower($research);
-                $search_term = '%' . $research . '%';
-                $select_research = $db->prepare("SELECT DISTINCT`manga`.`id`,`manga`.`volume`,`manga`.`extract`,`manga`.`title`,`manga`.`cover` FROM `manga` 
-                    INNER JOIN `genre` ON `manga`.`id_genre`=`genre`.`id`
-                    INNER JOIN `public` ON `manga`.`id_public`=`public`.`id`
-                    INNER JOIN `manga_category` ON `manga_category`.`id_manga`= `manga`.`id`
-                    INNER JOIN `category` ON `manga_category`.`id_category`= `category`.`id`               
-                    WHERE `manga`.`volume` LIKE :search_term OR `manga`.`author` LIKE :search_term OR `manga`.`extract` LIKE :search_term
-                    OR `manga`.`title` LIKE  :search_term OR `category`.`slug` LIKE  :search_term OR `genre`.`slug` LIKE  :search_term OR
-                    `public`.`slug` LIKE   :search_term ORDER BY :id ;");
-                $select_research->bindValue(':search_term', $search_term, PDO::PARAM_STR);
-                $select_research->bindParam(':id', $id, PDO::PARAM_INT);
-                $select_research->execute();
-            } else {
-                $message = "Vous devez entrer votre requete dans la barre de recherche";
-            }
-
-            ?>
-            <form action="../result-search.php" method="GET">
+        <section id="admin-search-bar" class="row-limit-size">
+            <form action="./research-list.php" method="GET">
                 <input type="search" placeholder="Rechercher" name="search" class="search-admin">
-                <button type="submit" name='research' value="rechercher..." class="search-admin">
+                <button type="submit" name="research" value="rechercher..." class="search-admin">
                     <img src="../asset/img/icon/icon_search_bar.svg" alt="icon loupe">
                 </button>
             </form>
@@ -80,7 +50,7 @@ require_once '../connexion.php';
                 ?>
                 <?=$total= $resultManga['nbManga']-$resultLoan['nbLoan'] ?>
             </span>
-            <span>Manga réservé :
+            <span>Réservé :
                 <?php
                 $sql2 = "SELECT COUNT(`available`) AS `reserved` FROM `loan`";
                 $req2 = $db->query($sql2);

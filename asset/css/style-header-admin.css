@@ -21,7 +21,7 @@ li {
 }
 
 header {
-  box-shadow: 0px 25px 20px -20px rgba(235, 93, 17, 0.45), 25px 0 20px -20px rgba(235, 93, 17, 0.45);
+  box-shadow: 25px 0 20px -20px rgba(235, 93, 17, 0.45);
   width: 140px;
   height: 100vh;
   overflow: auto;
@@ -52,9 +52,9 @@ header > a#burger {
 header > a#burger > img#logo {
   width: 70px;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 520px) {
   header > a#burger > img#logo {
-    width: 50px;
+    width: 60px;
   }
 }
 header nav#main-menu {
@@ -99,14 +99,26 @@ main > section#admin-search-bar {
   justify-content: space-between;
   position: sticky;
   top: 0;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding: 30px 10px;
   height: 100px;
   background-color: #fff;
 }
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 850px) {
   main > section#admin-search-bar {
-    margin-right: 10px;
+    margin: 0;
+    margin-bottom: 50px;
+  }
+}
+@media screen and (min-width: 850px) {
+  main > section#admin-search-bar {
+    margin-left: 50px;
+    margin-bottom: 50px;
+  }
+}
+@media screen and (max-width: 520px) {
+  main > section#admin-search-bar {
+    margin-left: 30px;
+    margin-bottom: 50px;
   }
 }
 @media screen and (max-width: 850px) {
@@ -127,16 +139,11 @@ main > section#admin-search-bar {
     left: 140px;
   }
 }
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 520px) {
   main > section#admin-search-bar > form {
     position: absolute;
-    left: 180px;
-  }
-}
-@media screen and (max-width: 350px) {
-  main > section#admin-search-bar > form {
-    position: absolute;
-    left: 100px;
+    top: 70px;
+    left: 120px;
   }
 }
 main > section#admin-search-bar > form > input[type=search] {
@@ -155,7 +162,15 @@ main > section#admin-search-bar > form > input[type=search] {
 }
 @media screen and (max-width: 400px) {
   main > section#admin-search-bar > form > input[type=search] {
-    width: 200px;
+    width: 150px;
+  }
+}
+@media screen and (max-width: 400px) {
+  main > section#admin-search-bar > form > input::-moz-placeholder {
+    font-size: medium;
+  }
+  main > section#admin-search-bar > form > input::placeholder {
+    font-size: medium;
   }
 }
 main > section#admin-search-bar > form > button {
@@ -180,11 +195,12 @@ main > section#admin-search-bar > form > button > img {
 @media screen and (max-width: 400px) {
   main > section#admin-search-bar > form > button {
     position: absolute;
-    left: 150px;
+    left: 120px;
   }
 }
 main > section#admin-search-bar > span {
   font-family: "Carter One", cursive;
+  color: #eb5d11;
 }
 @media screen and (max-width: 850px) {
   main > section#admin-search-bar > span {
@@ -197,28 +213,16 @@ main > section#admin-search-bar > :last-child {
 @media screen and (max-width: 850px) {
   main > section#admin-search-bar > :last-child {
     display: block;
+    margin-right: 10px;
   }
 }
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 520px) {
   main > section#admin-search-bar > :last-child {
+    margin: 0;
     position: absolute;
-    top: 75px;
-    left: 320px;
+    top: 20px;
+    left: 120px;
     z-index: 99999;
-  }
-}
-@media screen and (max-width: 400px) {
-  main > section#admin-search-bar > :last-child {
-    position: absolute;
-    top: 75px;
-    left: 300px;
-    z-index: 99999;
-  }
-}
-@media screen and (max-width: 350px) {
-  main > section#admin-search-bar > :last-child {
-    position: absolute;
-    left: 240px;
   }
 }
 main > section.new-post > form {
@@ -235,6 +239,13 @@ main > section.new-post > form > fieldset.manga-info {
   border: 1px solid #e23b3b;
   color: #eb5d11;
   font-family: "Carter One", cursive;
+  background-color: #fff;
+}
+@media screen and (max-width: 520px) {
+  main > section.new-post > form > fieldset.manga-info {
+    display: flex;
+    flex-direction: column;
+  }
 }
 main > section.new-post > form > fieldset.manga-info label {
   justify-self: end;
@@ -273,17 +284,100 @@ main > section.new-post > form > input[type=submit], main > section.new-post > f
   float: right;
   font-size: 1.1rem;
 }
+main > section.new-post > form > fieldset.cat-info {
+  margin-left: 50px;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  justify-content: center;
+  width: 300px;
+  padding: 30px;
+  border: 1px solid #e23b3b;
+  color: #eb5d11;
+  font-family: "Carter One", cursive;
+  background-color: #fff;
+}
+@media screen and (max-width: 850px) {
+  main > section.new-post > form > fieldset.cat-info {
+    margin-left: 150px;
+  }
+}
+@media screen and (max-width: 520px) {
+  main > section.new-post > form > fieldset.cat-info {
+    margin-left: 75px;
+  }
+}
+@media screen and (max-width: 400px) {
+  main > section.new-post > form > fieldset.cat-info {
+    margin-left: 45px;
+  }
+}
+@media screen and (max-width: 320px) {
+  main > section.new-post > form > fieldset.cat-info {
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width: 300px) {
+  main > section.new-post > form > fieldset.cat-info {
+    margin: 0;
+  }
+}
+main > section.new-post > form > fieldset.cat-info > label {
+  justify-self: end;
+  margin: 5px;
+}
+main > section.new-post > form > fieldset.cat-info > input {
+  margin: 5px;
+}
+main > section.new-post > form > fieldset.send-img {
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 350px;
+  padding: 20px;
+  border: 1px solid #e23b3b;
+  color: #eb5d11;
+  font-family: "Carter One", cursive;
+  background-color: #fff;
+}
+@media screen and (max-width: 850px) {
+  main > section.new-post > form > fieldset.send-img {
+    margin-left: 150px;
+  }
+}
+@media screen and (max-width: 520px) {
+  main > section.new-post > form > fieldset.send-img {
+    margin-left: 75px;
+  }
+}
+@media screen and (max-width: 400px) {
+  main > section.new-post > form > fieldset.send-img {
+    margin-left: 45px;
+  }
+}
+@media screen and (max-width: 370px) {
+  main > section.new-post > form > fieldset.send-img {
+    margin: 0;
+  }
+}
+main > section.new-post > form > fieldset.send-img > label {
+  justify-self: end;
+  margin: 5px;
+}
+main > section.new-post > form > fieldset.send-img > input {
+  margin: 5px;
+}
 main > section#list-manga {
   margin-left: 30px;
   padding: 10px;
   border-radius: 5px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  overflow: hidden;
 }
 @media screen and (max-width: 850px) {
   main > section#list-manga {
     margin: 0;
     padding: 0;
+    box-shadow: none;
   }
 }
 main > section#list-manga > h1 {
@@ -306,17 +400,40 @@ main > section#list-manga > div.list:hover {
 main > section#list-manga > div.list > p {
   font-family: "Carter One", cursive;
   color: #eb5d11;
+  display: inline-block;
+}
+main > section#list-manga > div.list > p:first-child {
+  width: 100px;
+}
+main > section#list-manga > div.list > p:last-child {
+  width: 50px;
 }
 main > section#list-manga > div.list > div.placement > ul#menu-list {
   width: inherit;
   display: flex;
   justify-content: space-evenly;
 }
+@media screen and (max-width: 490px) {
+  main > section#list-manga > div.list > div.placement > ul#menu-list {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 main > section#list-manga > div.list > div.placement > ul#menu-list > li {
   padding-left: 20px;
 }
+main > section#list-manga > div.list > div.placement > ul#menu-list > li > a {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+}
 main > section#list-manga > div.list > div.placement > ul#menu-list > li > a > img {
   width: 25px;
+}
+@media screen and (max-width: 490px) {
+  main > section#list-manga > div.list > div.placement > ul#menu-list > li > a > img {
+    width: 20px;
+  }
 }
 main > div.modal {
   display: none;
@@ -326,7 +443,6 @@ main > div.modal {
   z-index: 9999;
   left: 0;
   top: 0;
-  overflow: auto;
   background-color: rgba(71, 78, 93, 0.5);
   padding-top: 50px;
 }
@@ -339,6 +455,12 @@ main > div.modal > div.modal-content {
   padding-bottom: 20px;
   border-radius: 5px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+@media screen and (max-width: 350px) {
+  main > div.modal > div.modal-content {
+    position: absolute;
+    left: 120px;
+  }
 }
 main > div.modal > div.modal-content > h1 {
   font-size: 1.1rem;
@@ -361,6 +483,36 @@ main > div.modal > div.modal-content > a.btn:hover {
   background-color: #eb5d11;
   border-radius: 10px 0 10px 0;
   text-decoration: none;
+}
+main div.success,
+main div.error {
+  position: absolute;
+  top: 0;
+  left: 250px;
+  z-index: 9999;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 100px;
+  color: #e23b3b;
+  font-family: "Carter One", cursive;
+  border-radius: 25px;
+  transform: translateY(100%);
+  animation: 3s ease-in 1s disappear;
+  opacity: 0;
+}
+@keyframes disappear {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /*phone reservation*/

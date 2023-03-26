@@ -1,27 +1,22 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['id-user']) && $_SESSION['role-user'] === 'admin' ) {
-    header('Location: ./connect.php');
+if (!isset($_SESSION['id-user']) || $_SESSION['role-user'] !== 'admin') {
+    header('Location: ../index.php');
+    exit();
 }
-
-require_once '../connexion.php';
+include_once '../connexion.php';
 include_once './header-admin.php';
 
 if (isset($_GET['id']) && !empty($_GET['id'])) {
     $id = $_GET['id'];
 
     $req = $db->prepare("SELECT `id`, `id_genre`, `id_public`, `title`, `volume`, `editor`, `published_at`, `author`,`extract`,`bookshelf`  FROM `manga` WHERE `id`  = :id");
-    $req->bindParam('id', $id, PDO::PARAM_INT);
+    $req->bindParam(':id', $id, PDO::PARAM_INT);
     $req->execute();
 
     $article = $req->fetch(PDO::FETCH_ASSOC);
 
-    if ($req->rowCount() === 0) {
-        $_SESSION["notModified"] = "Manga introuvable";
-        header("Location: edit.php?id=" . $id);
-        exit();
-    }
 
     if (isset($_POST['submit'])) {
         $genre = $_POST['genre'];
@@ -46,23 +41,22 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
         $reqSend->bindParam(':extract', $extract, PDO::PARAM_STR);
         $reqSend->bindParam(':bookshelf', $bookshelf, PDO::PARAM_STR);
 
-        if ($reqSend->execute()) {
-            $_SESSION['modified'] = true;
-            header('Location: edit.php?id=' . $id);
+        try {
+            if ($reqSend->execute()) {
+                header('Location: edit.php?id=' . $id);
+                $_SESSION['success'] = "Informations modifiées";
+                exit();
+            }
+        } catch (PDOException $e) {
+            $_SESSION['error1'] = "Il y a eu un problème lors de l'enregistrement des informations. Veuillez réessayer.";
+            header('Location: ./list.php');
             exit();
-        } else {
-            $error = 'There was an error submitting your form. Please try again later.';
         }
     }
-} else {
-    $_SESSION["notModified"] = "Manga introuvable";
-    header("Location: edit.php?id=" . $id);
-    exit();
-}
-?>
+} ?>
 <section class="new-post">
     <form action="#" method="POST">
-        <fieldset class="manga-info">
+        <fieldset class="manga-info edit">
             <?php
             $req = $db->prepare("SELECT `id`, `id_genre`, `id_public`, `title`, `volume`, `editor`, `published_at`, `author`,`extract`,`bookshelf` FROM `manga` WHERE `id`  = :id");
             $req->bindParam('id', $id, PDO::PARAM_INT);
@@ -111,21 +105,22 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     </form>
 </section>
 
-<?php if (isset($_SESSION['modified'])) : ?>
-    <div id="confirmed-modified">
-        <p><?= $_SESSION["modified"] ?></p>
+<?php if (isset($_SESSION['success'])) : ?>
+    <div class="success">
+        <p><?= $_SESSION["success"] ?></p>
     </div>
-    <?php unset($_SESSION["modified"]); ?>
+    <?php unset($_SESSION["success"]); ?>
 <?php endif; ?>
 
-<?php if (isset($_SESSION['notModified'])) : ?>
-    <div id="not-modified">
-        <p><?= $_SESSION["notModified"] ?></p>
+<?php if (isset($_SESSION['error1'])) : ?>
+    <div class="error">
+        <p><?= $_SESSION["error1"] ?></p>
     </div>
-    <?php unset($_SESSION["notModified"]); ?>
+    <?php unset($_SESSION["error1"]); ?>
 <?php endif; ?>
 
 </main>
 <script src="../asset/js/header-admin.js"></script>
 </body>
+
 </html>
