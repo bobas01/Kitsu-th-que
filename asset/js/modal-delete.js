@@ -7,7 +7,7 @@ for (let deleteArticles of deleteArticle) {
         let titre = this.dataset.titre;
         let volume = this.dataset.volume;
         let id = this.dataset.id;
-        
+
 
         //Creation Modal Window
         let div = document.createElement('div');
@@ -34,7 +34,6 @@ for (let deleteArticles of deleteArticle) {
 
         let cancelbtn = document.createElement('a');
         cancelbtn.classList.add('btn');
-        cancelbtn.setAttribute("href", "./list.php");
         cancelbtn.innerHTML = 'Annuler';
         container.appendChild(cancelbtn);
 

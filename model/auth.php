@@ -2,7 +2,6 @@
 session_start();
 require_once '../connexion.php';
 
-
 $pseudo = $_POST['pseudo'];
 $pass = $_POST['password'];
 
@@ -15,7 +14,7 @@ $req->execute();
 if ($req->rowCount() == 1) {
     $user = $req->fetch(PDO::FETCH_ASSOC);
 
-    if ($user['password'] === $pass) {
+    if (password_verify($pass, $user['password'])) {
         $_SESSION['id-user'] = $user['id'];
         $_SESSION['role-user'] = $user['role'];
         $_SESSION['pseudo'] = $user['pseudo'];        
@@ -33,3 +32,6 @@ if ($req->rowCount() == 1) {
 } else {
     header('Location: ../index.php?err=1');
 }
+
+
+

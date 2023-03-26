@@ -99,8 +99,7 @@ main > section#admin-search-bar {
   justify-content: space-between;
   position: sticky;
   top: 0;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding: 30px 10px;
   height: 100px;
   background-color: #fff;
 }
@@ -231,26 +230,6 @@ main > section#list-category > form#form-category > fieldset.manga-info {
   grid-template-columns: 1fr 1fr;
   justify-content: center;
 }
-main > section#upload-img {
-  display: none;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  background-color: rgba(217, 221, 231, 0.5);
-  padding-top: 50px;
-}
-main > section#upload-img > form#form-img {
-  position: relative;
-  margin: 50px auto;
-}
-main > section#upload-img > form#form-img > fieldset.manga-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: center;
-}
 main > section.new-post > form {
   width: -moz-fit-content;
   width: fit-content;
@@ -342,17 +321,40 @@ main > section#list-manga > div.list:hover {
 main > section#list-manga > div.list > p {
   font-family: "Carter One", cursive;
   color: #eb5d11;
+  display: inline-block;
+}
+main > section#list-manga > div.list > p:first-child {
+  width: 100px;
+}
+main > section#list-manga > div.list > p:last-child {
+  width: 50px;
 }
 main > section#list-manga > div.list > div.placement > ul#menu-list {
   width: inherit;
   display: flex;
   justify-content: space-evenly;
 }
+@media screen and (max-width: 490px) {
+  main > section#list-manga > div.list > div.placement > ul#menu-list {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 main > section#list-manga > div.list > div.placement > ul#menu-list > li {
   padding-left: 20px;
 }
+main > section#list-manga > div.list > div.placement > ul#menu-list > li > a {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+}
 main > section#list-manga > div.list > div.placement > ul#menu-list > li > a > img {
   width: 25px;
+}
+@media screen and (max-width: 490px) {
+  main > section#list-manga > div.list > div.placement > ul#menu-list > li > a > img {
+    width: 20px;
+  }
 }
 main > div.modal {
   display: none;
@@ -402,4 +404,34 @@ main > div.modal > div.modal-content > a.btn:hover {
   background-color: #eb5d11;
   border-radius: 10px 0 10px 0;
   text-decoration: none;
+}
+main div.success,
+main div.error {
+  position: absolute;
+  top: 0;
+  left: 250px;
+  z-index: 9999;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 100px;
+  color: #e23b3b;
+  font-family: "Carter One", cursive;
+  border-radius: 25px;
+  transform: translateY(100%);
+  animation: 3s ease-in 1s disappear;
+  opacity: 0;
+}
+@keyframes disappear {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }/*# sourceMappingURL=style-header-admin.css.map */
