@@ -94,59 +94,55 @@ main {
   }
 }
 main > section#admin-search-bar {
-  margin: 0 50px 30px 30px;
-  display: flex;
-  justify-content: space-between;
+  margin: 0;
   position: sticky;
   top: 0;
-  padding: 30px 10px;
-  height: 100px;
+}
+main > section#admin-search-bar > div {
+  display: flex;
+  justify-content: space-around;
+  padding: 30px 0 30px 40px;
+  height: 150px;
   background-color: #fff;
 }
 @media screen and (max-width: 850px) {
-  main > section#admin-search-bar {
+  main > section#admin-search-bar > div {
     margin: 0;
     margin-bottom: 50px;
   }
 }
 @media screen and (min-width: 850px) {
-  main > section#admin-search-bar {
+  main > section#admin-search-bar > div {
     margin-left: 50px;
     margin-bottom: 50px;
   }
 }
 @media screen and (max-width: 520px) {
-  main > section#admin-search-bar {
+  main > section#admin-search-bar > div {
     margin-left: 30px;
     margin-bottom: 50px;
   }
 }
 @media screen and (max-width: 850px) {
-  main > section#admin-search-bar > form {
-    position: relative;
-    left: 260px;
-  }
-}
-@media screen and (max-width: 750px) {
-  main > section#admin-search-bar > form {
-    position: relative;
-    left: 210px;
-  }
-}
-@media screen and (max-width: 600px) {
-  main > section#admin-search-bar > form {
+  main > section#admin-search-bar > div > form {
     position: relative;
     left: 140px;
   }
 }
-@media screen and (max-width: 520px) {
-  main > section#admin-search-bar > form {
-    position: absolute;
-    top: 70px;
-    left: 120px;
+@media screen and (max-width: 600px) {
+  main > section#admin-search-bar > div > form {
+    position: relative;
+    left: 100px;
   }
 }
-main > section#admin-search-bar > form > input[type=search] {
+@media screen and (max-width: 520px) {
+  main > section#admin-search-bar > div > form {
+    position: absolute;
+    top: 70px;
+    left: 140px;
+  }
+}
+main > section#admin-search-bar > div > form > input[type=search] {
   height: 30px;
   border: none;
   border-bottom: 1px solid #e23b3b;
@@ -156,24 +152,24 @@ main > section#admin-search-bar > form > input[type=search] {
   outline: 0;
 }
 @media screen and (max-width: 470px) {
-  main > section#admin-search-bar > form > input[type=search] {
+  main > section#admin-search-bar > div > form > input[type=search] {
     width: 200px;
   }
 }
 @media screen and (max-width: 400px) {
-  main > section#admin-search-bar > form > input[type=search] {
+  main > section#admin-search-bar > div > form > input[type=search] {
     width: 150px;
   }
 }
 @media screen and (max-width: 400px) {
-  main > section#admin-search-bar > form > input::-moz-placeholder {
+  main > section#admin-search-bar > div > form > input::-moz-placeholder {
     font-size: medium;
   }
-  main > section#admin-search-bar > form > input::placeholder {
+  main > section#admin-search-bar > div > form > input::placeholder {
     font-size: medium;
   }
 }
-main > section#admin-search-bar > form > button {
+main > section#admin-search-bar > div > form > button {
   position: relative;
   z-index: 9999;
   top: 5px;
@@ -183,45 +179,45 @@ main > section#admin-search-bar > form > button {
   background-color: #fff;
   cursor: pointer;
 }
-main > section#admin-search-bar > form > button > img {
+main > section#admin-search-bar > div > form > button > img {
   width: 18px;
 }
 @media screen and (max-width: 470px) {
-  main > section#admin-search-bar > form > button {
+  main > section#admin-search-bar > div > form > button {
     position: absolute;
     left: 170px;
   }
 }
 @media screen and (max-width: 400px) {
-  main > section#admin-search-bar > form > button {
+  main > section#admin-search-bar > div > form > button {
     position: absolute;
     left: 120px;
   }
 }
-main > section#admin-search-bar > span {
+main > section#admin-search-bar > div > span {
   font-family: "Carter One", cursive;
   color: #eb5d11;
 }
 @media screen and (max-width: 850px) {
-  main > section#admin-search-bar > span {
+  main > section#admin-search-bar > div > span {
     display: none;
   }
 }
-main > section#admin-search-bar > :last-child {
+main > section#admin-search-bar > div > :last-child {
   color: #e23b3b;
 }
 @media screen and (max-width: 850px) {
-  main > section#admin-search-bar > :last-child {
+  main > section#admin-search-bar > div > :last-child {
     display: block;
     margin-right: 10px;
   }
 }
 @media screen and (max-width: 520px) {
-  main > section#admin-search-bar > :last-child {
+  main > section#admin-search-bar > div > :last-child {
     margin: 0;
     position: absolute;
     top: 20px;
-    left: 120px;
+    left: 140px;
     z-index: 99999;
   }
 }
