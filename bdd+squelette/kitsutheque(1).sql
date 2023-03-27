@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : dim. 26 mars 2023 à 17:26
+-- Généré le : lun. 27 mars 2023 à 08:16
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -482,7 +482,7 @@ INSERT INTO `user` (`id`, `role`, `pseudo`, `password`, `mail`) VALUES
 -- Contraintes pour la table `loan`
 --
 ALTER TABLE `loan`
-  ADD CONSTRAINT `loan_ibfk_1` FOREIGN KEY (`id_manga`) REFERENCES `manga` (`id`),
+  ADD CONSTRAINT `loan_ibfk_1` FOREIGN KEY (`id_manga`) REFERENCES `manga` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `loan_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`);
 
 --
@@ -496,7 +496,7 @@ ALTER TABLE `manga`
 -- Contraintes pour la table `manga_category`
 --
 ALTER TABLE `manga_category`
-  ADD CONSTRAINT `manga_category_ibfk_1` FOREIGN KEY (`id_manga`) REFERENCES `manga` (`id`),
+  ADD CONSTRAINT `manga_category_ibfk_1` FOREIGN KEY (`id_manga`) REFERENCES `manga` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `manga_category_ibfk_2` FOREIGN KEY (`id_category`) REFERENCES `category` (`id`);
 COMMIT;
 
