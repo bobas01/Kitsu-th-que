@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../connexion.php';
+include_once '../connexion.php';
 
 $pseudo = $_POST['pseudo'];
 $pass = $_POST['password'];
